@@ -1,0 +1,16 @@
+{
+  "name": "adrenaline-ui-ux-design",
+  "owner": {
+    "name": "d-mente"
+  },
+  "metadata": {
+    "description": "Marketplace with the UI/UX Design plugin."
+  },
+  "plugins": [
+    {
+      "name": "adrenaline-ui-ux-design",
+      "source": "./",
+      "description": "Diseña la experiencia y la interfaz de las pantallas, de la tarea al handoff y a la evaluación, sin escribir el código."
+    }
+  ]
+}

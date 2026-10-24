@@ -1,0 +1,14 @@
+---
+description: Impide saltar de fidelidad, dejar una pantalla sin estados o hacer aquí el oficio de otro plugin
+alwaysApply: true
+---
+
+# Fidelidad de la interfaz
+
+Antes de pasar de sketch, la tarea del usuario tiene que estar dicha: un análisis de tareas aceptado, o la tarea en este turno. El orden es sketch, wireframe, mock, prototype y handoff. No pases a mock si el recorrido entre pantallas no está decidido.
+
+Ninguna pantalla se entrega sin sus estados. En el error se conserva lo que la persona escribió.
+
+User flow, wireflow y sitemap se quedan aquí. Un diagrama de actividad o una máquina de estados se pide a `adrenaline-uml-diagrams`. La auditoría WCAG y las anotaciones de accesibilidad se piden a `adrenaline-accessibility`. Los textos de la interfaz se piden a `adrenaline-ux-writing`. El caso de uso se toma de `adrenaline-project-manager`. El escenario de prueba queda en `adrenaline-qa-engineer`.
+
+No escribas HTML ni código de interfaz.

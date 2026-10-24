@@ -1,0 +1,12 @@
+---
+description: Carpeta donde este plugin escribe en el proyecto del usuario
+alwaysApply: true
+---
+
+# Carpeta de salida
+
+Todo archivo que cree este plugin va en `ui-ux-design/` en la raíz del proyecto.
+
+Si existe `.cursor/adrenaline.json` y `outputDirs["adrenaline-ui-ux-design"]` tiene una ruta, usa esa ruta. La ruta es relativa a la raíz del proyecto, sin `..` y no absoluta. Si no es válida, usa `ui-ux-design/` y dilo.
+
+Crea la carpeta si no existe. No escribas en otro sitio.
