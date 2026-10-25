@@ -1,8 +1,8 @@
 {
   "name": "adrenaline-ui-ux-design",
   "displayName": "UI/UX Design",
-  "description": "Diseña la experiencia y la interfaz de las pantallas, de la tarea al handoff y a la evaluación, sin escribir el código.",
-  "version": "0.1.0",
+  "description": "Designs the experience and the interface of screens, from the task through handoff and evaluation, without writing the code.",
+  "version": "1.0.0",
   "author": { "name": "d-mente" },
   "license": "MIT",
   "repository": "https://github.com/d-mente/adrenaline-ui-ux-design",

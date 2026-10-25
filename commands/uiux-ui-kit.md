@@ -1,10 +1,10 @@
 ---
 name: uiux-ui-kit
-description: ADRenaline. UI kit y tokens de la interfaz.
+description: "ADRenaline. UI kit (skill define-appearance): components, tokens (color, typography, space, radius, and elevation), and rules for repeating the design."
 ---
 
-Escribe el UI kit y los tokens.
+Write the UI kit and the tokens.
 
-1. Sigue el skill `definir-apariencia` de este plugin.
-2. Este command fija la pieza. En ese skill, lee `references/ui-kit.md`. No vuelvas a preguntar qué pieza es.
-3. Si el producto ya tiene kit, parte de ese. Si faltan los valores, pídelos.
+1. Follow the skill `define-appearance` in this plugin.
+2. This command fixes the piece. In that skill, read `references/ui-kit.md`. Do not ask again which piece it is.
+3. Prerequisites: values (color, type, space, radius, and elevation), unless the product already has a kit. If they are missing, follow "When a prerequisite is missing" in that skill and the prompts in `references/ui-kit.md`.

@@ -1,10 +1,10 @@
 ---
 name: uiux-decision
-description: ADRenaline. Decisión de diseño.
+description: "ADRenaline. Design decision (skill record-decision): the context, the options, the decision, and the consequences, and whether that decision governs."
 ---
 
-Registra la decisión de diseño.
+Record the design decision.
 
-1. Sigue el skill `registrar-decision` de este plugin.
-2. Este command fija la pieza. En ese skill, lee `references/decision.md`. No vuelvas a preguntar qué pieza es.
-3. No elijas la opción ganadora. Si el usuario no la ha tomado, el estado es proposed.
+1. Follow the skill `record-decision` in this plugin.
+2. This command fixes the piece. In that skill, read `references/decision.md`. Do not ask again which piece it is.
+3. Prerequisites: a decision made by whoever asks for the record. Do not pick the winning option. If it is not made, the state is `proposed`. Follow "When a prerequisite is missing" in that skill and the prompts in `references/decision.md`.

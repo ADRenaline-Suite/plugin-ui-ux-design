@@ -1,10 +1,10 @@
 ---
 name: uiux-sitemap
-description: ADRenaline. Sitemap de las pantallas.
+description: "ADRenaline. Sitemap (skill arrange-screens): which screens exist and how they are grouped, without the path of a task or the look of each screen."
 ---
 
-Dibuja el sitemap.
+Draw the sitemap.
 
-1. Sigue el skill `ordenar-pantallas` de este plugin.
-2. Este command fija la pieza. En ese skill, lee `references/sitemap.md`. No vuelvas a preguntar qué pieza es.
-3. El texto del usuario es la lista de pantallas y grupos. Si falta, pídela.
+1. Follow the skill `arrange-screens` in this plugin.
+2. This command fixes the piece. In that skill, read `references/sitemap.md`. Do not ask again which piece it is.
+3. Prerequisites: screens and groups, task. If either is missing, follow "When a prerequisite is missing" in that skill and the prompts in `references/sitemap.md`.

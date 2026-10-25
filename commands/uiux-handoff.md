@@ -1,10 +1,10 @@
 ---
 name: uiux-handoff
-description: ADRenaline. Handoff de una pantalla.
+description: "ADRenaline. Handoff (skill specify-screen): measures, states, copy, behavior by window size, and accessibility, so the screen can be built without guessing."
 ---
 
-Escribe el handoff de la pantalla.
+Write the handoff of the screen.
 
-1. Sigue el skill `concretar-pantalla` de este plugin.
-2. Este command fija la pieza. En ese skill, lee `references/handoff.md`. No vuelvas a preguntar qué pieza es.
-3. Pide los textos a `adrenaline-ux-writing` y las anotaciones a `adrenaline-accessibility`.
+1. Follow the skill `specify-screen` in this plugin.
+2. This command fixes the piece. In that skill, read `references/handoff.md`. Do not ask again which piece it is.
+3. Prerequisites: an `accepted` mock, a UI kit, copy, accessibility notes. The mock and the UI kit stop the delivery. Missing copy or notes leave the delivery `proposed`. Follow "When a prerequisite is missing" in that skill and the prompts in `references/handoff.md`. Ask `adrenaline-ux-writing` for the copy and `adrenaline-accessibility` for the notes.

@@ -1,12 +1,14 @@
 ---
-description: Carpeta donde este plugin escribe en el proyecto del usuario
+description: Folder where this plugin writes in the user's project
 alwaysApply: true
 ---
 
-# Carpeta de salida
+# Output folder
 
-Todo archivo que cree este plugin va en `ui-ux-design/` en la raíz del proyecto.
+Every file this plugin creates goes in `ui-ux-design/` at the project root.
 
-Si existe `.cursor/adrenaline.json` y `outputDirs["adrenaline-ui-ux-design"]` tiene una ruta, usa esa ruta. La ruta es relativa a la raíz del proyecto, sin `..` y no absoluta. Si no es válida, usa `ui-ux-design/` y dilo.
+If `.cursor/adrenaline.json` exists and `outputDirs["adrenaline-ui-ux-design"]` holds a path, use that path. The path is relative to the project root, with no `..` and not absolute. If it is not valid, use `ui-ux-design/` and say so.
 
-Crea la carpeta si no existe. No escribas en otro sitio.
+Create the folder if it does not exist. Do not write anywhere else.
+
+Write the artifact in the language of the request. If the request names a language, use that one. Otherwise use the language the request is written in. Keep names the person already used. The type in the file name stays the English piece id. `STATUS.md` columns stay `N`, `archivo`, `estado`, `sustituye`, `notas`.

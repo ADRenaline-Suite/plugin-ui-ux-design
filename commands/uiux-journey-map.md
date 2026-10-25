@@ -1,10 +1,10 @@
 ---
 name: uiux-journey-map
-description: ADRenaline. Journey map de una persona y un escenario.
+description: "ADRenaline. Journey map (skill understand-user): one person's path through a scenario, with actions, thoughts, emotions, and opportunities, without proposing the interface."
 ---
 
-Haz el journey map.
+Write the journey map.
 
-1. Sigue el skill `entender-usuario` de este plugin.
-2. Este command fija la pieza. En ese skill, lee `references/journey-map.md`. No vuelvas a preguntar qué pieza es.
-3. Si falta la persona o el escenario, pídelos. No inventes la persona.
+1. Follow the skill `understand-user` in this plugin.
+2. This command fixes the piece. In that skill, read `references/journey-map.md`. Do not ask again which piece it is.
+3. Prerequisites: persona, scenario. If either is missing, follow "When a prerequisite is missing" in that skill and the prompts in `references/journey-map.md`.

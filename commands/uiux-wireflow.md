@@ -1,10 +1,10 @@
 ---
 name: uiux-wireflow
-description: ADRenaline. Wireflow de una tarea.
+description: "ADRenaline. Wireflow (skill arrange-screens): the same path of a task, with the hierarchy of each step in view, without color or build measures."
 ---
 
-Dibuja el wireflow de la tarea.
+Draw the wireflow of the task.
 
-1. Sigue el skill `ordenar-pantallas` de este plugin.
-2. Este command fija la pieza. En ese skill, lee `references/wireflow.md`. No vuelvas a preguntar qué pieza es.
-3. Si el camino no está dicho, pídelo.
+1. Follow the skill `arrange-screens` in this plugin.
+2. This command fixes the piece. In that skill, read `references/wireflow.md`. Do not ask again which piece it is.
+3. Prerequisites: task, path. If either is missing, follow "When a prerequisite is missing" in that skill and the prompts in `references/wireflow.md`.

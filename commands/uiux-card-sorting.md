@@ -1,10 +1,10 @@
 ---
 name: uiux-card-sorting
-description: ADRenaline. Plan y análisis de card sorting.
+description: "ADRenaline. Card sorting (skill test-with-users): a plan for how people group content and, when there is data, the groups that came out, without evaluating a sitemap that already exists."
 ---
 
-Planea o analiza el card sorting.
+Plan or analyze the card sort.
 
-1. Sigue el skill `medir-con-usuarios` de este plugin.
-2. Este command fija la pieza. En ese skill, lee `references/card-sorting.md`. No vuelvas a preguntar qué pieza es.
-3. Si no dicen si es abierto, cerrado o híbrido, pregunta.
+1. Follow the skill `test-with-users` in this plugin.
+2. This command fixes the piece. In that skill, read `references/card-sorting.md`. Do not ask again which piece it is.
+3. Prerequisites: kind (open, closed, or hybrid). If it is missing, follow "When a prerequisite is missing" in that skill and the prompts in `references/card-sorting.md`.

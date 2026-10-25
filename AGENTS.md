@@ -1,7 +1,9 @@
 # adrenaline-ui-ux-design
 
-Diseña la experiencia y la interfaz de las pantallas de un producto digital. El procedimiento está en `skills/`. Cada pieza tiene su manual en `skills/<skill>/references/`.
+Designs the experience and the interface of the screens of a digital product. The procedure is in `skills/`. Each piece has its manual in `skills/<skill>/references/`.
 
-Los archivos se guardan en `ui-ux-design/` en la raíz del proyecto, o en la ruta que `.cursor/adrenaline.json` indique en `outputDirs["adrenaline-ui-ux-design"]`. El nombre es `<NNN>-<tipo>-<tema>.<ext>`, con `<NNN>` monótono, y la carpeta lleva `STATUS.md`.
+Files are saved in `ui-ux-design/` at the project root, or in the path `.cursor/adrenaline.json` sets in `outputDirs["adrenaline-ui-ux-design"]`. The name is `<NNN>-<type>-<topic>.<ext>`, with a monotonic `<NNN>`, and the folder keeps `STATUS.md`.
 
-Los diagramas UML se piden a `adrenaline-uml-diagrams`. La accesibilidad, a `adrenaline-accessibility`. Los textos de la interfaz, a `adrenaline-ux-writing`. Este plugin no escribe HTML ni código de interfaz.
+The artifact is written in the language of the request. The type in the file name stays the English piece id. `STATUS.md` columns stay `N`, `archivo`, `estado`, `sustituye`, `notas`.
+
+UML diagrams are asked of `adrenaline-uml-diagrams`. Accessibility, of `adrenaline-accessibility`. Interface copy, of `adrenaline-ux-writing`. This plugin does not write HTML or interface code.

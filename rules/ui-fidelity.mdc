@@ -1,0 +1,16 @@
+---
+description: Stops a jump in fidelity, a screen without states, or this plugin doing another plugin's job
+alwaysApply: true
+---
+
+# Interface fidelity
+
+Before leaving sketch, the user's task has to be stated: an accepted task analysis, or the task in this turn. The order is sketch, wireframe, mock, prototype, and handoff. Do not move on to mock if the path between screens is not decided. The mock needs an accepted UI kit or the tokens stated in this turn. If a stopping prerequisite is missing, do not write the piece: say its name, give one prompt, and list the earlier commands in order.
+
+No screen is delivered without its states. On error, what the person typed is kept.
+
+User flow, wireflow, and sitemap stay here. An activity diagram or a state machine is asked of `adrenaline-uml-diagrams`. The WCAG audit and the accessibility notes are asked of `adrenaline-accessibility`. Interface copy is asked of `adrenaline-ux-writing`. The use case is taken from `adrenaline-project-manager`. The test scenario stays in `adrenaline-qa-engineer`.
+
+Do not write HTML or interface code.
+
+Write the artifact in the language of the request. The type in the file name stays the English piece id.
