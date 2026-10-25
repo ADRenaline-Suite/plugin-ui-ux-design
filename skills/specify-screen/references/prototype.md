@@ -17,7 +17,7 @@ Measures, annotated tokens, and accessibility requirements. Those stay in the ha
 3. The first SVG is the start of the path. The Markdown says which one to open.
 4. Every destination exists. If an action has no screen, do not invent the destination: ask, or leave that zone without a link and mark the delivery `proposed`.
 5. Include the error state when the task can fail, as its own SVG if it is another view, or as a linked frame inside the same screen if the error does not change file. The "retry" link returns to the screen where the data is.
-6. The path is not a UML diagram. If a state machine is needed, ask `adrenaline-uml-diagrams` for it.
+6. The path is not a UML diagram. If a state machine is needed, ask `plugin-uml-diagrams` for it.
 
 ## Markdown template
 

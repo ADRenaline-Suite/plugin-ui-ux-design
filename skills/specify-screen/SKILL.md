@@ -7,7 +7,7 @@ description: Produces the sketch, wireframe, mock, prototype, or handoff of a sc
 
 Produce one screen. The handoff is the piece from which the screen can be built without guessing. This skill closes that delivery.
 
-Source: ISO 9241-210:2019 (produce solutions). States: Scott Hurff, The UI Stack, plus success and, when they apply, no permission and offline. Fallback breakpoints: Material Design 3 (compact &lt;600 dp, medium 600–839, expanded 840–1199, large 1200–1599, extra-large ≥1600), by window width. Native platform: Apple Human Interface Guidelines, Material Design 3, or Fluent 2. Text expansion: W3C Internationalization, Text size in translation. Copy is written by `adrenaline-ux-writing`. Accessibility notes are specified by `adrenaline-accessibility`.
+Source: ISO 9241-210:2019 (produce solutions). States: Scott Hurff, The UI Stack, plus success and, when they apply, no permission and offline. Fallback breakpoints: Material Design 3 (compact &lt;600 dp, medium 600–839, expanded 840–1199, large 1200–1599, extra-large ≥1600), by window width. Native platform: Apple Human Interface Guidelines, Material Design 3, or Fluent 2. Text expansion: W3C Internationalization, Text size in translation. Copy is written by `plugin-ux-writing`. Accessibility notes are specified by `plugin-accessibility`.
 
 ## Before drawing
 
@@ -17,10 +17,10 @@ Source: ISO 9241-210:2019 (produce solutions). States: Scott Hurff, The UI Stack
 4. The order is sketch, wireframe, mock, prototype, handoff. If they ask for a piece and the previous one does not exist, it can be done when the task is stated and, for mock or later, the path is already decided. Do not fill in the earlier pieces on your own. Do write them in this turn when the prompt brings their data.
 5. Do not move on to mock if the path is not decided: an `accepted` user flow, or the path in this turn. Do not move on to mock if there is no `accepted` UI kit and no tokens in this turn. If the path or the kit is missing, follow "When a prerequisite is missing".
 6. Platform and breakpoints: the product's, if they exist. If there are no breakpoints, use Material Design 3. If the product is native, follow that platform's guide. If that guide contradicts the UI kit, say so and follow the kit.
-7. Real content, what the user already gave or what `adrenaline-ux-writing` gave. No lorem ipsum. In the wireframe, the mock, and the handoff, try a long string and the expansion on translation (a string of up to 10 characters can grow to 200–300%). If the product uses right-to-left writing, include an RTL frame. Do not translate the product: translation itself is out of scope.
+7. Real content, what the user already gave or what `plugin-ux-writing` gave. No lorem ipsum. In the wireframe, the mock, and the handoff, try a long string and the expansion on translation (a string of up to 10 characters can grow to 200–300%). If the product uses right-to-left writing, include an RTL frame. Do not translate the product: translation itself is out of scope.
 8. Themes: if the product has light mode, dark mode, or brand variants, the mock and the handoff cover them.
 9. States of every screen: ideal, empty, loading, partial, error, and success. When they apply, also no permission and offline. On error, what the person typed is kept. If a state does not apply, the Markdown says why.
-10. An activity diagram or a state machine for the screen is asked of `adrenaline-uml-diagrams`. Do not draw it here.
+10. An activity diagram or a state machine for the screen is asked of `plugin-uml-diagrams`. Do not draw it here.
 11. Do not write HTML or interface code.
 
 | Request | Piece | Reference |
@@ -65,7 +65,7 @@ Then stop. If the prerequisite does not stop the delivery, write the artifact as
 
 ## Delivery
 
-The folder is `ui-ux-design/` at the project root. If `.cursor/adrenaline.json` has `outputDirs["adrenaline-ui-ux-design"]` set to a relative path, without `..` and not absolute, use that path. If the file, the key, or a valid path is missing, use `ui-ux-design/` and, in the last case, say so. Create the folder if it does not exist. Do not write outside it. Do not choose another plugin's folder.
+The folder is `ui-ux-design/` at the project root. If `.cursor/adrenaline.json` has `outputDirs["plugin-ui-ux-design"]` set to a relative path, without `..` and not absolute, use that path. If the file, the key, or a valid path is missing, use `ui-ux-design/` and, in the last case, say so. Create the folder if it does not exist. Do not write outside it. Do not choose another plugin's folder.
 
 `<NNN>` is the next free integer in that folder, three digits, and it is not reused. `<type>` is `sketch`, `wireframe`, `mock`, `prototype`, or `handoff`. `<topic>` and `<screen>` are kebab-case.
 

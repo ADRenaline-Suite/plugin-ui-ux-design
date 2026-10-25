@@ -8,15 +8,15 @@ Differences between the built screen and what was specified: measures, tokens, s
 
 ## What it does not do
 
-It does not verify the use case. It does not verify WCAG: that is asked of `adrenaline-accessibility`. It does not fix the code.
+It does not verify the use case. It does not verify WCAG: that is asked of `plugin-accessibility`. It does not fix the code.
 
 ## How to do it
 
 1. The built screen arrives as a screenshot or as a URL. If they give a URL, open that screen. If you cannot open it, ask for a screenshot and leave the delivery `proposed`.
 2. Compare against the handoff. If there is no `accepted` handoff, compare with what does exist (mock, kit) and leave the delivery `proposed`, saying what was missing.
-3. Check measures, tokens, states, breakpoints, and copy. Copy that differs from the handoff is a finding, even when it "can be understood". The origin of the copy is `adrenaline-ux-writing` or the user; do not rewrite the copy here.
+3. Check measures, tokens, states, breakpoints, and copy. Copy that differs from the handoff is a finding, even when it "can be understood". The origin of the copy is `plugin-ux-writing` or the user; do not rewrite the copy here.
 4. Each difference says the element, what was specified, what was built, and the correction (return to the handoff, or amend the handoff if what was built was a new decision).
-5. Ask `adrenaline-accessibility` to audit the implementation.
+5. Ask `plugin-accessibility` to audit the implementation.
 
 ## Template
 
@@ -33,7 +33,7 @@ It does not verify the use case. It does not verify WCAG: that is asked of `adre
 | Element | Specified | Built | Correction |
 | --- | --- | --- | --- |
 
-Accessibility: ask `adrenaline-accessibility` for the audit.
+Accessibility: ask `plugin-accessibility` for the audit.
 ```
 
 ## Example

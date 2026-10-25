@@ -40,7 +40,7 @@ Then stop. If the prerequisite does not stop the delivery, write the artifact as
 
 ## Delivery
 
-The folder is `ui-ux-design/` at the project root. If `.cursor/adrenaline.json` has `outputDirs["adrenaline-ui-ux-design"]` set to a relative path, without `..` and not absolute, use that path. If the file, the key, or a valid path is missing, use `ui-ux-design/` and, in the last case, say so. Create the folder if it does not exist. Do not write outside it. Do not choose another plugin's folder.
+The folder is `ui-ux-design/` at the project root. If `.cursor/adrenaline.json` has `outputDirs["plugin-ui-ux-design"]` set to a relative path, without `..` and not absolute, use that path. If the file, the key, or a valid path is missing, use `ui-ux-design/` and, in the last case, say so. Create the folder if it does not exist. Do not write outside it. Do not choose another plugin's folder.
 
 `<NNN>` is the next free integer, three digits, and it is not reused. The moodboard is `<NNN>-moodboard-<topic>.md` plus one SVG per sample screen, `<NNN>-moodboard-<topic>-<screen>.svg`. The UI kit is `<NNN>-ui-kit-<topic>.md` and `<NNN>-ui-kit-<topic>.tokens.json`. Same delivery, same `<NNN>`.
 

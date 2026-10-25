@@ -5,7 +5,7 @@ description: Arranges the screens of a task into a user flow, a wireflow, or a s
 
 # Arrange screens
 
-Produce the user flow, the wireflow, or the sitemap. These are UX artifacts. They are not UML diagrams. An activity diagram or a state machine is asked of `adrenaline-uml-diagrams`.
+Produce the user flow, the wireflow, or the sitemap. These are UX artifacts. They are not UML diagrams. An activity diagram or a state machine is asked of `plugin-uml-diagrams`.
 
 Source: the task the flow completes follows Nielsen Norman Group, Task Analysis (goal, tasks, subtasks, order). The user flow, the wireflow, and the sitemap have no other standard in this plugin's sources: they show that order as a path or as a map.
 
@@ -41,7 +41,7 @@ Then stop. If the prerequisite does not stop the delivery, write the artifact as
 
 ## Delivery
 
-The folder is `ui-ux-design/` at the project root. If `.cursor/adrenaline.json` has `outputDirs["adrenaline-ui-ux-design"]` set to a relative path, without `..` and not absolute, use that path. If the file, the key, or a valid path is missing, use `ui-ux-design/` and, in the last case, say so. Create the folder if it does not exist. Do not write outside it. Do not choose another plugin's folder.
+The folder is `ui-ux-design/` at the project root. If `.cursor/adrenaline.json` has `outputDirs["plugin-ui-ux-design"]` set to a relative path, without `..` and not absolute, use that path. If the file, the key, or a valid path is missing, use `ui-ux-design/` and, in the last case, say so. Create the folder if it does not exist. Do not write outside it. Do not choose another plugin's folder.
 
 Each new file is named `<NNN>-<type>-<topic>.<ext>`. `<NNN>` is the next free integer in that folder, three digits, and it is not reused. `<type>` is `user-flow`, `wireflow`, or `sitemap`. The user flow and the sitemap are Markdown with Mermaid. The wireflow adds one SVG per screen: `<NNN>-wireflow-<topic>-<screen>.svg`, same `<NNN>`.
 

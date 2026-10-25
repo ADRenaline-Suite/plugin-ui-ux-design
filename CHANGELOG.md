@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.0.0] - 2026-10-25
+
+### Changed
+
+- The plugin id is `plugin-ui-ux-design`. It was `adrenaline-ui-ux-design`. The repository is https://github.com/ADRenaline-Suite/plugin-ui-ux-design. Cursor commands stay `/uiux-…`. In Claude Code the prefix is `/plugin-ui-ux-design:`.
+
 ## [1.0.0] - 2026-10-25
 
 ### Changed
@@ -44,8 +50,8 @@
 - Skill `test-with-users`: plan and analysis of a usability test, card sorting, tree testing, and HEART. Released as `medir-con-usuarios`.
 - Skill `record-decision`: a design decision with state `proposed`, `accepted`, `deprecated`, or `superseded`. Released as `registrar-decision`.
 - Rules `output-folder` and `ui-fidelity` (released as `fidelidad-ui`). Each restriction is also in the skill that applies it.
-- Commands `/uiux-help` and one per piece. Delivery goes to `ui-ux-design/` (or to `outputDirs["adrenaline-ui-ux-design"]`), with a monotonic `<NNN>` and `STATUS.md`.
-- Cursor and Claude Code manifests, so the repo installs with `claude plugin marketplace add d-mente/adrenaline-ui-ux-design`.
+- Commands `/uiux-help` and one per piece. Delivery goes to `ui-ux-design/` (or to `outputDirs["plugin-ui-ux-design"]`), with a monotonic `<NNN>` and `STATUS.md`.
+- Cursor and Claude Code manifests, so the repo installs with `claude plugin marketplace add ADRenaline-Suite/plugin-ui-ux-design`.
 
 ### Changed
 

@@ -7,7 +7,7 @@ alwaysApply: true
 
 Every file this plugin creates goes in `ui-ux-design/` at the project root.
 
-If `.cursor/adrenaline.json` exists and `outputDirs["adrenaline-ui-ux-design"]` holds a path, use that path. The path is relative to the project root, with no `..` and not absolute. If it is not valid, use `ui-ux-design/` and say so.
+If `.cursor/adrenaline.json` exists and `outputDirs["plugin-ui-ux-design"]` holds a path, use that path. The path is relative to the project root, with no `..` and not absolute. If it is not valid, use `ui-ux-design/` and say so.
 
 Create the folder if it does not exist. Do not write anywhere else.
 

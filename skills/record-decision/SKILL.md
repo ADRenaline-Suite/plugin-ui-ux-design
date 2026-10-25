@@ -13,7 +13,7 @@ Source: Michael Nygard, Documenting Architecture Decisions (2011). The states us
 
 1. Read `references/decision.md`.
 2. The decision has to have been made by the user, or the user asks to leave an option as a proposal. Do not pick the winning option yourself and mark it `accepted`.
-3. If the option changes tokens, copy, or the flow, do not rewrite them in this file. Those changes are deliveries of `define-appearance`, `adrenaline-ux-writing`, or `arrange-screens`.
+3. If the option changes tokens, copy, or the flow, do not rewrite them in this file. Those changes are deliveries of `define-appearance`, `plugin-ux-writing`, or `arrange-screens`.
 4. Do not write HTML or interface code.
 
 ## Language
@@ -34,7 +34,7 @@ Then stop. If the prerequisite does not stop the delivery, write the artifact as
 
 ## Delivery
 
-The folder is `ui-ux-design/` at the project root. If `.cursor/adrenaline.json` has `outputDirs["adrenaline-ui-ux-design"]` set to a relative path, without `..` and not absolute, use that path. If the file, the key, or a valid path is missing, use `ui-ux-design/` and, in the last case, say so. Create the folder if it does not exist. Do not write outside it.
+The folder is `ui-ux-design/` at the project root. If `.cursor/adrenaline.json` has `outputDirs["plugin-ui-ux-design"]` set to a relative path, without `..` and not absolute, use that path. If the file, the key, or a valid path is missing, use `ui-ux-design/` and, in the last case, say so. Create the folder if it does not exist. Do not write outside it.
 
 The file is `<NNN>-decision-<topic>.md`. `<NNN>` is the next free integer, three digits, and it is not reused.
 

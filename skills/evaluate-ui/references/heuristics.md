@@ -36,7 +36,7 @@ Use the Nielsen Norman Group name and, in parentheses, a gloss in the language o
 1. Walk the states of the screen, not only the ideal one. An error that clears what was typed is a finding.
 2. One finding, one heuristic. If it fits two, choose the one that explains the correction.
 3. The correction says what changes on the screen. Do not write the code.
-4. Close by asking `adrenaline-accessibility` for the review. Do not assign a WCAG criterion.
+4. Close by asking `plugin-accessibility` for the review. Do not assign a WCAG criterion.
 
 ## Template
 
@@ -49,7 +49,7 @@ Use the Nielsen Norman Group name and, in parentheses, a gloss in the language o
 | # | Heuristic | Screen | State | Severity | Finding | Correction |
 | --- | --- | --- | --- | --- | --- | --- |
 
-Accessibility: ask `adrenaline-accessibility` for the review.
+Accessibility: ask `plugin-accessibility` for the review.
 ```
 
 ## Example

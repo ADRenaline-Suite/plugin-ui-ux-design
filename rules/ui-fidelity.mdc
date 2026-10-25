@@ -9,7 +9,7 @@ Before leaving sketch, the user's task has to be stated: an accepted task analys
 
 No screen is delivered without its states. On error, what the person typed is kept.
 
-User flow, wireflow, and sitemap stay here. An activity diagram or a state machine is asked of `adrenaline-uml-diagrams`. The WCAG audit and the accessibility notes are asked of `adrenaline-accessibility`. Interface copy is asked of `adrenaline-ux-writing`. The use case is taken from `adrenaline-project-manager`. The test scenario stays in `adrenaline-qa-engineer`.
+User flow, wireflow, and sitemap stay here. An activity diagram or a state machine is asked of `plugin-uml-diagrams`. The WCAG audit and the accessibility notes are asked of `plugin-accessibility`. Interface copy is asked of `plugin-ux-writing`. The use case is taken from `plugin-project-manager`. The test scenario stays in `plugin-qa-engineer`.
 
 Do not write HTML or interface code.
 

@@ -1,6 +1,6 @@
 # User tasks
 
-Source: Nielsen Norman Group, Task Analysis. The goal, if it comes from a use case, is the one from `adrenaline-project-manager`.
+Source: Nielsen Norman Group, Task Analysis. The goal, if it comes from a use case, is the one from `plugin-project-manager`.
 
 ## What it fixes
 

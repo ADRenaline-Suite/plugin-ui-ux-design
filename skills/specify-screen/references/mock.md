@@ -15,7 +15,7 @@ The path to other screens and the build specification (annotated measures, behav
 1. The path has to be decided: an `accepted` user flow, or the path in this turn. If it is not, follow "When a prerequisite is missing" in the skill.
 2. Use the tokens of the `accepted` UI kit, or the ones that arrive in this turn. Color, type, space, radius, and elevation come from there. If they arrive in this turn and there is no kit, write the kit with `define-appearance` and then the mock. If there is neither a kit nor tokens, follow "When a prerequisite is missing" in the skill. Do not invent a palette.
 3. One frame per theme in the ideal state (light, dark, brand variant), only the themes the product has. Do not add dark mode if the product does not have it.
-4. Real copy, from the user or from `adrenaline-ux-writing`. If the final copy is missing, use the labels already agreed and say so in the Markdown; do not write new microcopy.
+4. Real copy, from the user or from `plugin-ux-writing`. If the final copy is missing, use the labels already agreed and say so in the Markdown; do not write new microcopy.
 5. Draw the states that change the appearance. Error keeps what was typed and shows what failed.
 6. The SVG uses the kit colors in `fill` and `stroke`. Still no redlines: the dimensions belong to the handoff.
 
@@ -30,13 +30,13 @@ The path to other screens and the build specification (annotated measures, behav
 - Themes:
 - Platform and breakpoints:
 - States drawn:
-- Origin of the copy: user | adrenaline-ux-writing | agreed labels, final copy still missing
+- Origin of the copy: user | plugin-ux-writing | agreed labels, final copy still missing
 - SVG: `<NNN>-mock-<topic>-<screen>.svg`
 ```
 
 ## Example
 
-Mock of payment in the light theme, with the shop kit's action color and type. The error state uses the kit's error color, the notice "The charge did not go through" if `adrenaline-ux-writing` already gave it, and the card fields stay filled. The path to the result is in the accepted user flow; this mock does not link it.
+Mock of payment in the light theme, with the shop kit's action color and type. The error state uses the kit's error color, the notice "The charge did not go through" if `plugin-ux-writing` already gave it, and the card fields stay filled. The path to the result is in the accepted user flow; this mock does not link it.
 
 ## Prerequisites
 

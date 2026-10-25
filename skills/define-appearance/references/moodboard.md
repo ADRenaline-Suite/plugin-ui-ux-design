@@ -14,7 +14,7 @@ Formal tokens and the states of each component. That is the UI kit.
 
 1. The references are links or pieces the user provided. Do not search a gallery or invent other brands as if they belonged to the product.
 2. One SVG per sample screen. Color swatches in rectangles with their hex, one line of type in the family the user named, and a screen block in that tone. `xmlns="http://www.w3.org/2000/svg"` and `viewBox`. No `foreignObject`.
-3. Tone is said with yes and no examples the user gave. If they gave none, describe the tone in one sentence and do not write the microcopy: that is `adrenaline-ux-writing`.
+3. Tone is said with yes and no examples the user gave. If they gave none, describe the tone in one sentence and do not write the microcopy: that is `plugin-ux-writing`.
 4. If the product already has a UI kit, the moodboard does not replace it. It shows how the kit is applied.
 
 ## Template

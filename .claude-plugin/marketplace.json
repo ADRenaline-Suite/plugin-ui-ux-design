@@ -1,14 +1,14 @@
 {
-  "name": "adrenaline-ui-ux-design",
+  "name": "plugin-ui-ux-design",
   "owner": {
-    "name": "d-mente"
+    "name": "ADRenaline Suite"
   },
   "metadata": {
     "description": "Marketplace with the UI/UX Design plugin."
   },
   "plugins": [
     {
-      "name": "adrenaline-ui-ux-design",
+      "name": "plugin-ui-ux-design",
       "source": "./",
       "description": "Designs the experience and the interface of screens, from the task through handoff and evaluation, without writing the code."
     }

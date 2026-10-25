@@ -12,7 +12,7 @@ Problems of the path, not of the appearance or of the code.
 2. An extra step is one that does not move the task forward. A dead end is a screen with no exit toward success or toward recovery. A missing state is one from the list (ideal, empty, loading, partial, error, success, and, when they apply, no permission and offline) that the path does not cover.
 3. Error has to be able to return to the data that was typed.
 4. Each finding names the screen and the correction of the path. Do not redraw the flow here: if the correction is accepted, it is updated with `arrange-screens`.
-5. Ask `adrenaline-accessibility` for the review. Do not audit WCAG. Do not verify the use case.
+5. Ask `plugin-accessibility` for the review. Do not audit WCAG. Do not verify the use case.
 
 ## Template
 
@@ -25,7 +25,7 @@ Problems of the path, not of the appearance or of the code.
 | Kind | Screen | Finding | Correction |
 | --- | --- | --- | --- |
 
-Accessibility: ask `adrenaline-accessibility` for the review.
+Accessibility: ask `plugin-accessibility` for the review.
 ```
 
 ## Example

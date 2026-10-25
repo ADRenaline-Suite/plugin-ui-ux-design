@@ -14,7 +14,7 @@ Source: ISO 9241-11:2018 (effectiveness, efficiency, and satisfaction of specifi
 1. If this turn comes from a command, the piece is already fixed.
 2. Read only `references/<piece>.md` for the piece they asked for. Do not read references from another skill.
 3. Do not invent participants, quotes, or times. If the analysis has no data, write the plan and leave the results blank, or stop and ask for them.
-4. The usability test does not verify the use case. The test scenario from `adrenaline-qa-engineer` is a different artifact.
+4. The usability test does not verify the use case. The test scenario from `plugin-qa-engineer` is a different artifact.
 5. Do not instrument metrics or measure Core Web Vitals. That belongs to the frontend area.
 6. Do not write HTML or interface code.
 
@@ -44,7 +44,7 @@ Then stop. If the prerequisite does not stop the delivery, write the artifact as
 
 ## Delivery
 
-The folder is `ui-ux-design/` at the project root. If `.cursor/adrenaline.json` has `outputDirs["adrenaline-ui-ux-design"]` set to a relative path, without `..` and not absolute, use that path. If the file, the key, or a valid path is missing, use `ui-ux-design/` and, in the last case, say so. Create the folder if it does not exist. Do not write outside it.
+The folder is `ui-ux-design/` at the project root. If `.cursor/adrenaline.json` has `outputDirs["plugin-ui-ux-design"]` set to a relative path, without `..` and not absolute, use that path. If the file, the key, or a valid path is missing, use `ui-ux-design/` and, in the last case, say so. Create the folder if it does not exist. Do not write outside it.
 
 `<NNN>` is the next free integer, three digits, and it is not reused. `<type>` is `usability-test`, `test-analysis`, `card-sorting`, `tree-testing`, or `heart`. The plan is Markdown. Observations, SUS, card sorting, and tree testing add a CSV with the same `<NNN>`: `<NNN>-<type>-<topic>.csv`.
 

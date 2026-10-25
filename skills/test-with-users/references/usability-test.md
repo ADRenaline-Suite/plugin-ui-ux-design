@@ -17,7 +17,7 @@ The results. `test-analysis` calculates them when the data exists. This plugin d
 3. Participants: the criteria the user gives (who and how many). If they do not give the number, ask. Do not invent a sample. A qualitative session is not a statistical calculation; do not present it as one.
 4. What to observe: whether they completed the task, in how much time, what errors, whether they asked for help, and verbatim quotes. The person who moderates writes it down. This plan's CSV may go out empty, with the header, for that session; the analysis loads the data.
 5. If the SUS will be given, say so in the plan and reserve the ten items for the end. Do not mix them with the task.
-6. The test scenario from `adrenaline-qa-engineer` is not copied here.
+6. The test scenario from `plugin-qa-engineer` is not copied here.
 
 ## Template
 

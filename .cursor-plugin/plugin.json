@@ -1,10 +1,10 @@
 {
-  "name": "adrenaline-ui-ux-design",
+  "name": "plugin-ui-ux-design",
   "displayName": "UI/UX Design",
   "description": "Designs the experience and the interface of screens, from the task through handoff and evaluation, without writing the code.",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "author": { "name": "d-mente" },
   "license": "MIT",
-  "repository": "https://github.com/d-mente/adrenaline-ui-ux-design",
+  "repository": "https://github.com/ADRenaline-Suite/plugin-ui-ux-design",
   "keywords": ["ui", "ux", "wireframe", "handoff", "usability", "design-tokens"]
 }

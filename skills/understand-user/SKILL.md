@@ -13,7 +13,7 @@ Source: ISO 9241-210:2019 (understand the context of use and specify requirement
 
 1. If this turn comes from a command, the piece is already fixed. Otherwise pick one piece from the table. If they ask for two, make both deliveries, each with its own `<NNN>`.
 2. Read only `references/<piece>.md` for the piece they asked for. Do not read references from another skill.
-3. The use case, if one exists, comes from `adrenaline-project-manager`. If it does not, start from the goal the user states in this turn. If there is no goal, follow "When a prerequisite is missing".
+3. The use case, if one exists, comes from `plugin-project-manager`. If it does not, start from the goal the user states in this turn. If there is no goal, follow "When a prerequisite is missing".
 4. The persona comes from the user. Do not invent one. If it is missing and the piece is the journey map, follow "When a prerequisite is missing".
 5. Do not draw screens, flows, or tokens in this skill.
 
@@ -41,7 +41,7 @@ Then stop. If the prerequisite does not stop the delivery, write the artifact as
 
 ## Delivery
 
-The folder is `ui-ux-design/` at the project root. If `.cursor/adrenaline.json` has `outputDirs["adrenaline-ui-ux-design"]` set to a relative path, without `..` and not absolute, use that path. If the file, the key, or a valid path is missing, use `ui-ux-design/` and, in the last case, say so. Create the folder if it does not exist. Do not write outside it. Do not choose another plugin's folder.
+The folder is `ui-ux-design/` at the project root. If `.cursor/adrenaline.json` has `outputDirs["plugin-ui-ux-design"]` set to a relative path, without `..` and not absolute, use that path. If the file, the key, or a valid path is missing, use `ui-ux-design/` and, in the last case, say so. Create the folder if it does not exist. Do not write outside it. Do not choose another plugin's folder.
 
 Each new file is named `<NNN>-<type>-<topic>.<ext>`. `<NNN>` is the next free integer in that folder, three digits, and it is not reused. `<type>` is `tasks`, `journey-map`, or `brief`. `<topic>` is kebab-case. This skill writes Markdown.
 

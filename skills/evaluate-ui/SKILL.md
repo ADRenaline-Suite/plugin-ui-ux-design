@@ -7,7 +7,7 @@ description: Evaluates an interface without users through heuristics, a cognitiv
 
 Find problems without calling users in. Each finding says where it is, which rule it breaks, how severe it is, and how to fix it. Measuring with people is `test-with-users`.
 
-Source: Nielsen Norman Group, 10 Usability Heuristics for User Interface Design, and Severity Ratings for Usability Problems (0–4). Cognitive walkthrough: Wharton, Rieman, Lewis, and Polson (1994), The Cognitive Walkthrough Method: A Practitioner's Guide. Consistency is judged against the UI kit. The flow review has no other standard: extra steps, dead ends, and missing states. The implementation review has no standard of its own: the criterion is the handoff and the UI kit. The WCAG audit is done by `adrenaline-accessibility`. This skill asks for it; it does not run it.
+Source: Nielsen Norman Group, 10 Usability Heuristics for User Interface Design, and Severity Ratings for Usability Problems (0–4). Cognitive walkthrough: Wharton, Rieman, Lewis, and Polson (1994), The Cognitive Walkthrough Method: A Practitioner's Guide. Consistency is judged against the UI kit. The flow review has no other standard: extra steps, dead ends, and missing states. The implementation review has no standard of its own: the criterion is the handoff and the UI kit. The WCAG audit is done by `plugin-accessibility`. This skill asks for it; it does not run it.
 
 ## Before writing
 
@@ -15,7 +15,7 @@ Source: Nielsen Norman Group, 10 Usability Heuristics for User Interface Design,
 2. Read only `references/<piece>.md` for the piece they asked for. Do not read references from another skill.
 3. Evaluate a screen or a flow that already exists (an `accepted` file, or what the user shows in this turn). If there is nothing to review, follow "When a prerequisite is missing".
 4. Do not verify the use case: that is not this evaluation. Do not mark a WCAG criterion as met.
-5. When closing heuristics, the walkthrough, the flow, or the implementation review, ask `adrenaline-accessibility` for the review.
+5. When closing heuristics, the walkthrough, the flow, or the implementation review, ask `plugin-accessibility` for the review.
 6. Do not write HTML or interface code. Do not fix the built screen: write the correction down.
 
 | Request | Piece | Reference |
@@ -44,7 +44,7 @@ Then stop. If the prerequisite does not stop the delivery, write the artifact as
 
 ## Delivery
 
-The folder is `ui-ux-design/` at the project root. If `.cursor/adrenaline.json` has `outputDirs["adrenaline-ui-ux-design"]` set to a relative path, without `..` and not absolute, use that path. If the file, the key, or a valid path is missing, use `ui-ux-design/` and, in the last case, say so. Create the folder if it does not exist. Do not write outside it.
+The folder is `ui-ux-design/` at the project root. If `.cursor/adrenaline.json` has `outputDirs["plugin-ui-ux-design"]` set to a relative path, without `..` and not absolute, use that path. If the file, the key, or a valid path is missing, use `ui-ux-design/` and, in the last case, say so. Create the folder if it does not exist. Do not write outside it.
 
 `<NNN>-<type>-<topic>.md`. `<type>` is `heuristics`, `cognitive-walkthrough`, `consistency`, `flow-review`, or `implementation-review`. `<NNN>` is the next free integer, three digits, and it is not reused.
 
@@ -62,4 +62,4 @@ The implementation review stays `proposed` if the handoff is missing or the scre
 
 Input: "Review the heuristics of payment when the network fails. The button still says Pay and there is no message."
 
-Output: a Markdown file with one finding. Screen: payment. State: network error. Heuristic: visibility of system status. Severity: 3 (major). Correction: an error message and a retry action; keep the card data. At the end, ask `adrenaline-accessibility` for the review.
+Output: a Markdown file with one finding. Screen: payment. State: network error. Heuristic: visibility of system status. Severity: 3 (major). Correction: an error message and a retry action; keep the card data. At the end, ask `plugin-accessibility` for the review.

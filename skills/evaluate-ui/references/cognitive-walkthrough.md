@@ -22,7 +22,7 @@ A "no" is a problem. Note the question, the evidence on the screen, and the corr
 1. The task and its steps come from the task analysis or the `accepted` user flow. If they are not there, ask for them.
 2. Walk the story of a new person. Do not assume an unlabeled icon is known.
 3. Success on question 4 is that the screen shows the progress. A button that does not change on error fails question 4.
-4. Ask `adrenaline-accessibility` for the review. Do not audit WCAG.
+4. Ask `plugin-accessibility` for the review. Do not audit WCAG.
 
 ## Template
 
@@ -45,7 +45,7 @@ A "no" is a problem. Note the question, the evidence on the screen, and the corr
 - Problem:
 - Correction:
 
-Accessibility: ask `adrenaline-accessibility` for the review.
+Accessibility: ask `plugin-accessibility` for the review.
 ```
 
 ## Example

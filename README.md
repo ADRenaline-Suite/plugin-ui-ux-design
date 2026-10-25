@@ -1,4 +1,4 @@
-# UI/UX Design (`adrenaline-ui-ux-design`)
+# UI/UX Design (`plugin-ui-ux-design`)
 
 Designs the experience and the interface of the screens of a digital product: how they are walked, how they look, and how they are built. It does not write the interface code.
 
@@ -8,7 +8,7 @@ The instructions are in English. The file the plugin saves follows the language 
 
 ## Who it is for
 
-Someone designing screens inside a conversation with the agent. They ask `adrenaline-uml-diagrams` for UML diagrams, `adrenaline-accessibility` for accessibility, and `adrenaline-ux-writing` for copy. This plugin does not copy their skills.
+Someone designing screens inside a conversation with the agent. They ask `plugin-uml-diagrams` for UML diagrams, `plugin-accessibility` for accessibility, and `plugin-ux-writing` for copy. This plugin does not copy their skills.
 
 ## What it includes
 
@@ -18,7 +18,7 @@ Portable, for any agent that follows [Agent Skills](https://agentskills.io/speci
 
 Cursor and Claude Code:
 
-- 25 commands: `/uiux-help` (one-line catalog) and one per piece. In Cursor, `/uiux-help` or `/uiux-wireframe`. In Claude Code, `/adrenaline-ui-ux-design:uiux-help`.
+- 25 commands: `/uiux-help` (one-line catalog) and one per piece. In Cursor, `/uiux-help` or `/uiux-wireframe`. In Claude Code, `/plugin-ui-ux-design:uiux-help`.
 
 Cursor only:
 
@@ -32,8 +32,8 @@ In Cursor, install the plugin from this repository in Customize.
 In Claude Code, this repository is also a marketplace:
 
 ```text
-claude plugin marketplace add d-mente/adrenaline-ui-ux-design
-claude plugin install adrenaline-ui-ux-design@adrenaline-ui-ux-design
+claude plugin marketplace add ADRenaline-Suite/plugin-ui-ux-design
+claude plugin install plugin-ui-ux-design@plugin-ui-ux-design
 ```
 
 To try a local copy without installing it, start Claude Code with `claude --plugin-dir <path to this repository>`.
@@ -41,7 +41,7 @@ To try a local copy without installing it, start Claude Code with `claude --plug
 In another agent, install the skill with that agent's mechanism. For example:
 
 ```text
-gh skill install d-mente/adrenaline-ui-ux-design
+gh skill install ADRenaline-Suite/plugin-ui-ux-design
 ```
 
 ## Configuration
@@ -55,7 +55,7 @@ To use another folder, add `.cursor/adrenaline.json` to the project:
 ```json
 {
   "outputDirs": {
-    "adrenaline-ui-ux-design": "docs/ui"
+    "plugin-ui-ux-design": "docs/ui"
   }
 }
 ```
@@ -64,7 +64,7 @@ The path is relative to the project root and cannot contain `..`. Claude Code an
 
 ## How to ask
 
-In Cursor, `/uiux-sketch` or the name of another command. In Claude Code, the same name with the plugin prefix: `/adrenaline-ui-ux-design:uiux-sketch`. Asking in plain language is enough: the skill chooses the reference. A request in Spanish produces a Spanish file.
+In Cursor, `/uiux-sketch` or the name of another command. In Claude Code, the same name with the plugin prefix: `/plugin-ui-ux-design:uiux-sketch`. Asking in plain language is enough: the skill chooses the reference. A request in Spanish produces a Spanish file.
 
 A prerequisite is met by an `accepted` file or by the fact written in the same message. If a stopping one is missing, the command does not write the piece: it says the missing name, gives one prompt, and, if there are earlier commands, gives them in order with one prompt each. Sketch and wireframe can be skipped. A handoff without copy or without notes stays `proposed`. HTML is not delivered.
 
@@ -167,7 +167,7 @@ flowchart TD
 | `test-with-users` | `/uiux-heart` | Product launched | Stays `proposed` |
 | `record-decision` | `/uiux-decision` | Decision made by whoever asks | Stays `proposed` |
 
-`/uiux-help` has no prerequisites. Copy comes from `adrenaline-ux-writing` or from whoever pastes it. Accessibility notes come from `adrenaline-accessibility`. The journey-map persona comes from whoever asks for the map. Each manual, in `skills/<skill>/references/`, repeats these names and brings the single prompt and the order.
+`/uiux-help` has no prerequisites. Copy comes from `plugin-ux-writing` or from whoever pastes it. Accessibility notes come from `plugin-accessibility`. The journey-map persona comes from whoever asks for the map. Each manual, in `skills/<skill>/references/`, repeats these names and brings the single prompt and the order.
 
 ## Catalog
 
