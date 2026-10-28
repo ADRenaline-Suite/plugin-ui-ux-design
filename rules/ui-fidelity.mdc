@@ -1,11 +1,15 @@
 ---
-description: Stops a jump in fidelity, a screen without states, or this plugin doing another plugin's job
+description: Fills a missing design input with a named template, and still stops a consistency review without a product kit or an implementation review without a built screen
 alwaysApply: true
 ---
 
 # Interface fidelity
 
-Before leaving sketch, the user's task has to be stated: an accepted task analysis, or the task in this turn. The order is sketch, wireframe, mock, prototype, and handoff. Do not move on to mock if the path between screens is not decided. The mock needs an accepted UI kit or the tokens stated in this turn. If a stopping prerequisite is missing, do not write the piece: say its name, give one prompt, and list the earlier commands in order.
+A missing design input is filled with the named template in the piece reference. Record it under Assumed. The reply says it was taken automatically, which command changes it, and which command regenerates the piece. An accepted file wins, then the fact in this turn, then the template. Do not invent a palette, copy, accessibility notes, test rows, HEART figures, a decision, or a persona's name or biography.
+
+The task uses an accepted analysis, the task in this turn, or template single-task. The path uses an accepted user flow, the path in this turn, or template linear-three, written in this turn. The mock uses an accepted UI kit, the tokens in this turn, a named preset, or plain. The other presets are dense, material-3, hig, and fluent-2, and they apply only when named.
+
+Consistency without a product UI kit (an accepted kit, or tokens in this turn) writes nothing. It does not compare against plain, and it does not draw a screen in order to compare it. An implementation review without a screenshot or a URL writes nothing.
 
 No screen is delivered without its states. On error, what the person typed is kept.
 

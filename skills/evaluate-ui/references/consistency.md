@@ -1,6 +1,8 @@
+[🏠 UI/UX Design](../../../README.md) / [Evaluate the interface](../SKILL.md)
+
 # Consistency with the UI kit
 
-Source: the product's `accepted` UI kit. There is no other standard. If there is no `accepted` kit and no tokens in this turn, follow "When a prerequisite is missing" in the skill. Do not compare against a kit invented in this turn.
+Source: the product's `accepted` UI kit. There is no other standard. If there is no `accepted` kit and no tokens in this turn, follow "When a prerequisite is missing" in the skill. Do not compare against a kit invented in this turn, and do not fill the gap with preset `plain`.
 
 ## What it fixes
 
@@ -31,8 +33,8 @@ The "Pay" button uses a blue that is not in `color.action`. Correction: use the 
 
 ## Prerequisites
 
-- **UI kit.** An `accepted` kit, or the tokens in this turn. If they arrive in this turn, write the kit with `define-appearance` before comparing. Stops the delivery. Earlier command: `/uiux-ui-kit`.
-- **Screen.** An `accepted` file, or the screen described in this turn. Stops the delivery. Earlier command: `/uiux-mock`.
+- **UI kit.** An `accepted` kit, or the tokens in this turn. If they arrive in this turn, write the kit with `define-appearance` before comparing. If neither exists, this review stops. Do not write files. Do not compare against preset `plain`. Earlier command: `/uiux-ui-kit`.
+- **Screen.** An `accepted` file, or the screen described in this turn. If neither exists, this review stops. Do not draw a screen in order to compare it. Earlier command: `/uiux-mock`.
 
 ## Prompts
 
@@ -56,3 +58,9 @@ Action #0066cc, background #ffffff, text #1a1a1a, error #b00020, type Source San
 The task is pay with a card.
 The path is cart, payment, result. If the charge fails, it returns to payment with the data still filled in.
 ```
+
+## Done
+
+- The kit is an accepted file, or tokens from this turn written with `define-appearance` before the comparison. Preset `plain` was not used to fill a missing kit.
+- Each drift names the token or component, the screen, the state, what is seen instead, and how to return to the kit. An intentional drift is not filed as accepted: it waits on `record-decision`.
+- Heuristics and WCAG are not substituted by this file.

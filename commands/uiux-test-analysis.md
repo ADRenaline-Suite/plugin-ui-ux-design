@@ -8,3 +8,5 @@ Analyze the test results.
 1. Follow the skill `test-with-users` in this plugin.
 2. This command fixes the piece. In that skill, read `references/test-analysis.md`. Do not ask again which piece it is.
 3. Prerequisites: data. It does not stop the delivery: without rows the delivery stays `proposed`. Follow "When a prerequisite is missing" in that skill and the prompts in `references/test-analysis.md`.
+
+Before you close, evaluate `## Done` in that skill and in the reference this command names. Every item is true, or fix the delivery in this turn. Do not leave a file that fails an item. Do not mark it `accepted` while an item fails.

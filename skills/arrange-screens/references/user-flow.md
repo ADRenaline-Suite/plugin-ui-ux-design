@@ -1,3 +1,5 @@
+[🏠 UI/UX Design](../../../README.md) / [Arrange screens](../SKILL.md)
+
 # User flow
 
 Source: Nielsen Norman Group, Task Analysis, for the task the path completes. The drawing is a screen flow in Mermaid, not a UML diagram.
@@ -46,8 +48,8 @@ Pay with a card. From "Payment details" the path goes to "Result" if the charge 
 
 ## Prerequisites
 
-- **Task.** An `accepted` task analysis, or the task in this turn. Stops the delivery. Earlier command: `/uiux-tasks`.
-- **Screens.** The list of screens on the path, in this turn. Stops the delivery. No earlier command.
+- **Task.** An `accepted` task analysis, or the task in this turn. If neither exists, write it with template `single-task`. State: `accepted`. Change it with `/uiux-tasks`. Regenerate this flow with `/uiux-user-flow`.
+- **Screens.** The list of screens on the path, in this turn. If it is missing, template `linear-three`: screens named in the request, in that order; one screen becomes that screen then a result, and the error returns to it with the data kept; none named becomes form, wait, result. A payment or an irreversible action inserts confirm before the result. State: `accepted`. Change it with `/uiux-user-flow`. Regenerate with `/uiux-user-flow`.
 
 ## Prompts
 
@@ -65,3 +67,9 @@ In order, omitting the ones already met:
 /uiux-tasks
 The goal is to pay an order with a card. Tasks: review the amount, enter the card, confirm.
 ```
+
+## Done
+
+- The drawing is a Mermaid `flowchart`. Nodes are screens. Decisions have named exits. It is not UML activity, state, or sequence syntax.
+- Every path ends in success, in an error the person can leave, or in an exit the user asked for. A node with no exit is marked and the delivery is `proposed`.
+- An error that keeps data returns to the screen where that data is. Each screen names the task it covers. Layout is not drawn.

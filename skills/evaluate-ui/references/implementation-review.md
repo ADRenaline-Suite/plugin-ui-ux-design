@@ -1,3 +1,5 @@
+[🏠 UI/UX Design](../../../README.md) / [Evaluate the interface](../SKILL.md)
+
 # Implementation review
 
 It has no standard of its own. The criterion is the `accepted` handoff and the `accepted` UI kit. The mock is also looked at when the handoff points at it.
@@ -42,8 +44,8 @@ The handoff separates the amount and the form with `space.stack` (16 px). The sc
 
 ## Prerequisites
 
-- **Handoff.** An `accepted` handoff. If there is only a mock or a kit, the review stays `proposed`. Does not stop the delivery: the delivery stays `proposed`. Earlier command: `/uiux-handoff`.
-- **Screenshot or URL.** The built screen, in this turn. Stops the delivery. No earlier command.
+- **Handoff.** An `accepted` handoff. If there is only a mock or a kit, the review stays `proposed` and says the handoff was missing. Does not stop the delivery. Change it with `/uiux-handoff`. Regenerate this review with `/uiux-implementation-review`.
+- **Screenshot or URL.** The built screen, in this turn. This stops the delivery. No template. Write no files. There is no default for a screen that is not built yet. No earlier command.
 
 ## Prompts
 
@@ -63,3 +65,10 @@ The task is pay with a card.
 The path is cart, payment, result. If the charge fails, it returns to payment with the data still filled in.
 UI kit, light theme: action #0066cc, background #ffffff, text #1a1a1a, error #b00020, type Source Sans 3, space 16 px, radius 4 px, shadow 0 2 px 8 px.
 ```
+
+## Done
+
+- The built screen was seen (screenshot or opened URL). If it could not be opened, the delivery is `proposed` and a screenshot was asked for. It was not treated as fine.
+- Each difference names the element, what was specified, what was built, and the correction. Copy that differs is a finding. Copy was not rewritten here. The code was not fixed.
+- Without an accepted handoff, the delivery is `proposed` and says what was missing. States that were not in the screenshot are marked not checked.
+- The use case is not verified. The close asks `plugin-accessibility` to audit the implementation.

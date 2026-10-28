@@ -1,3 +1,5 @@
+[🏠 UI/UX Design](../../../README.md) / [Specify a screen](../SKILL.md)
+
 # Sketch
 
 Source: this plugin's fidelity order. The sketch fixes the idea. It is not the specification yet.
@@ -35,7 +37,7 @@ Payment screen. Blocks of the ideal state: amount, card details, action "Pay". E
 
 ## Prerequisites
 
-- **Task.** An `accepted` task analysis, or the task in this turn. Stops the delivery. Earlier command: `/uiux-tasks`.
+- **Task.** An `accepted` task analysis, or the task in this turn. If neither exists, write the task analysis in this turn with template `single-task` (one task named from the request; subtasks enter the data, confirm, see the result). State of that file: `accepted`. This sketch stays `accepted`. Change the task with `/uiux-tasks`. Regenerate this sketch with `/uiux-sketch`.
 
 ## Prompts
 
@@ -52,3 +54,10 @@ In order, omitting the ones already met:
 /uiux-tasks
 The goal is to pay an order with a card. Tasks: review the amount, enter the card, confirm.
 ```
+
+## Done
+
+- The task or use case is named, from an accepted analysis, from this turn, or from template `single-task`. When the template was used, Assumed says so. The SVG is grayscale, one file per screen, with rectangles and labels. No brand icons, no final typeface, no pixel measures, no links to other screens.
+- Ideal, empty, loading, partial, error, and success are listed. A state that does not apply says why. A state that changes the blocks has a frame. Error keeps what was typed.
+- Labels are words the user already used, or the subtask name. No new interface copy.
+- Left open stays measure, color, and final copy.

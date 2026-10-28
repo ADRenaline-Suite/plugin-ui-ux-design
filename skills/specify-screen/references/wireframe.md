@@ -1,3 +1,5 @@
+[🏠 UI/UX Design](../../../README.md) / [Specify a screen](../SKILL.md)
+
 # Wireframe
 
 Source: this plugin's fidelity order. Breakpoints: the product's, or Material Design 3 if the product has none.
@@ -44,7 +46,7 @@ Payment, web, Material Design 3. Compact: amount, form, and "Pay" in one column.
 
 ## Prerequisites
 
-- **Task.** An `accepted` task analysis, or the task in this turn. Stops the delivery. Earlier command: `/uiux-tasks`.
+- **Task.** An `accepted` task analysis, or the task in this turn. If neither exists, write the task analysis in this turn with template `single-task`. State of that file: `accepted`. This wireframe stays `accepted`. Change the task with `/uiux-tasks`. Regenerate this wireframe with `/uiux-wireframe`.
 
 ## Prompts
 
@@ -62,3 +64,9 @@ In order, omitting the ones already met:
 /uiux-tasks
 The goal is to pay an order with a card. Tasks: review the amount, enter the card, confirm.
 ```
+
+## Done
+
+- Hierarchy and layout are fixed per breakpoint. The task is named, including template `single-task` when it was written in this turn. Breakpoints are the product's, or Material Design 3 if the product has none. A breakpoint that only grows is named in the Markdown and is not redrawn.
+- The SVG stays grayscale. At least one block has a long string. Translation expansion is reserved when a short string may be translated. RTL is a frame only if the product needs it.
+- States that change the layout are drawn, including error, which keeps what was typed. Brand color and build measures are absent.

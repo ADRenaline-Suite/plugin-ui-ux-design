@@ -3,6 +3,8 @@ name: specify-screen
 description: Produces the sketch, wireframe, mock, prototype, or handoff of a screen, from least to most concrete. Use it when someone asks to draw or specify a screen so it can be built.
 ---
 
+[🏠 UI/UX Design](../../README.md)
+
 # Specify a screen
 
 Produce one screen. The handoff is the piece from which the screen can be built without guessing. This skill closes that delivery.
@@ -12,10 +14,10 @@ Source: ISO 9241-210:2019 (produce solutions). States: Scott Hurff, The UI Stack
 ## Before drawing
 
 1. If this turn comes from a command, the piece is already fixed. Otherwise pick one from the table.
-2. Read only `references/<piece>.md` for the piece they asked for. Do not read references from another skill. Exception: if this turn brings the UI kit tokens and there is no `accepted` kit, write the kit with `define-appearance` (`references/ui-kit.md` of that skill) and then the piece.
-3. Each screen names the user task or the use case it covers. If the task is not stated (neither in an `accepted` task analysis nor in this turn), follow "When a prerequisite is missing". Do not leave sketch without that task.
-4. The order is sketch, wireframe, mock, prototype, handoff. If they ask for a piece and the previous one does not exist, it can be done when the task is stated and, for mock or later, the path is already decided. Do not fill in the earlier pieces on your own. Do write them in this turn when the prompt brings their data.
-5. Do not move on to mock if the path is not decided: an `accepted` user flow, or the path in this turn. Do not move on to mock if there is no `accepted` UI kit and no tokens in this turn. If the path or the kit is missing, follow "When a prerequisite is missing".
+2. Read only `references/<piece>.md` for the piece they asked for. Do not read references from another skill. Exception: if there is no `accepted` kit, write the kit with `define-appearance` before the mock or the handoff. That skill reads `references/presets.md`. A named preset or the tokens in this turn choose the kit. If neither arrives, the kit is preset `plain`.
+3. Each screen names the user task or the use case it covers. If the task is not stated, write it in this turn with template `single-task` and record it under Assumed.
+4. The order is sketch, wireframe, mock, prototype, handoff. Sketch and wireframe stay optional. Write an earlier piece in this turn only when the reference of the piece they asked for says that piece is required and it is missing.
+5. The mock needs a path: an `accepted` user flow, the path in this turn, or template `linear-three` written as a user flow in this turn. If there is no `accepted` UI kit, write one with `define-appearance` before the mock: the named preset, the tokens in this turn, or `plain` when none is selected. Do not invent a palette. Record each template under Assumed.
 6. Platform and breakpoints: the product's, if they exist. If there are no breakpoints, use Material Design 3. If the product is native, follow that platform's guide. If that guide contradicts the UI kit, say so and follow the kit.
 7. Real content, what the user already gave or what `plugin-ux-writing` gave. No lorem ipsum. In the wireframe, the mock, and the handoff, try a long string and the expansion on translation (a string of up to 10 characters can grow to 200–300%). If the product uses right-to-left writing, include an RTL frame. Do not translate the product: translation itself is out of scope.
 8. Themes: if the product has light mode, dark mode, or brand variants, the mock and the handoff cover them.
@@ -25,11 +27,11 @@ Source: ISO 9241-210:2019 (produce solutions). States: Scott Hurff, The UI Stack
 
 | Request | Piece | Reference |
 | --- | --- | --- |
-| Idea and blocks | sketch | `references/sketch.md` |
-| Hierarchy and layout | wireframe | `references/wireframe.md` |
-| Visual appearance | mock | `references/mock.md` |
-| Path across screens | prototype | `references/prototype.md` |
-| Specification for building | handoff | `references/handoff.md` |
+| Idea and blocks | sketch | [references/sketch.md](references/sketch.md) |
+| Hierarchy and layout | wireframe | [references/wireframe.md](references/wireframe.md) |
+| Visual appearance | mock | [references/mock.md](references/mock.md) |
+| Path across screens | prototype | [references/prototype.md](references/prototype.md) |
+| Specification for building | handoff | [references/handoff.md](references/handoff.md) |
 
 | Piece | What it fixes | What it leaves open |
 | --- | --- | --- |
@@ -49,19 +51,38 @@ The Markdown is `<NNN>-<type>-<topic>.md`. Each SVG is `<NNN>-<type>-<topic>-<sc
 
 ## Language
 
-The instructions stay in English. Write the artifact in the language of the request. If the request names a language, use that one. Otherwise use the language the request is written in. Keep names the person already used. Translate the headings of the reference template and keep the same fields. The type in the file name stays the English piece id (`sketch`, `wireframe`, `mock`, `prototype`, `handoff`). `STATUS.md` columns stay `N`, `archivo`, `estado`, `sustituye`, `notas`. The reply uses that same language, including the three parts when a prerequisite is missing. The prompts in the reference are the English wording: show them in the language of the request and keep the command names.
+The instructions stay in English. Write the artifact in the language of the request. If the request names a language, use that one. Otherwise use the language the request is written in. Keep names the person already used. Translate the headings of the reference template and keep the same fields. The type in the file name stays the English piece id (`sketch`, `wireframe`, `mock`, `prototype`, `handoff`). `STATUS.md` columns stay `N`, `archivo`, `estado`, `sustituye`, `notas`. The reply uses that same language, including the Assumed block when a template was applied and the three parts when a prerequisite still stops the delivery. The prompts in the reference are the English wording: show them in the language of the request and keep the command names.
 
 ## When a prerequisite is missing
 
-A prerequisite is met by an `accepted` file of that piece, or by the fact written in this turn. The piece reference names the prerequisites, says whether they stop the delivery, and gives the prompts.
+A prerequisite is met by an `accepted` file of that piece, or by the fact written in this turn. The piece reference names each prerequisite, the template that fills it, the state that template leaves, the command that replaces it, and the command that regenerates this piece.
 
-If a stopping prerequisite is missing and this turn does not bring it, do not write files for this piece. Reply with only this, in the language of the request:
+Use sources in this order: an `accepted` file, then the fact written in this turn, then the template. Do not apply a template when a higher source exists.
+
+When the reference gives a template, write the files. In the same turn, also write the earlier pieces that reference says to write, each with its own `<NNN>`, and only those. Do not write a piece this request does not need.
+
+In the Markdown, add a heading `Assumed`, translated to the language of the request. One line per template: the gap, the template id, and the value used. `STATUS.md` `notas` for that row lists the template ids (`assumed: plain, linear-three`).
+
+After the folder, the files, the `N`, and the state, close with this block, in the language of the request. One line per template. Omit the block when nothing was assumed.
+
+```text
+Assumed automatically (there was no accepted file and this message did not bring it):
+- <gap>: template <id> (<value used>). Change it with <command>. Regenerate with <command>.
+```
+
+A template the reference marks `accepted` leaves the delivery `accepted`. A template the reference marks `proposed` leaves it `proposed`. Each line says the value is a starting point, taken automatically, and is not a fact from the user, from research, or from another plugin.
+
+If the reference gives no template and does not stop, write the artifact as it says and, when you close, name the command that fills the gap. Say that the blank was left on purpose and that nothing was invented for it.
+
+Two checks still stop the delivery. Write no files for that piece. Reply with only this, in the language of the request:
 
 1. "Missing:" and the names that are missing.
-2. "In one message:" and the single prompt from the reference. Fill it with what the person already said. Where a value is missing, leave the gap (`#…`, `<task>`). Do not invent a palette, a persona, participants, or copy.
+2. "In one message:" and the single prompt from the reference. Fill it with what the person already said. Where a value is missing, leave the gap (`#…`, `<task>`).
 3. "Or, in this order:" and the earlier commands that are still missing, in the order of the reference, each with its prompt. Omit this block if there is no earlier command. Omit commands whose prerequisite is already met.
 
-Then stop. If the prerequisite does not stop the delivery, write the artifact as the reference says and, when you close, say in the same shape which command completes it.
+Those two are a screenshot or a URL for `/uiux-implementation-review`, and a product UI kit for `/uiux-consistency` (an `accepted` kit, or tokens in this turn). Consistency also stops when no `accepted` screen exists and this turn does not describe one. Do not draw a screen in order to compare it, and do not compare against preset `plain`.
+
+Do not invent copy, accessibility notes, test rows, HEART figures, a chosen decision, a persona's name or biography, or a palette. Those gaps stay blank, or use the template the reference names, and the delivery stays in the state the reference names.
 
 ## Delivery
 
@@ -77,7 +98,18 @@ If the topic already has a file:
 - The user asks for a replacement or a new decision on the same topic: take the next `<NNN>`, mark the previous row `superseded` (`sustituye` points at the new `N`), and leave the new row `accepted`.
 - Otherwise: next `<NNN>` and an `accepted` row.
 
-The handoff stays `proposed` when the copy or the accessibility notes are missing. Without an `accepted` kit and without tokens in this turn, the mock is not delivered. The rest is `accepted`, unless the user asks for a draft. When you close, say the folder, the files, the `N`, and the state.
+The handoff stays `proposed` when the copy or the accessibility notes are missing, or when the mock was written in this turn from a template. The mock is delivered with preset `plain` when no kit, no tokens, and no named preset arrive. The rest is `accepted`, unless the user asks for a draft. When you close, say the folder, the files, the `N`, and the state.
+
+## Done
+
+Before you close, evaluate this list and the `## Done` list in the reference for this situation. A command fixes the situation: use the reference that command names. Every item is true, or you fix the delivery in this turn. Do not leave a file that fails an item. Do not mark it `accepted` while an item fails. A template the reference names is applied and recorded under Assumed; the delivery uses the state that reference names. A prerequisite that still stops the delivery is not a failed list: follow "When a prerequisite is missing" and write no files for that piece.
+
+- The situation of this turn is the only one written, unless the request asked for two. Each delivery has its own `<NNN>`.
+- Files are only in the output folder, named as Delivery says. `<NNN>` is not reused. `STATUS.md` matches the files and the state this situation allows. A gap the reference leaves as `proposed` stays `proposed`.
+- The artifact language matches the request. `STATUS.md` columns stay `N`, `archivo`, `estado`, `sustituye`, `notas`.
+- Every field the template requires is filled. No placeholder remains (`#…`, `<task>`, `TBD`, lorem ipsum). A field the reference tells you to leave blank until data arrives is blank on purpose, and the state is the one the reference names.
+- Nothing this skill forbids was added. The reference names what stays out.
+- The reply names the folder, the files, the `N`, and the state. If a template was applied, the reply ends with the Assumed block, one line per template, naming the command that changes it and the command that regenerates this piece. A blank left on purpose names the command that fills it.
 
 ## Example
 

@@ -1,3 +1,5 @@
+[🏠 UI/UX Design](../../../README.md) / [Evaluate the interface](../SKILL.md)
+
 # Cognitive walkthrough
 
 Source: Wharton, Rieman, Lewis, and Polson (1994), The Cognitive Walkthrough Method: A Practitioner's Guide.
@@ -19,7 +21,7 @@ A "no" is a problem. Note the question, the evidence on the screen, and the corr
 
 ## How to do it
 
-1. The task and its steps come from the task analysis or the `accepted` user flow. If they are not there, ask for them.
+1. The task and its steps come from the task analysis or the `accepted` user flow. If they are not there, write them with templates `single-task` and `linear-three` and leave this review `proposed`.
 2. Walk the story of a new person. Do not assume an unlabeled icon is known.
 3. Success on question 4 is that the screen shows the progress. A button that does not change on error fails question 4.
 4. Ask `plugin-accessibility` for the review. Do not audit WCAG.
@@ -54,8 +56,8 @@ Step "confirm the payment" in the network-error state. Question 4: no. The butto
 
 ## Prerequisites
 
-- **Task.** An `accepted` task analysis, or the task in this turn. Stops the delivery. Earlier command: `/uiux-tasks`.
-- **Steps.** An `accepted` user flow, or the steps in this turn. Stops the delivery. Earlier command: `/uiux-user-flow`.
+- **Task.** An `accepted` task analysis, or the task in this turn. If neither exists, write it with template `single-task`. Change it with `/uiux-tasks`. Regenerate this walkthrough with `/uiux-cognitive-walkthrough`.
+- **Steps.** An `accepted` user flow, or the steps in this turn. If neither exists, write the flow with template `linear-three`. Change it with `/uiux-user-flow`. Regenerate this walkthrough with `/uiux-cognitive-walkthrough`. State of this review: `accepted` when the task and the steps already existed; `proposed` when either was written in this turn from a template.
 
 ## Prompts
 
@@ -79,3 +81,9 @@ The goal is to pay an order with a card. Tasks: review the amount, enter the car
 The task is pay with a card.
 Screens: cart, payment, result. If the charge fails, it returns to payment with the data still filled in.
 ```
+
+## Done
+
+- Every step of the task has the four questions, in order, each with yes or no and evidence from the screen. A "no" has a problem and a correction. When the task or the steps were written in this turn from a template, the delivery is `proposed` and Assumed says so.
+- The assumed person knows the task and not this interface. An unlabeled control is not treated as known.
+- No WCAG criterion is assigned. The close asks `plugin-accessibility` for the review.

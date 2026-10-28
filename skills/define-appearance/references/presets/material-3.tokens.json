@@ -1,0 +1,197 @@
+{
+  "theme": {
+    "light": {
+      "color": {
+        "primary": {
+          "$type": "color",
+          "$description": "Material 3 baseline light primary",
+          "$value": { "colorSpace": "srgb", "components": [0.404, 0.314, 0.643], "hex": "#6750A4" }
+        },
+        "onPrimary": {
+          "$type": "color",
+          "$description": "Material 3 baseline light on primary",
+          "$value": { "colorSpace": "srgb", "components": [1, 1, 1], "hex": "#FFFFFF" }
+        },
+        "primaryContainer": {
+          "$type": "color",
+          "$description": "Material 3 baseline light primary container",
+          "$value": { "colorSpace": "srgb", "components": [0.918, 0.867, 1], "hex": "#EADDFF" }
+        },
+        "onPrimaryContainer": {
+          "$type": "color",
+          "$description": "Material 3 baseline light on primary container",
+          "$value": { "colorSpace": "srgb", "components": [0.129, 0, 0.365], "hex": "#21005D" }
+        },
+        "secondary": {
+          "$type": "color",
+          "$description": "Material 3 baseline light secondary",
+          "$value": { "colorSpace": "srgb", "components": [0.384, 0.357, 0.443], "hex": "#625B71" }
+        },
+        "error": {
+          "$type": "color",
+          "$description": "Material 3 baseline light error",
+          "$value": { "colorSpace": "srgb", "components": [0.702, 0.149, 0.118], "hex": "#B3261E" }
+        },
+        "onError": {
+          "$type": "color",
+          "$description": "Material 3 baseline light on error",
+          "$value": { "colorSpace": "srgb", "components": [1, 1, 1], "hex": "#FFFFFF" }
+        },
+        "errorContainer": {
+          "$type": "color",
+          "$description": "Material 3 baseline light error container",
+          "$value": { "colorSpace": "srgb", "components": [0.976, 0.871, 0.863], "hex": "#F9DEDC" }
+        },
+        "onErrorContainer": {
+          "$type": "color",
+          "$description": "Material 3 baseline light on error container",
+          "$value": { "colorSpace": "srgb", "components": [0.255, 0.055, 0.043], "hex": "#410E0B" }
+        },
+        "surface": {
+          "$type": "color",
+          "$description": "Material 3 baseline light surface",
+          "$value": { "colorSpace": "srgb", "components": [0.996, 0.969, 1], "hex": "#FEF7FF" }
+        },
+        "onSurface": {
+          "$type": "color",
+          "$description": "Material 3 baseline light on surface",
+          "$value": { "colorSpace": "srgb", "components": [0.114, 0.106, 0.125], "hex": "#1D1B20" }
+        },
+        "onSurfaceVariant": {
+          "$type": "color",
+          "$description": "Material 3 baseline light on surface variant",
+          "$value": { "colorSpace": "srgb", "components": [0.286, 0.271, 0.31], "hex": "#49454F" }
+        },
+        "surfaceContainer": {
+          "$type": "color",
+          "$description": "Material 3 baseline light surface container",
+          "$value": { "colorSpace": "srgb", "components": [0.953, 0.929, 0.969], "hex": "#F3EDF7" }
+        },
+        "outline": {
+          "$type": "color",
+          "$description": "Material 3 baseline light outline",
+          "$value": { "colorSpace": "srgb", "components": [0.475, 0.455, 0.494], "hex": "#79747E" }
+        }
+      }
+    }
+  },
+  "font": {
+    "family": {
+      "$type": "fontFamily",
+      "$description": "Material 3 default face",
+      "$value": "Roboto"
+    },
+    "regular": {
+      "$type": "fontWeight",
+      "$description": "Body large weight",
+      "$value": "regular"
+    },
+    "medium": {
+      "$type": "fontWeight",
+      "$description": "Title large and label large weight",
+      "$value": 500
+    }
+  },
+  "type": {
+    "body": {
+      "$type": "typography",
+      "$description": "Body large, 16/24",
+      "$value": {
+        "fontFamily": "{font.family}",
+        "fontSize": { "value": 16, "unit": "px" },
+        "fontWeight": "{font.regular}",
+        "letterSpacing": { "value": 0.5, "unit": "px" },
+        "lineHeight": 1.5
+      }
+    },
+    "title": {
+      "$type": "typography",
+      "$description": "Title large, 22/28",
+      "$value": {
+        "fontFamily": "{font.family}",
+        "fontSize": { "value": 22, "unit": "px" },
+        "fontWeight": "{font.medium}",
+        "letterSpacing": { "value": 0, "unit": "px" },
+        "lineHeight": 1.27
+      }
+    },
+    "label": {
+      "$type": "typography",
+      "$description": "Label large, 14/20",
+      "$value": {
+        "fontFamily": "{font.family}",
+        "fontSize": { "value": 14, "unit": "px" },
+        "fontWeight": "{font.medium}",
+        "letterSpacing": { "value": 0.1, "unit": "px" },
+        "lineHeight": 1.43
+      }
+    }
+  },
+  "space": {
+    "4": {
+      "$type": "dimension",
+      "$description": "4 dp step of the Material layout increment",
+      "$value": { "value": 4, "unit": "px" }
+    },
+    "8": {
+      "$type": "dimension",
+      "$description": "8 dp step of the Material layout increment",
+      "$value": { "value": 8, "unit": "px" }
+    },
+    "16": {
+      "$type": "dimension",
+      "$description": "16 dp step of the Material layout increment",
+      "$value": { "value": 16, "unit": "px" }
+    },
+    "24": {
+      "$type": "dimension",
+      "$description": "24 dp step of the Material layout increment",
+      "$value": { "value": 24, "unit": "px" }
+    }
+  },
+  "radius": {
+    "none": {
+      "$type": "dimension",
+      "$description": "Shape scale none, 0 dp",
+      "$value": { "value": 0, "unit": "px" }
+    },
+    "extraSmall": {
+      "$type": "dimension",
+      "$description": "Shape scale extra small, 4 dp",
+      "$value": { "value": 4, "unit": "px" }
+    },
+    "medium": {
+      "$type": "dimension",
+      "$description": "Shape scale medium, 12 dp",
+      "$value": { "value": 12, "unit": "px" }
+    },
+    "button": {
+      "$type": "dimension",
+      "$description": "Shape scale large increased, 20 dp, used for the filled button. Full is a stadium: half the shorter side",
+      "$value": { "value": 20, "unit": "px" }
+    }
+  },
+  "elevation": {
+    "level0": {
+      "$type": "dimension",
+      "$description": "Elevation level 0. Filled button at rest",
+      "$value": { "value": 0, "unit": "px" }
+    },
+    "level1": {
+      "$type": "dimension",
+      "$description": "Elevation level 1, 1 dp. Elevated card at rest",
+      "$value": { "value": 1, "unit": "px" }
+    },
+    "level1Shadow": {
+      "$type": "shadow",
+      "$description": "One layer used when level 1 has to be drawn as a shadow. Material 3 prefers the level",
+      "$value": {
+        "color": { "colorSpace": "srgb", "components": [0, 0, 0], "alpha": 0.12, "hex": "#000000" },
+        "offsetX": { "value": 0, "unit": "px" },
+        "offsetY": { "value": 1, "unit": "px" },
+        "blur": { "value": 3, "unit": "px" },
+        "spread": { "value": 0, "unit": "px" }
+      }
+    }
+  }
+}

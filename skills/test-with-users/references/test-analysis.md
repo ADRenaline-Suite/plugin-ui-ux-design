@@ -1,3 +1,5 @@
+[🏠 UI/UX Design](../../../README.md) / [Test with users](../SKILL.md)
+
 # Test analysis
 
 Source: ISO 9241-11:2018. Effectiveness is the success rate. Efficiency is time, errors, and assistance. Satisfaction, in this plugin, is Brooke's SUS (1996) when the session used it. Problems are ordered with the Nielsen Norman Group severity (0–4), the same scale as `evaluate-ui`.
@@ -75,7 +77,7 @@ Four of five complete "pay with a card" (success 0.8). One person sees the "Pay"
 
 ## Prerequisites
 
-- **Data.** The test rows, in this turn. Without rows, the delivery stays `proposed`. Does not stop the delivery: the delivery stays `proposed`. Earlier command: `/uiux-usability-test`.
+- **Data.** The test rows, in this turn. Without rows, write the file, leave the results blank, and leave the delivery `proposed`. No results are invented. The close says the rows were left blank. Earlier command: `/uiux-usability-test`. Regenerate with `/uiux-test-analysis` when the rows exist.
 
 ## Prompts
 
@@ -94,3 +96,10 @@ In order, omitting the ones already met:
 The task is pay with a card.
 Five people who have already bought in the shop take part.
 ```
+
+## Done
+
+- Rows are the ones the user handed over. No time was estimated. With no rows, the delivery is `proposed`.
+- The CSV columns are `participant,task,success,time_s,errors,assistance,notes`. `success` is `yes`, `no`, or `partial`. `partial` is not counted as success. Effectiveness and efficiency follow the reference. With fewer than two successful times, values are listed and no median is computed.
+- Each problem has a task, a severity 0–4, and a design correction. It is not a WCAG finding.
+- SUS is scored only for Brooke's ten items, with no pass cutoff, letter, or adjective. Another questionnaire keeps its own name. The close is effectiveness, efficiency, and satisfaction for these users, this task, and this context, and it does not say the interface is usable.

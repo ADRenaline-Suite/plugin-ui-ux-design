@@ -1,3 +1,5 @@
+[🏠 UI/UX Design](../../../README.md) / [Test with users](../SKILL.md)
+
 # Tree testing
 
 Source: Nielsen Norman Group, Tree Testing. It evaluates a hierarchy that is already named. Direct success, indirect success, and the first click are the result.
@@ -8,7 +10,7 @@ Whether people find a destination in the sitemap, without the visual appearance 
 
 ## How to do it
 
-1. The hierarchy is an `accepted` sitemap or the tree the user pastes, with the names already decided. Do not rename items during the analysis.
+1. The hierarchy is an `accepted` sitemap or the tree the user pastes, with the names already decided. If neither exists, write a sitemap in this turn with template `one-group` and use that tree. Do not rename items during the analysis.
 2. Each task asks to find a destination and does not say which branch it is in. "Where do you see the order receipt?" is right. "Go into Account and then Receipts" is not.
 3. The plan fixes participants as the user describes them. A person runs the session.
 4. With data, the CSV is `participant,task,direct_success,indirect_success,first_click,path`. Successes and the first click are `yes` or `no`.
@@ -46,7 +48,7 @@ Tree: Shop → Order → Payment. Task: "Where do you check the receipt?". Of fi
 
 ## Prerequisites
 
-- **Tree.** An `accepted` sitemap, or the tree pasted in this turn. Stops the delivery. Earlier command: `/uiux-sitemap`.
+- **Tree.** An `accepted` sitemap, or the tree pasted in this turn. If neither exists, write a sitemap in this turn with template `one-group` and test that tree. One find-task per screen, without naming the branch. State of a plan: `accepted`. An analysis with no rows stays `proposed`. Change the tree with `/uiux-sitemap`. Regenerate with `/uiux-tree-testing`.
 
 ## Prompts
 
@@ -65,3 +67,10 @@ In order, omitting the ones already met:
 Groups: Shop → Order → Payment → Receipt.
 Payment covers the task pay with a card.
 ```
+
+## Done
+
+- The tree is an accepted sitemap, the list the user pasted, or template `one-group` written in this turn. Assumed says which. Item names the user gave were not renamed.
+- Each task asks for a destination and does not name the branch.
+- A plan with a header-only CSV is `accepted`. An analysis with no rows is `proposed`.
+- With data, a task is not both a direct and an indirect success. Shares are reported. The file does not replace the sitemap.

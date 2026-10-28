@@ -1,0 +1,172 @@
+{
+  "theme": {
+    "light": {
+      "color": {
+        "action": {
+          "$type": "color",
+          "$description": "Primary action on a light background",
+          "$value": { "colorSpace": "srgb", "components": [0, 0.4, 0.8], "hex": "#0066CC" }
+        },
+        "onAction": {
+          "$type": "color",
+          "$description": "Label on the primary action",
+          "$value": { "colorSpace": "srgb", "components": [1, 1, 1], "hex": "#FFFFFF" }
+        },
+        "actionHover": {
+          "$type": "color",
+          "$description": "Primary action when the pointer is over it",
+          "$value": { "colorSpace": "srgb", "components": [0, 0.298, 0.6], "hex": "#004C99" }
+        },
+        "actionPressed": {
+          "$type": "color",
+          "$description": "Primary action while it is pressed",
+          "$value": { "colorSpace": "srgb", "components": [0, 0.2, 0.4], "hex": "#003366" }
+        },
+        "background": {
+          "$type": "color",
+          "$description": "Page background",
+          "$value": { "colorSpace": "srgb", "components": [1, 1, 1], "hex": "#FFFFFF" }
+        },
+        "surface": {
+          "$type": "color",
+          "$description": "Panel on the page background",
+          "$value": { "colorSpace": "srgb", "components": [0.969, 0.969, 0.969], "hex": "#F7F7F7" }
+        },
+        "text": {
+          "$type": "color",
+          "$description": "Primary text",
+          "$value": { "colorSpace": "srgb", "components": [0.102, 0.102, 0.102], "hex": "#1A1A1A" }
+        },
+        "textMuted": {
+          "$type": "color",
+          "$description": "Secondary text",
+          "$value": { "colorSpace": "srgb", "components": [0.361, 0.361, 0.361], "hex": "#5C5C5C" }
+        },
+        "border": {
+          "$type": "color",
+          "$description": "Hairline around a field or a panel",
+          "$value": { "colorSpace": "srgb", "components": [0.816, 0.816, 0.816], "hex": "#D0D0D0" }
+        },
+        "error": {
+          "$type": "color",
+          "$description": "Error border and error notice",
+          "$value": { "colorSpace": "srgb", "components": [0.69, 0, 0.125], "hex": "#B00020" }
+        },
+        "disabled": {
+          "$type": "color",
+          "$description": "Fill of a control that cannot be used",
+          "$value": { "colorSpace": "srgb", "components": [0.902, 0.902, 0.902], "hex": "#E6E6E6" }
+        },
+        "onDisabled": {
+          "$type": "color",
+          "$description": "Label of a control that cannot be used",
+          "$value": { "colorSpace": "srgb", "components": [0.541, 0.541, 0.541], "hex": "#8A8A8A" }
+        }
+      }
+    }
+  },
+  "font": {
+    "family": {
+      "$type": "fontFamily",
+      "$description": "Platform UI sans. This starter does not pick a brand face",
+      "$value": ["system-ui", "Segoe UI", "sans-serif"]
+    },
+    "regular": {
+      "$type": "fontWeight",
+      "$description": "Body weight",
+      "$value": "regular"
+    },
+    "semibold": {
+      "$type": "fontWeight",
+      "$description": "Title and button weight",
+      "$value": 600
+    }
+  },
+  "type": {
+    "body": {
+      "$type": "typography",
+      "$description": "Reading text",
+      "$value": {
+        "fontFamily": "{font.family}",
+        "fontSize": { "value": 16, "unit": "px" },
+        "fontWeight": "{font.regular}",
+        "letterSpacing": { "value": 0, "unit": "px" },
+        "lineHeight": 1.5
+      }
+    },
+    "title": {
+      "$type": "typography",
+      "$description": "Screen title",
+      "$value": {
+        "fontFamily": "{font.family}",
+        "fontSize": { "value": 22, "unit": "px" },
+        "fontWeight": "{font.semibold}",
+        "letterSpacing": { "value": 0, "unit": "px" },
+        "lineHeight": 1.3
+      }
+    },
+    "label": {
+      "$type": "typography",
+      "$description": "Button and field label",
+      "$value": {
+        "fontFamily": "{font.family}",
+        "fontSize": { "value": 14, "unit": "px" },
+        "fontWeight": "{font.semibold}",
+        "letterSpacing": { "value": 0, "unit": "px" },
+        "lineHeight": 1.4
+      }
+    }
+  },
+  "space": {
+    "unit": {
+      "$type": "dimension",
+      "$description": "Base step",
+      "$value": { "value": 8, "unit": "px" }
+    },
+    "stack": {
+      "$type": "dimension",
+      "$description": "Space between blocks",
+      "$value": { "value": 16, "unit": "px" }
+    },
+    "section": {
+      "$type": "dimension",
+      "$description": "Space between sections",
+      "$value": { "value": 32, "unit": "px" }
+    },
+    "controlX": {
+      "$type": "dimension",
+      "$description": "Horizontal padding inside a control",
+      "$value": { "value": 16, "unit": "px" }
+    },
+    "controlY": {
+      "$type": "dimension",
+      "$description": "Vertical padding inside a control",
+      "$value": { "value": 8, "unit": "px" }
+    }
+  },
+  "radius": {
+    "control": {
+      "$type": "dimension",
+      "$description": "Corner of a button or a field",
+      "$value": { "value": 4, "unit": "px" }
+    },
+    "panel": {
+      "$type": "dimension",
+      "$description": "Corner of a panel",
+      "$value": { "value": 8, "unit": "px" }
+    }
+  },
+  "elevation": {
+    "panel": {
+      "$type": "shadow",
+      "$description": "Panel lifted off the page",
+      "$value": {
+        "color": { "colorSpace": "srgb", "components": [0, 0, 0], "alpha": 0.12, "hex": "#000000" },
+        "offsetX": { "value": 0, "unit": "px" },
+        "offsetY": { "value": 2, "unit": "px" },
+        "blur": { "value": 8, "unit": "px" },
+        "spread": { "value": 0, "unit": "px" }
+      }
+    }
+  }
+}

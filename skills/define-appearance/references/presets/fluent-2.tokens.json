@@ -1,0 +1,151 @@
+{
+  "theme": {
+    "light": {
+      "color": {
+        "brandBackground": {
+          "$type": "color",
+          "$description": "Fluent 2 web light colorBrandBackground",
+          "$value": { "colorSpace": "srgb", "components": [0.059, 0.424, 0.741], "hex": "#0F6CBD" }
+        },
+        "brandBackgroundHover": {
+          "$type": "color",
+          "$description": "Fluent 2 web light colorBrandBackgroundHover",
+          "$value": { "colorSpace": "srgb", "components": [0.067, 0.369, 0.639], "hex": "#115EA3" }
+        },
+        "brandBackgroundPressed": {
+          "$type": "color",
+          "$description": "Fluent 2 web light colorBrandBackgroundPressed",
+          "$value": { "colorSpace": "srgb", "components": [0.047, 0.231, 0.369], "hex": "#0C3B5E" }
+        },
+        "neutralForegroundOnBrand": {
+          "$type": "color",
+          "$description": "Fluent 2 web light colorNeutralForegroundOnBrand",
+          "$value": { "colorSpace": "srgb", "components": [1, 1, 1], "hex": "#FFFFFF" }
+        },
+        "neutralForeground1": {
+          "$type": "color",
+          "$description": "Fluent 2 web light colorNeutralForeground1",
+          "$value": { "colorSpace": "srgb", "components": [0.141, 0.141, 0.141], "hex": "#242424" }
+        },
+        "neutralForeground2": {
+          "$type": "color",
+          "$description": "Fluent 2 web light colorNeutralForeground2",
+          "$value": { "colorSpace": "srgb", "components": [0.259, 0.259, 0.259], "hex": "#424242" }
+        },
+        "neutralBackground1": {
+          "$type": "color",
+          "$description": "Fluent 2 web light colorNeutralBackground1",
+          "$value": { "colorSpace": "srgb", "components": [1, 1, 1], "hex": "#FFFFFF" }
+        },
+        "neutralBackground3": {
+          "$type": "color",
+          "$description": "Fluent 2 web light colorNeutralBackground3",
+          "$value": { "colorSpace": "srgb", "components": [0.961, 0.961, 0.961], "hex": "#F5F5F5" }
+        },
+        "neutralStroke1": {
+          "$type": "color",
+          "$description": "Fluent 2 web light colorNeutralStroke1",
+          "$value": { "colorSpace": "srgb", "components": [0.82, 0.82, 0.82], "hex": "#D1D1D1" }
+        },
+        "danger": {
+          "$type": "color",
+          "$description": "Fluent 2 web light colorStatusDangerBackground3",
+          "$value": { "colorSpace": "srgb", "components": [0.773, 0.059, 0.122], "hex": "#C50F1F" }
+        },
+        "dangerForeground": {
+          "$type": "color",
+          "$description": "Fluent 2 web light colorPaletteRedForeground1",
+          "$value": { "colorSpace": "srgb", "components": [0.737, 0.184, 0.196], "hex": "#BC2F32" }
+        }
+      }
+    }
+  },
+  "font": {
+    "family": {
+      "$type": "fontFamily",
+      "$description": "Fluent 2 web stack, Segoe UI first",
+      "$value": ["Segoe UI", "Segoe UI Web (West European)", "-apple-system", "BlinkMacSystemFont", "Roboto", "Helvetica Neue", "sans-serif"]
+    },
+    "regular": {
+      "$type": "fontWeight",
+      "$description": "Body 1 weight",
+      "$value": "regular"
+    },
+    "semibold": {
+      "$type": "fontWeight",
+      "$description": "Subtitle 1 weight",
+      "$value": 600
+    }
+  },
+  "type": {
+    "body": {
+      "$type": "typography",
+      "$description": "Body 1, 14/20",
+      "$value": {
+        "fontFamily": "{font.family}",
+        "fontSize": { "value": 14, "unit": "px" },
+        "fontWeight": "{font.regular}",
+        "letterSpacing": { "value": 0, "unit": "px" },
+        "lineHeight": 1.43
+      }
+    },
+    "subtitle": {
+      "$type": "typography",
+      "$description": "Subtitle 1, 20/26",
+      "$value": {
+        "fontFamily": "{font.family}",
+        "fontSize": { "value": 20, "unit": "px" },
+        "fontWeight": "{font.semibold}",
+        "letterSpacing": { "value": 0, "unit": "px" },
+        "lineHeight": 1.3
+      }
+    }
+  },
+  "space": {
+    "s": {
+      "$type": "dimension",
+      "$description": "spacingHorizontalS and spacingVerticalS, 8 px",
+      "$value": { "value": 8, "unit": "px" }
+    },
+    "m": {
+      "$type": "dimension",
+      "$description": "spacingHorizontalM and spacingVerticalM, 12 px",
+      "$value": { "value": 12, "unit": "px" }
+    },
+    "l": {
+      "$type": "dimension",
+      "$description": "spacingHorizontalL and spacingVerticalL, 16 px",
+      "$value": { "value": 16, "unit": "px" }
+    },
+    "xxl": {
+      "$type": "dimension",
+      "$description": "spacingHorizontalXXL and spacingVerticalXXL, 24 px",
+      "$value": { "value": 24, "unit": "px" }
+    }
+  },
+  "radius": {
+    "medium": {
+      "$type": "dimension",
+      "$description": "borderRadiusMedium, 4 px",
+      "$value": { "value": 4, "unit": "px" }
+    },
+    "xLarge": {
+      "$type": "dimension",
+      "$description": "borderRadiusXLarge, 8 px",
+      "$value": { "value": 8, "unit": "px" }
+    }
+  },
+  "elevation": {
+    "shadow4": {
+      "$type": "shadow",
+      "$description": "Drop layer of Fluent shadow4. The ambient layer is 0 0 2 px at 12 percent black and is not a second token",
+      "$value": {
+        "color": { "colorSpace": "srgb", "components": [0, 0, 0], "alpha": 0.14, "hex": "#000000" },
+        "offsetX": { "value": 0, "unit": "px" },
+        "offsetY": { "value": 2, "unit": "px" },
+        "blur": { "value": 4, "unit": "px" },
+        "spread": { "value": 0, "unit": "px" }
+      }
+    }
+  }
+}

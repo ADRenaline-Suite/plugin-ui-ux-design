@@ -1,3 +1,5 @@
+[🏠 UI/UX Design](../../../README.md) / [Record a decision](../SKILL.md)
+
 # Design decision
 
 Source: Michael Nygard, Documenting Architecture Decisions (2011). The title may say "design decision": the format is Nygard's.
@@ -40,7 +42,7 @@ State: `accepted`. Context: the heuristics finding for payment on a network erro
 
 ## Prerequisites
 
-- **Decision.** Made by whoever asks for the record. If it is not made, the state is `proposed`. Does not stop the delivery: the delivery stays `proposed`. No earlier command.
+- **Decision.** Made by whoever asks for the record. If it is not made, write the file, leave the state `proposed`, and write the decision as pending. No template. Do not pick an option. The close says the decision was not made and that no option was chosen. Regenerate with `/uiux-decision` when the decision exists.
 
 ## Prompts
 
@@ -53,3 +55,9 @@ Options discarded: an empty error screen.
 ```
 
 There is no earlier command. The single prompt is the way.
+
+## Done
+
+- Context, at least two options (including the discarded one), the decision, and the consequences are present. The decision is the one the user made. If they have not chosen, the state is `proposed` and the decision says pending. The winning option was not picked by the skill.
+- The state in the file and the `STATUS.md` row are the same. A replacement uses the next `<NNN>` and marks the previous row `superseded`.
+- Consequences name which delivery changes. The handoff, the kit, and the flow were not rewritten in this file.

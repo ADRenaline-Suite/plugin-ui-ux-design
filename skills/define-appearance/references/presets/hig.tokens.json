@@ -1,0 +1,143 @@
+{
+  "theme": {
+    "light": {
+      "color": {
+        "systemBlue": {
+          "$type": "color",
+          "$description": "Light appearance of systemBlue. The HIG does not publish this hex",
+          "$value": { "colorSpace": "srgb", "components": [0, 0.478, 1], "hex": "#007AFF" }
+        },
+        "systemRed": {
+          "$type": "color",
+          "$description": "Light appearance of systemRed. The HIG does not publish this hex",
+          "$value": { "colorSpace": "srgb", "components": [1, 0.231, 0.188], "hex": "#FF3B30" }
+        },
+        "label": {
+          "$type": "color",
+          "$description": "Light appearance of label",
+          "$value": { "colorSpace": "srgb", "components": [0, 0, 0], "hex": "#000000" }
+        },
+        "secondaryLabel": {
+          "$type": "color",
+          "$description": "Light appearance of secondaryLabel, 60 percent opacity",
+          "$value": { "colorSpace": "srgb", "components": [0.235, 0.235, 0.263], "alpha": 0.6, "hex": "#3C3C43" }
+        },
+        "systemBackground": {
+          "$type": "color",
+          "$description": "Light appearance of systemBackground",
+          "$value": { "colorSpace": "srgb", "components": [1, 1, 1], "hex": "#FFFFFF" }
+        },
+        "secondarySystemBackground": {
+          "$type": "color",
+          "$description": "Light appearance of secondarySystemBackground",
+          "$value": { "colorSpace": "srgb", "components": [0.949, 0.949, 0.969], "hex": "#F2F2F7" }
+        },
+        "separator": {
+          "$type": "color",
+          "$description": "Light appearance of separator, 29 percent opacity",
+          "$value": { "colorSpace": "srgb", "components": [0.235, 0.235, 0.263], "alpha": 0.29, "hex": "#3C3C43" }
+        }
+      }
+    }
+  },
+  "font": {
+    "family": {
+      "$type": "fontFamily",
+      "$description": "Apple system face",
+      "$value": "SF Pro"
+    },
+    "regular": {
+      "$type": "fontWeight",
+      "$description": "Body, Title 1, and Large Title weight at the Large size",
+      "$value": "regular"
+    },
+    "semibold": {
+      "$type": "fontWeight",
+      "$description": "Headline weight",
+      "$value": 600
+    }
+  },
+  "type": {
+    "largeTitle": {
+      "$type": "typography",
+      "$description": "Large Title, 34 pt, at the Large Dynamic Type size",
+      "$value": {
+        "fontFamily": "{font.family}",
+        "fontSize": { "value": 34, "unit": "px" },
+        "fontWeight": "{font.regular}",
+        "letterSpacing": { "value": 0, "unit": "px" },
+        "lineHeight": 1.2
+      }
+    },
+    "title": {
+      "$type": "typography",
+      "$description": "Title 1, 28 pt, at the Large Dynamic Type size",
+      "$value": {
+        "fontFamily": "{font.family}",
+        "fontSize": { "value": 28, "unit": "px" },
+        "fontWeight": "{font.regular}",
+        "letterSpacing": { "value": 0, "unit": "px" },
+        "lineHeight": 1.21
+      }
+    },
+    "headline": {
+      "$type": "typography",
+      "$description": "Headline, 17 pt semibold, at the Large Dynamic Type size",
+      "$value": {
+        "fontFamily": "{font.family}",
+        "fontSize": { "value": 17, "unit": "px" },
+        "fontWeight": "{font.semibold}",
+        "letterSpacing": { "value": 0, "unit": "px" },
+        "lineHeight": 1.29
+      }
+    },
+    "body": {
+      "$type": "typography",
+      "$description": "Body, 17 pt regular, at the Large Dynamic Type size. Line height 22 pt is a working leading",
+      "$value": {
+        "fontFamily": "{font.family}",
+        "fontSize": { "value": 17, "unit": "px" },
+        "fontWeight": "{font.regular}",
+        "letterSpacing": { "value": 0, "unit": "px" },
+        "lineHeight": 1.29
+      }
+    }
+  },
+  "space": {
+    "unit": {
+      "$type": "dimension",
+      "$description": "Working 8 pt step. The HIG does not publish this as a token",
+      "$value": { "value": 8, "unit": "px" }
+    },
+    "margin": {
+      "$type": "dimension",
+      "$description": "Common iPhone layout margin, 16 pt",
+      "$value": { "value": 16, "unit": "px" }
+    },
+    "control": {
+      "$type": "dimension",
+      "$description": "Minimum height and width of a control, 44 pt",
+      "$value": { "value": 44, "unit": "px" }
+    }
+  },
+  "radius": {
+    "grouped": {
+      "$type": "dimension",
+      "$description": "Working continuous corner for an inset group, 10 px. The HIG does not publish one corner token",
+      "$value": { "value": 10, "unit": "px" }
+    }
+  },
+  "elevation": {
+    "card": {
+      "$type": "shadow",
+      "$description": "Stand-in so the kit has an elevation token. The HIG expresses depth with materials, not this shadow",
+      "$value": {
+        "color": { "colorSpace": "srgb", "components": [0, 0, 0], "alpha": 0.12, "hex": "#000000" },
+        "offsetX": { "value": 0, "unit": "px" },
+        "offsetY": { "value": 1, "unit": "px" },
+        "blur": { "value": 3, "unit": "px" },
+        "spread": { "value": 0, "unit": "px" }
+      }
+    }
+  }
+}

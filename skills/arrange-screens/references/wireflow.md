@@ -1,3 +1,5 @@
+[🏠 UI/UX Design](../../../README.md) / [Arrange screens](../SKILL.md)
+
 # Wireflow
 
 Source: the user flow of the same task, drawn with a wireframe at each step. It is still UX, not UML.
@@ -12,7 +14,7 @@ Color, type, and build measures.
 
 ## How to do it
 
-1. If there is an `accepted` user flow for that task, follow its screens and its returns. If there is none and the user describes the path in this turn, use it and cite it. If the path is not stated, follow "When a prerequisite is missing" in the skill.
+1. If there is an `accepted` user flow for that task, follow its screens and its returns. If there is none and the user describes the path in this turn, use it and cite it. If the path is not stated, write the user flow in this turn with template `linear-three`.
 2. One SVG per screen, in gray, with the same visual rule as a wireframe: blocks, labels, no brand color. `xmlns="http://www.w3.org/2000/svg"`, `viewBox`, no scripts and no `foreignObject`.
 3. The Markdown orders the steps and points at each SVG. The SVGs do not have to be linked: the link between screens is the prototype. Here the order comes from the list.
 4. Include the error step when the flow has one. The error frame keeps the data the person typed.
@@ -39,8 +41,8 @@ Three gray SVGs: details, result, and error. The error one shows the notice and 
 
 ## Prerequisites
 
-- **Task.** An `accepted` task analysis, or the task in this turn. Stops the delivery. Earlier command: `/uiux-tasks`.
-- **Path.** An `accepted` user flow, or the path in this turn. Stops the delivery. Earlier command: `/uiux-user-flow`.
+- **Task.** An `accepted` task analysis, or the task in this turn. If neither exists, write it with template `single-task`. State: `accepted`. Change it with `/uiux-tasks`. Regenerate this wireflow with `/uiux-wireflow`.
+- **Path.** An `accepted` user flow, or the path in this turn. If neither exists, write it with template `linear-three`. State: `accepted`. Change it with `/uiux-user-flow`. Regenerate this wireflow with `/uiux-wireflow`.
 
 ## Prompts
 
@@ -64,3 +66,9 @@ The goal is to pay an order with a card. Tasks: review the amount, enter the car
 The task is pay with a card.
 Screens: cart, payment, result. If the charge fails, it returns to payment with the data still filled in.
 ```
+
+## Done
+
+- The steps follow the accepted user flow, the path described in this turn, or template `linear-three` written in this turn, in that order. Each step names the task and points at one gray SVG. Assumed names any template.
+- Each SVG has `xmlns`, a `viewBox`, blocks, and labels. No brand color, no scripts, no `foreignObject`, and no links between SVGs.
+- The error step is included when the flow has one, and that frame keeps the data that was typed. Color, type, and build measures are absent.

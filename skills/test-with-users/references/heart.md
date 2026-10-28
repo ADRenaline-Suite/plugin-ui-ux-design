@@ -1,3 +1,5 @@
+[🏠 UI/UX Design](../../../README.md) / [Test with users](../SKILL.md)
+
 # HEART
 
 Source: Rodden, Hutchinson, and Fu (2010), Measuring the User Experience on a Large Scale (CHI 2010). The process is goals, signals, and metrics. It complements research with users. It does not replace it. It is not a usability test.
@@ -44,7 +46,7 @@ Product launched. Task success. Goal: the person paying knows whether the charge
 
 ## Prerequisites
 
-- **Product launched.** If it is not launched yet, the delivery stays `proposed`. Does not stop the delivery: the delivery stays `proposed`. Earlier command: `/uiux-usability-test`.
+- **Product launched.** If it is not launched yet, the delivery stays `proposed`. No usage figures are invented. The close says HEART waits for launch and that the figures were not filled in. Earlier command: `/uiux-usability-test`. Regenerate with `/uiux-heart` when the product is launched.
 
 ## Prompts
 
@@ -65,3 +67,9 @@ In order, omitting the ones already met:
 The task is pay with a card.
 Five people who have already bought in the shop take part.
 ```
+
+## Done
+
+- If the product is not launched, the delivery is `proposed`, no usage figure was invented, and the reply says HEART waits for launch.
+- Each row the user asked for has a goal, a signal, and a metric. A missing threshold stays blank. No threshold was invented.
+- No event, code, dashboard, or Core Web Vitals metric was designed. The file says it does not replace the usability test.

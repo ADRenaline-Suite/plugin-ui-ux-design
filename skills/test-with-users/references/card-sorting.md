@@ -1,3 +1,5 @@
+[🏠 UI/UX Design](../../../README.md) / [Test with users](../SKILL.md)
+
 # Card sorting
 
 Source: Nielsen Norman Group, Card Sorting. It generates groupings. It does not evaluate a hierarchy that is already named: that is tree testing.
@@ -8,7 +10,7 @@ The session plan and, when there is data, how people grouped the cards.
 
 ## How to do it
 
-1. The user states the kind. Open: the person creates the groups and names them. Closed: the groups already have names. Hybrid: there are given groups and the person may create others. If they do not say, ask.
+1. The user states the kind. Open: the person creates the groups and names them. Closed: the groups already have names. Hybrid: there are given groups and the person may create others. If they do not say, apply template `open`.
 2. The cards are the contents the user lists. Do not add "typical" contents.
 3. The plan states participant criteria, the number the user gave, and that a person runs the session.
 4. With data, the CSV is `participant,card,group,kind`. `kind` is `open`, `closed`, or `hybrid`. The Markdown summarizes agreements (cards that land together) and group names that repeat. A disagreement is counted, not broken by inventing the "correct group". Prose follows the language of the artifact.
@@ -40,7 +42,7 @@ Open, cards "receipt", "card", "address". Three people put receipt and card toge
 
 ## Prerequisites
 
-- **Kind.** Open, closed, or hybrid, in this turn. Stops the delivery. No earlier command.
+- **Kind.** Open, closed, or hybrid, in this turn. If it is missing, template `open`: the person creates the groups and names them. State: `accepted` for a plan. Change it with `/uiux-card-sorting`. Regenerate with `/uiux-card-sorting`. Do not add cards the user did not list. If the card list is empty, the delivery stays `proposed` and Assumed says no cards were invented.
 
 ## Prompts
 
@@ -53,3 +55,9 @@ Cards: receipt, card, address.
 ```
 
 There is no earlier command. The single prompt is the way.
+
+## Done
+
+- Kind is open, closed, or hybrid, as the user stated, or template `open` when they did not say. Cards are only the ones the user listed. An empty card list leaves the delivery `proposed`.
+- A plan with a header-only CSV is `accepted`. An analysis with no rows is `proposed`.
+- With data, the CSV is `participant,card,group,kind`. Agreements are counted. No "correct group" was invented. The sitemap was not rewritten in this file.

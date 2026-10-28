@@ -5,7 +5,11 @@ description: "ADRenaline. Help: catalog of plugin-ui-ux-design (skills, rules, c
 
 # Help — plugin-ui-ux-design
 
-Print this catalog as the reply. One line per item. Do not run any skill or command. Do not invent entries that are not listed. If a component was added to the plugin and is missing here, add one line from its frontmatter `description` and say the catalog was refreshed.
+Print this catalog as the reply. Do not run any skill or command. Do not invent entries that are not listed. If a component was added to the plugin and is missing here, add one line from its frontmatter `description` and say the catalog was refreshed.
+
+Write the sentences in the language of the request. Keep command names, file ids, and every URL unchanged. Every id is a markdown link to the GitHub URL on its line. Do not print an id as plain text.
+
+Keep the section headings. Under Commands, group the lines by the skill named in the line. Each group opens with that skill name linked to its SKILL.md. One line per item: the linked id, then the sentence.
 
 ## Plugin
 
@@ -16,7 +20,7 @@ Print this catalog as the reply. One line per item. Do not run any skill or comm
 - [**understand-user**](https://github.com/ADRenaline-Suite/plugin-ui-ux-design/blob/main/skills/understand-user/SKILL.md) — Analyzes the user's tasks, builds the journey map, and closes the design brief before any screen is drawn.
 - [**specify-screen**](https://github.com/ADRenaline-Suite/plugin-ui-ux-design/blob/main/skills/specify-screen/SKILL.md) — Produces the sketch, wireframe, mock, prototype, or handoff of a screen, from least to most concrete.
 - [**arrange-screens**](https://github.com/ADRenaline-Suite/plugin-ui-ux-design/blob/main/skills/arrange-screens/SKILL.md) — Arranges the screens of a task into a user flow, a wireflow, or a sitemap.
-- [**define-appearance**](https://github.com/ADRenaline-Suite/plugin-ui-ux-design/blob/main/skills/define-appearance/SKILL.md) — Sets the visual direction of the interface in a moodboard and the UI kit with its tokens.
+- [**define-appearance**](https://github.com/ADRenaline-Suite/plugin-ui-ux-design/blob/main/skills/define-appearance/SKILL.md) — Sets the visual direction of the interface in a moodboard and the UI kit with its tokens. If no kit is selected, the plain preset is used.
 - [**evaluate-ui**](https://github.com/ADRenaline-Suite/plugin-ui-ux-design/blob/main/skills/evaluate-ui/SKILL.md) — Evaluates an interface without users through heuristics, a cognitive walkthrough, consistency with the UI kit, a flow review, or an implementation review.
 - [**test-with-users**](https://github.com/ADRenaline-Suite/plugin-ui-ux-design/blob/main/skills/test-with-users/SKILL.md) — Plans and analyzes a usability test, a card sort, a tree test, or HEART metrics.
 - [**record-decision**](https://github.com/ADRenaline-Suite/plugin-ui-ux-design/blob/main/skills/record-decision/SKILL.md) — Records a design decision with its context, the options, the decision, and the consequences.
@@ -24,7 +28,7 @@ Print this catalog as the reply. One line per item. Do not run any skill or comm
 ## Rules
 
 - [**output-folder**](https://github.com/ADRenaline-Suite/plugin-ui-ux-design/blob/main/rules/output-folder.mdc) — Every file goes in `ui-ux-design/` (or in `outputDirs["plugin-ui-ux-design"]` of `.cursor/adrenaline.json`). The artifact follows the language of the request.
-- [**ui-fidelity**](https://github.com/ADRenaline-Suite/plugin-ui-ux-design/blob/main/rules/ui-fidelity.mdc) — Do not jump fidelity, leave a screen without states, or do another plugin's job here.
+- [**ui-fidelity**](https://github.com/ADRenaline-Suite/plugin-ui-ux-design/blob/main/rules/ui-fidelity.mdc) — A missing design input uses a named template and is recorded as assumed. Consistency without a product kit, and an implementation review without a built screen, still stop.
 
 ## Commands
 
@@ -41,7 +45,7 @@ Print this catalog as the reply. One line per item. Do not run any skill or comm
 - [**/uiux-wireflow**](https://github.com/ADRenaline-Suite/plugin-ui-ux-design/blob/main/skills/arrange-screens/references/wireflow.md) — Wireflow (skill arrange-screens): the same path of a task, with the hierarchy of each step in view, without color or build measures.
 - [**/uiux-sitemap**](https://github.com/ADRenaline-Suite/plugin-ui-ux-design/blob/main/skills/arrange-screens/references/sitemap.md) — Sitemap (skill arrange-screens): which screens exist and how they are grouped, without the path of a task or the look of each screen.
 - [**/uiux-moodboard**](https://github.com/ADRenaline-Suite/plugin-ui-ux-design/blob/main/skills/define-appearance/references/moodboard.md) — Moodboard (skill define-appearance): visual direction (references, color, type, and tone) on sample screens, before tokens and components are fixed.
-- [**/uiux-ui-kit**](https://github.com/ADRenaline-Suite/plugin-ui-ux-design/blob/main/skills/define-appearance/references/ui-kit.md) — UI kit (skill define-appearance): components, tokens (color, typography, space, radius, and elevation), and rules for repeating the design.
+- [**/uiux-ui-kit**](https://github.com/ADRenaline-Suite/plugin-ui-ux-design/blob/main/skills/define-appearance/references/ui-kit.md) — UI kit (skill define-appearance): components, tokens (color, typography, space, radius, and elevation), and rules for repeating the design, with presets plain (default), dense, material-3, hig, and fluent-2.
 - [**/uiux-heuristics**](https://github.com/ADRenaline-Suite/plugin-ui-ux-design/blob/main/skills/evaluate-ui/references/heuristics.md) — Heuristic evaluation (skill evaluate-ui): usability problems visible on a screen, with the heuristic, the place, the severity, and the correction.
 - [**/uiux-cognitive-walkthrough**](https://github.com/ADRenaline-Suite/plugin-ui-ux-design/blob/main/skills/evaluate-ui/references/cognitive-walkthrough.md) — Cognitive walkthrough (skill evaluate-ui): whether someone who knows the task, and does not know this interface, can take each step by exploring.
 - [**/uiux-consistency**](https://github.com/ADRenaline-Suite/plugin-ui-ux-design/blob/main/skills/evaluate-ui/references/consistency.md) — Consistency (skill evaluate-ui): where a screen drifts from the UI kit's components and tokens.
@@ -77,3 +81,9 @@ Print this catalog as the reply. One line per item. Do not run any skill or comm
 - Interface code, instrumentation, and Core Web Vitals → frontend area.
 
 In Claude Code, commands use the prefix `/plugin-ui-ux-design:` (example: `/plugin-ui-ux-design:uiux-help`).
+
+## Done
+
+- The reply is this catalog. Every id is a markdown link to the GitHub URL listed here. Commands are grouped by skill.
+- No skill ran. No command ran. No file was written.
+- No entry was invented. If a component exists in the plugin and is missing here, one line was added from its `description` and the reply says the catalog was refreshed.

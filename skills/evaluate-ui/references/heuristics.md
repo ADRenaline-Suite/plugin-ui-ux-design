@@ -1,3 +1,5 @@
+[🏠 UI/UX Design](../../../README.md) / [Evaluate the interface](../SKILL.md)
+
 # Heuristics
 
 Source: Nielsen Norman Group, 10 Usability Heuristics for User Interface Design, and Severity Ratings for Usability Problems.
@@ -58,7 +60,7 @@ Screen: payment. State: network error. Heuristic: Visibility of system status. S
 
 ## Prerequisites
 
-- **Screen or flow.** An `accepted` file, or what is described in this turn. Stops the delivery. Earlier command: `/uiux-mock`.
+- **Screen or flow.** An `accepted` file, or what is described in this turn. If neither exists, write a sketch in this turn with template `single-task` and template `task-blocks` (one block per subtask, plus the primary action) and review that sketch. State of this review: `proposed`, because the screen was assumed. Change the screen with `/uiux-sketch` or `/uiux-mock`. Regenerate this review with `/uiux-heuristics`.
 
 ## Prompts
 
@@ -77,3 +79,9 @@ The task is pay with a card.
 The path is cart, payment, result. If the charge fails, it returns to payment with the data still filled in.
 UI kit, light theme: action #0066cc, background #ffffff, text #1a1a1a, error #b00020, type Source Sans 3, space 16 px, radius 4 px, shadow 0 2 px 8 px.
 ```
+
+## Done
+
+- Each finding has one Nielsen Norman Group heuristic name, the screen, the state, a severity from 0 to 4, the finding, and a correction that says what changes on the screen. No code. When the screen was written in this turn from a template, the delivery is `proposed` and Assumed says so.
+- States other than the ideal were walked when the screen has them. An error that clears typed data is a finding when it is present.
+- No WCAG criterion is marked met or failed. The close asks `plugin-accessibility` for the review.

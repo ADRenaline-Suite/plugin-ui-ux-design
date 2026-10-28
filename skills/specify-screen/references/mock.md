@@ -1,3 +1,5 @@
+[🏠 UI/UX Design](../../../README.md) / [Specify a screen](../SKILL.md)
+
 # Mock
 
 Source: the product's UI kit. Tokens written in this turn follow the Design Tokens Format Module 2025.10; the token file is produced by `define-appearance`, not by this manual. Breakpoints: the product's, or Material Design 3.
@@ -12,8 +14,8 @@ The path to other screens and the build specification (annotated measures, behav
 
 ## How to do it
 
-1. The path has to be decided: an `accepted` user flow, or the path in this turn. If it is not, follow "When a prerequisite is missing" in the skill.
-2. Use the tokens of the `accepted` UI kit, or the ones that arrive in this turn. Color, type, space, radius, and elevation come from there. If they arrive in this turn and there is no kit, write the kit with `define-appearance` and then the mock. If there is neither a kit nor tokens, follow "When a prerequisite is missing" in the skill. Do not invent a palette.
+1. The path has to be decided: an `accepted` user flow, or the path in this turn. If neither exists, write the user flow in this turn with template `linear-three`.
+2. Use the tokens of the `accepted` UI kit. If there is no kit, write it with `define-appearance` and then the mock. A named preset or the tokens in this turn choose it. If neither arrives, the kit is preset `plain`. Do not invent a palette.
 3. One frame per theme in the ideal state (light, dark, brand variant), only the themes the product has. Do not add dark mode if the product does not have it.
 4. Real copy, from the user or from `plugin-ux-writing`. If the final copy is missing, use the labels already agreed and say so in the Markdown; do not write new microcopy.
 5. Draw the states that change the appearance. Error keeps what was typed and shows what failed.
@@ -26,7 +28,7 @@ The path to other screens and the build specification (annotated measures, behav
 
 - Task or use case:
 - Path decided: <user flow file, or "described in this turn">
-- UI kit: <accepted file> | tokens from this turn
+- UI kit: <accepted file> | preset <id> | tokens from this turn
 - Themes:
 - Platform and breakpoints:
 - States drawn:
@@ -40,9 +42,9 @@ Mock of payment in the light theme, with the shop kit's action color and type. T
 
 ## Prerequisites
 
-- **Task.** An `accepted` task analysis, or the task in this turn. Stops the delivery. Earlier command: `/uiux-tasks`.
-- **Path.** An `accepted` user flow, or the path in this turn. Stops the delivery. Earlier command: `/uiux-user-flow`.
-- **UI kit.** An `accepted` kit, or the tokens in this turn. If they arrive in this turn and there is no kit, write the kit with `define-appearance` and then the mock. Stops the delivery. Earlier command: `/uiux-ui-kit`.
+- **Task.** An `accepted` task analysis, or the task in this turn. If neither exists, write it in this turn with template `single-task`. State: `accepted`. Change it with `/uiux-tasks`. Regenerate this mock with `/uiux-mock`.
+- **Path.** An `accepted` user flow, or the path in this turn. If neither exists, write the user flow in this turn with template `linear-three`: the screens named in the request, in that order; one screen becomes that screen then a result, and the error returns to it with the data kept; no screen named becomes form, wait, result. A payment or an irreversible action (pay, delete, send, publish, buy, transfer) inserts a confirm screen before the result. State: `accepted`. Change it with `/uiux-user-flow`. Regenerate this mock with `/uiux-mock`.
+- **UI kit.** An `accepted` kit, a named preset, or the tokens in this turn. If none of these arrive, write preset `plain` with `define-appearance` and then the mock. State: `accepted`. Change it with `/uiux-ui-kit`. Regenerate this mock with `/uiux-mock`. Do not invent a palette.
 
 ## Prompts
 
@@ -52,8 +54,10 @@ In one message:
 /uiux-mock of the payment screen.
 The task is pay with a card.
 The path is cart, payment, result. If the charge fails, it returns to payment with the data still filled in.
-UI kit, light theme: action #0066cc, background #ffffff, text #1a1a1a, error #b00020, type Source Sans 3, space 16 px, radius 4 px, shadow 0 2 px 8 px.
+UI kit: preset plain. Other presets: dense, material-3, hig, fluent-2.
 ```
+
+The UI kit is not in this order. When it is missing, preset `plain` is written with the mock.
 
 In order, omitting the ones already met:
 
@@ -69,12 +73,14 @@ Screens: cart, payment, result. If the charge fails, it returns to payment with 
 ```
 
 ```text
-/uiux-ui-kit for the shop. Web platform, light theme.
-Action #0066cc, background #ffffff, text #1a1a1a, error #b00020, type Source Sans 3, space 16 px, radius 4 px, shadow 0 2 px 8 px.
-```
-
-```text
 /uiux-mock of the payment screen.
 The task is pay with a card.
 The path is cart, payment, result. If the charge fails, it returns to payment with the data still filled in.
 ```
+
+## Done
+
+- The path is an accepted user flow, the path in this turn, or template `linear-three` written in this turn. The UI kit line names an accepted kit, a preset id, or tokens from this turn. If none was selected, the kit is preset `plain`, written by `define-appearance` before this file. No palette was invented. Each template used is under Assumed.
+- Themes are only the ones the product has. States that change the appearance are drawn. Error keeps what was typed and shows what failed.
+- Copy comes from the user, from `plugin-ux-writing`, or from agreed labels, and the origin line says which. No new microcopy.
+- The SVG uses kit colors. There are no redlines and no links to other screens.

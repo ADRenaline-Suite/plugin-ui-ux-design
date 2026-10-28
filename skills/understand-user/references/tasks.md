@@ -1,3 +1,5 @@
+[🏠 UI/UX Design](../../../README.md) / [Understand the user](../SKILL.md)
+
 # User tasks
 
 Source: Nielsen Norman Group, Task Analysis. The goal, if it comes from a use case, is the one from `plugin-project-manager`.
@@ -12,9 +14,9 @@ Screens, visual appearance, final copy, and metrics.
 
 ## How to do it
 
-1. Write the goal in the user's words or the use case's words. If the goal does not fit in one sentence, ask them to narrow it.
+1. Write the goal in the user's words or the use case's words. If the goal does not fit in one sentence, ask them to narrow it. If no goal is stated, apply template `single-task`.
 2. List the tasks in the order the person does them. Number them.
-3. Under each task, list the subtasks. Do not add a task the user did not describe and the goal does not require.
+3. Under each task, list the subtasks. Do not add a task the user did not describe and the goal does not require. Template `single-task` is the exception: it adds the three subtasks below.
 4. Mark which task depends on another.
 5. Each task that will later have a screen must be citable by its name. Use those names as given in later deliveries.
 
@@ -44,7 +46,7 @@ Goal: pay an order with a card.
 
 ## Prerequisites
 
-- **Goal.** Stated by whoever asks for the analysis, in this turn. Stops the delivery. No earlier command.
+- **Goal.** Stated by whoever asks for the analysis, in this turn. If it is missing, template `single-task`: one task named from the noun or the verb in the request; subtasks enter the data, confirm, see the result; each depends on the previous one, and the first depends on none. Origin: `template single-task`. State: `accepted`. Change it with `/uiux-tasks`. Regenerate with `/uiux-tasks`.
 
 ## Prompts
 
@@ -56,3 +58,10 @@ The goal is to pay an order with a card. Tasks: review the amount, enter the car
 ```
 
 There is no earlier command. The single prompt is the way.
+
+## Done
+
+- The goal is one sentence. Origin is the use case, the conversation, or template `single-task`. When the template was used, Assumed says so.
+- Tasks are numbered and in order. Each one has subtasks and Depends on. No task was added that the user did not describe and the goal does not require, except the three subtasks of template `single-task`.
+- Screens, visual appearance, final copy, metrics, and a persona are absent.
+- The source line cites Nielsen Norman Group, Task Analysis.

@@ -64,9 +64,147 @@ The path is relative to the project root and cannot contain `..`. Claude Code an
 
 ## How to ask
 
+If a command name is unfamiliar, read [What each command is for](#what-each-command-is-for) before the tables below.
+
 In Cursor, `/uiux-sketch` or the name of another command. In Claude Code, the same name with the plugin prefix: `/plugin-ui-ux-design:uiux-sketch`. Asking in plain language is enough: the skill chooses the reference. A request in Spanish produces a Spanish file.
 
-A prerequisite is met by an `accepted` file or by the fact written in the same message. If a stopping one is missing, the command does not write the piece: it says the missing name, gives one prompt, and, if there are earlier commands, gives them in order with one prompt each. Sketch and wireframe can be skipped. A handoff without copy or without notes stays `proposed`. HTML is not delivered.
+Before it closes, the command checks the done list of that skill and of that piece. A file that fails a check is corrected in the same turn, or it is not marked `accepted`.
+
+A prerequisite is met by an `accepted` file or by the fact written in the same message. If it is missing, the command writes the piece with the named template and says so at the end: what was assumed automatically, the command that changes it, and the command that regenerates the piece. Sketch and wireframe can still be skipped. A handoff without copy or without notes stays `proposed`. With no kit, no values, and no named preset, preset `plain` is written. The other presets are `dense`, `material-3`, `hig`, and `fluent-2`. Two checks still write nothing: an implementation review without a screenshot or a URL, and a consistency review without a product UI kit or without a screen. Consistency does not use `plain`. HTML is not delivered.
+
+## What each command is for
+
+You do not need to know design terms. Each command writes one piece of the work. The skill named with it is only the group that piece belongs to. You can ignore the skill name and use the command.
+
+A skill is the folder of instructions for several related commands. You meet it when you ask in a sentence ("sketch the checkout") instead of typing a command. The sentence under each skill says when that group is the right one.
+
+### `/uiux-help`
+
+Prints the short list of skills, rules, and commands. It does not write a file. Use it when you want to see what you can ask for.
+
+### Understand the user — skill `understand-user`
+
+Use this group before any screen exists. It writes what the person is trying to do, what they go through, and what success means. It does not draw the interface.
+
+#### `/uiux-tasks`
+
+Writes the person's goal, the tasks that reach it, and the steps of each task, in order. A task is something the person finishes, such as paying for an order, not a button. Use it when you know the goal and you need that list before anyone draws a screen.
+
+#### `/uiux-journey-map`
+
+Writes one person's path through one situation: what they do, what they think, how they feel, and where the product could help. It does not propose screens. Use it when you want the experience around the product, including what happens outside the interface. You say who the person is and which situation you mean.
+
+#### `/uiux-brief`
+
+Writes the design brief: the problem, who it is for, the limits (platform, time, what is out of scope), and how you will know it worked. Use it when the team should agree on the problem before choosing a shape for the interface.
+
+### Specify a screen — skill `specify-screen`
+
+Use this group to describe one screen, from a rough idea to the notes someone can build from. Each command is a step further. The early ones can be skipped.
+
+#### `/uiux-sketch`
+
+Draws the idea of a screen as named blocks, such as search, list, and pay. No sizes, no colors, and no final wording. Use it when you want to check that the pieces of the screen are the right ones, before spending time on layout.
+
+#### `/uiux-wireframe`
+
+Draws the layout: what is large, what is small, and how that changes when the window is narrow or wide. It still has no brand colors and no final typeface. Use it when the blocks are known and the question is where each one sits.
+
+#### `/uiux-mock`
+
+Draws the screen as it should look: colors, type, and components taken from the UI kit. It does not describe the path between screens or the measurements for building. Use it when you need the finished appearance of one screen.
+
+#### `/uiux-prototype`
+
+Links several screens so a person can click through one task in the browser. It is for walking the path. It does not set sizes or accessibility rules. Use it when you want to try the sequence of screens before building.
+
+#### `/uiux-handoff`
+
+Writes what someone needs in order to build the screen without guessing: sizes, states (empty, loading, error, and the rest), the wording, how it behaves at each window size, and the accessibility notes. Use it when the screen is decided and someone is about to build it. The wording comes from `plugin-ux-writing` or from what you paste. The accessibility notes come from `plugin-accessibility`.
+
+### Arrange screens — skill `arrange-screens`
+
+Use this group when the question is how screens connect, not how one screen looks.
+
+#### `/uiux-user-flow`
+
+Draws the path of one task: which screen comes next, where the person decides, and where they can go back. It does not draw the layout inside each screen. Use it when you need to agree on the path before the screens look finished.
+
+#### `/uiux-wireflow`
+
+Draws that same path with a simple layout at each step, still without brand color or measurements for building. Use it when the path is hard to judge without seeing what is on each screen.
+
+#### `/uiux-sitemap`
+
+Lists which screens exist and how they are grouped, like a table of contents of the product. It does not show the path of one task or the look of a screen. Use it when you need the inventory of screens and their groups.
+
+### Define the appearance — skill `define-appearance`
+
+Use this group for how the interface looks across screens, not for the content of one screen.
+
+#### `/uiux-moodboard`
+
+Collects the visual direction — references, color, type, and tone — shown on sample screens, before those choices become reusable rules. Use it when you are still choosing a direction and you have references to start from.
+
+#### `/uiux-ui-kit`
+
+Writes the shared pieces and the values behind them: colors, type, spacing, corner radius, and shadow, plus the rules for using them again. If you do not name a kit, it writes a plain starting point and names four others (`dense`, `material-3`, `hig`, `fluent-2`). Use it when several screens should look like the same product.
+
+### Evaluate the interface — skill `evaluate-ui`
+
+Use this group to find problems without inviting people in. Each result says where the problem is, how serious it is, and how to fix it. It does not change the built product.
+
+#### `/uiux-heuristics`
+
+Reviews a screen against a known list of usability rules and writes the problems it can see. Use it when you have a screen or a flow and you want a structured critique before a test with people.
+
+#### `/uiux-cognitive-walkthrough`
+
+Walks a task one step at a time and asks whether a person who knows the goal, and has never seen this interface, could find the next step by looking. Use it when the question is whether someone can figure the task out.
+
+#### `/uiux-consistency`
+
+Compares a screen with the UI kit and lists where the screen drifts from those components and values. Use it when a kit already exists and you want to know what does not follow it.
+
+#### `/uiux-flow-review`
+
+Reviews the path of a task: extra steps, dead ends, and missing ways back. It does not judge colors or code. Use it when the path is drawn and you want the problems in that path.
+
+#### `/uiux-implementation-review`
+
+Compares a built screen (a screenshot or a URL) with the handoff: sizes, tokens, states, window sizes, and wording. Use it when something has been built and you need the list of differences. Without a screenshot or a URL it stops. Without an accepted handoff the file stays a draft.
+
+### Test with users — skill `test-with-users`
+
+Use this group to plan a session with people, or to read results someone already collected. The plugin does not recruit people and does not run the session.
+
+#### `/uiux-usability-test`
+
+Writes the plan: the tasks people will try, who takes part, what to watch, and how to write it down. It does not run the session and it does not calculate results. Use it before the sessions happen.
+
+#### `/uiux-test-analysis`
+
+Reads the notes from a usability test and writes what came out: how often each task succeeded, how long it took, the problems by severity, and a satisfaction score when one was collected. Use it when you already have the data. Without data, the file stays a draft.
+
+#### `/uiux-card-sorting`
+
+Plans a card sort, where people group topics the way that makes sense to them, so the menu can follow their groups. When the results already exist, it also writes the groups that appeared. It does not judge a sitemap that already exists. Use it before the groups of a sitemap are frozen.
+
+#### `/uiux-tree-testing`
+
+Plans, and when there is data also analyzes, whether people can find a destination in the sitemap from the labels alone, without the visual design. Use it when the groups exist and you want to know if the names lead people to the right place.
+
+#### `/uiux-heart`
+
+Writes goals and metrics for a product that is already launched: happiness, engagement, adoption, retention, and task success. Each one gets a goal, something you can observe, and a metric. Use it to decide what to measure after launch. It does not install the measurement. Without a launched product, the file stays a draft.
+
+### Record a decision — skill `record-decision`
+
+Use this group when the reason for a choice should stay written next to the screens.
+
+#### `/uiux-decision`
+
+Writes why the interface ended one way: the context, the options, what was chosen, and what follows from that. It does not design the screen. The choice comes from you. The plugin does not pick the winner. Use it when a later reader should know why this option was chosen. Until you confirm the decision, the file stays a draft.
 
 ## Skills
 
@@ -77,14 +215,14 @@ Each command belongs to a skill. The skill is the category: it groups the pieces
 | [understand-user](skills/understand-user/SKILL.md) | Tasks, journey map, and brief, before drawing | `/uiux-tasks`, `/uiux-journey-map`, `/uiux-brief` |
 | [specify-screen](skills/specify-screen/SKILL.md) | Sketch, wireframe, mock, prototype, and handoff | `/uiux-sketch`, `/uiux-wireframe`, `/uiux-mock`, `/uiux-prototype`, `/uiux-handoff` |
 | [arrange-screens](skills/arrange-screens/SKILL.md) | User flow, wireflow, and sitemap | `/uiux-user-flow`, `/uiux-wireflow`, `/uiux-sitemap` |
-| [define-appearance](skills/define-appearance/SKILL.md) | Moodboard and UI kit | `/uiux-moodboard`, `/uiux-ui-kit` |
+| [define-appearance](skills/define-appearance/SKILL.md) | Moodboard and UI kit. Five presets; `plain` is the default | `/uiux-moodboard`, `/uiux-ui-kit` |
 | [evaluate-ui](skills/evaluate-ui/SKILL.md) | Heuristics, cognitive walkthrough, consistency, flow review, and implementation review | `/uiux-heuristics`, `/uiux-cognitive-walkthrough`, `/uiux-consistency`, `/uiux-flow-review`, `/uiux-implementation-review` |
 | [test-with-users](skills/test-with-users/SKILL.md) | Usability test, its analysis, card sorting, tree testing, and HEART | `/uiux-usability-test`, `/uiux-test-analysis`, `/uiux-card-sorting`, `/uiux-tree-testing`, `/uiux-heart` |
 | [record-decision](skills/record-decision/SKILL.md) | Design decision, and whether that decision governs | `/uiux-decision` |
 
 ## Order and prerequisites
 
-A solid arrow stops the destination command if that piece is missing and the message does not bring it. A dotted arrow does not stop: it is an order that can be skipped, or a delivery that stays `proposed`. The prototype also stops if there is no mock, no wireframe, and no screen blocks in the message. Each group is the skill of those commands. Journey map, brief, moodboard, card sorting, HEART, and the decision are not in the diagram: they do not depend on another command.
+A solid arrow means the destination writes that earlier piece with its template when it is missing, then continues. A dotted arrow can be skipped, or the delivery stays `proposed`. The thick arrow into consistency still stops: that review does not use preset `plain`, and it does not draw a screen in order to compare it. An implementation review also stops when there is no screenshot or URL. Each group is the skill of those commands. Journey map, brief, moodboard, card sorting, HEART, and the decision are not in the diagram: they do not depend on another command. Their own gaps use a template, or stay `proposed` with the blank named in the reply.
 
 ```mermaid
 flowchart TD
@@ -131,7 +269,7 @@ flowchart TD
   flow --> proto
   mock --> hand
   kit --> hand
-  kit --> cons
+  kit ==>|stops| cons
   mock -.-> heur
   flow --> cog
   flow --> revflow
@@ -140,63 +278,63 @@ flowchart TD
   test -.-> analysis
 ```
 
-| Skill | Command | Prerequisites | If missing |
-| --- | --- | --- | --- |
-| `understand-user` | `/uiux-tasks` | Goal | Stops |
-| `understand-user` | `/uiux-journey-map` | Persona, scenario | Stops |
-| `understand-user` | `/uiux-brief` | Problem, platform, success criterion | Stops |
-| `specify-screen` | `/uiux-sketch` | Task | Stops |
-| `specify-screen` | `/uiux-wireframe` | Task | Stops |
-| `arrange-screens` | `/uiux-user-flow` | Task, screens | Stops |
-| `arrange-screens` | `/uiux-wireflow` | Task, path | Stops |
-| `arrange-screens` | `/uiux-sitemap` | Screens and groups, task | Stops |
-| `define-appearance` | `/uiux-moodboard` | Visual references | Stops |
-| `define-appearance` | `/uiux-ui-kit` | Values: color, type, space, radius, elevation | Stops |
-| `specify-screen` | `/uiux-mock` | Task, path, UI kit | Stops |
-| `specify-screen` | `/uiux-prototype` | Task, path, drawn screen | Stops |
-| `specify-screen` | `/uiux-handoff` | Mock, UI kit, copy, accessibility notes | Mock and UI kit stop. Copy and notes leave `proposed` |
-| `evaluate-ui` | `/uiux-heuristics` | Screen or flow | Stops |
-| `evaluate-ui` | `/uiux-cognitive-walkthrough` | Task, steps | Stops |
-| `evaluate-ui` | `/uiux-consistency` | UI kit, screen | Stops |
-| `evaluate-ui` | `/uiux-flow-review` | Path | Stops |
-| `evaluate-ui` | `/uiux-implementation-review` | Screenshot or URL, handoff | Without a screenshot or URL it stops. Without an `accepted` handoff it stays `proposed` |
-| `test-with-users` | `/uiux-usability-test` | Task, number of participants | Stops |
-| `test-with-users` | `/uiux-test-analysis` | Test data | Stays `proposed` |
-| `test-with-users` | `/uiux-card-sorting` | Kind: open, closed, or hybrid | Stops |
-| `test-with-users` | `/uiux-tree-testing` | Tree | Stops |
-| `test-with-users` | `/uiux-heart` | Product launched | Stays `proposed` |
-| `record-decision` | `/uiux-decision` | Decision made by whoever asks | Stays `proposed` |
+| Skill | Command | If it is missing |
+| --- | --- | --- |
+| `understand-user` | `/uiux-tasks` | Template `single-task`. `accepted` |
+| `understand-user` | `/uiux-journey-map` | Templates `role-from-task` and `complete-the-task`. `proposed`. No name or biography |
+| `understand-user` | `/uiux-brief` | `task-unsupported` and `finish-unaided` leave `proposed`. Platform `web` can leave `accepted` |
+| `specify-screen` | `/uiux-sketch` | Template `single-task`, written in this turn. `accepted` |
+| `specify-screen` | `/uiux-wireframe` | Template `single-task`. `accepted` |
+| `arrange-screens` | `/uiux-user-flow` | Templates `single-task` and `linear-three`. `accepted` |
+| `arrange-screens` | `/uiux-wireflow` | Templates `single-task` and `linear-three`. `accepted` |
+| `arrange-screens` | `/uiux-sitemap` | Templates `one-group` and `single-task`. `accepted` |
+| `define-appearance` | `/uiux-moodboard` | Template `neutral`. `proposed`. No gallery is searched |
+| `define-appearance` | `/uiux-ui-kit` | Preset `plain`. `accepted`. The other presets are named |
+| `specify-screen` | `/uiux-mock` | `single-task`, `linear-three`, and preset `plain`. `accepted` |
+| `specify-screen` | `/uiux-prototype` | `single-task`, `linear-three`, and `task-blocks` (a wireframe in this turn). `accepted` |
+| `specify-screen` | `/uiux-handoff` | Writes the mock chain if needed. Copy and notes stay blank. `proposed` until they arrive |
+| `evaluate-ui` | `/uiux-heuristics` | Writes a sketch if there is no screen. The review stays `proposed` |
+| `evaluate-ui` | `/uiux-cognitive-walkthrough` | `single-task` and `linear-three`. `proposed` if they were written in this turn |
+| `evaluate-ui` | `/uiux-consistency` | Stops. No product kit, or no screen: nothing is written. `plain` is not used |
+| `evaluate-ui` | `/uiux-flow-review` | Template `linear-three`. `proposed` if the flow was written in this turn |
+| `evaluate-ui` | `/uiux-implementation-review` | Stops without a screenshot or a URL. Without an `accepted` handoff it stays `proposed` |
+| `test-with-users` | `/uiux-usability-test` | `single-task` and `nielsen-5` (5 people, qualitative, not recruited). `accepted` |
+| `test-with-users` | `/uiux-test-analysis` | No rows: results stay blank. `proposed`. Nothing is invented |
+| `test-with-users` | `/uiux-card-sorting` | Template `open`. An empty card list stays `proposed` |
+| `test-with-users` | `/uiux-tree-testing` | Writes a sitemap with `one-group`. A plan is `accepted` |
+| `test-with-users` | `/uiux-heart` | Not launched: `proposed`. No usage figures |
+| `record-decision` | `/uiux-decision` | Not made: `proposed`. No option is chosen |
 
-`/uiux-help` has no prerequisites. Copy comes from `plugin-ux-writing` or from whoever pastes it. Accessibility notes come from `plugin-accessibility`. The journey-map persona comes from whoever asks for the map. Each manual, in `skills/<skill>/references/`, repeats these names and brings the single prompt and the order.
+The reply ends with one line per template: the value taken automatically, the command that changes it, and the command that regenerates the piece. The same lines are in the file under `Assumed` and in `STATUS.md` `notas`. An `accepted` file wins over the message, and the message wins over the template.
 
 ## Catalog
 
-| Skill | Piece | Action | Documentation |
+| Command | Skill | Piece | Documentation |
 | --- | --- | --- | --- |
-| [understand-user](skills/understand-user/SKILL.md) | Tasks | `/uiux-tasks` | [reference](skills/understand-user/references/tasks.md) |
-| [understand-user](skills/understand-user/SKILL.md) | Journey map | `/uiux-journey-map` | [reference](skills/understand-user/references/journey-map.md) |
-| [understand-user](skills/understand-user/SKILL.md) | Brief | `/uiux-brief` | [reference](skills/understand-user/references/brief.md) |
-| [specify-screen](skills/specify-screen/SKILL.md) | Sketch | `/uiux-sketch` | [reference](skills/specify-screen/references/sketch.md) |
-| [specify-screen](skills/specify-screen/SKILL.md) | Wireframe | `/uiux-wireframe` | [reference](skills/specify-screen/references/wireframe.md) |
-| [specify-screen](skills/specify-screen/SKILL.md) | Mock | `/uiux-mock` | [reference](skills/specify-screen/references/mock.md) |
-| [specify-screen](skills/specify-screen/SKILL.md) | Prototype | `/uiux-prototype` | [reference](skills/specify-screen/references/prototype.md) |
-| [specify-screen](skills/specify-screen/SKILL.md) | Handoff | `/uiux-handoff` | [reference](skills/specify-screen/references/handoff.md) |
-| [arrange-screens](skills/arrange-screens/SKILL.md) | User flow | `/uiux-user-flow` | [reference](skills/arrange-screens/references/user-flow.md) |
-| [arrange-screens](skills/arrange-screens/SKILL.md) | Wireflow | `/uiux-wireflow` | [reference](skills/arrange-screens/references/wireflow.md) |
-| [arrange-screens](skills/arrange-screens/SKILL.md) | Sitemap | `/uiux-sitemap` | [reference](skills/arrange-screens/references/sitemap.md) |
-| [define-appearance](skills/define-appearance/SKILL.md) | Moodboard | `/uiux-moodboard` | [reference](skills/define-appearance/references/moodboard.md) |
-| [define-appearance](skills/define-appearance/SKILL.md) | UI kit | `/uiux-ui-kit` | [reference](skills/define-appearance/references/ui-kit.md) |
-| [evaluate-ui](skills/evaluate-ui/SKILL.md) | Heuristics | `/uiux-heuristics` | [reference](skills/evaluate-ui/references/heuristics.md) |
-| [evaluate-ui](skills/evaluate-ui/SKILL.md) | Cognitive walkthrough | `/uiux-cognitive-walkthrough` | [reference](skills/evaluate-ui/references/cognitive-walkthrough.md) |
-| [evaluate-ui](skills/evaluate-ui/SKILL.md) | Consistency | `/uiux-consistency` | [reference](skills/evaluate-ui/references/consistency.md) |
-| [evaluate-ui](skills/evaluate-ui/SKILL.md) | Flow review | `/uiux-flow-review` | [reference](skills/evaluate-ui/references/flow-review.md) |
-| [evaluate-ui](skills/evaluate-ui/SKILL.md) | Implementation review | `/uiux-implementation-review` | [reference](skills/evaluate-ui/references/implementation-review.md) |
-| [test-with-users](skills/test-with-users/SKILL.md) | Usability test | `/uiux-usability-test` | [reference](skills/test-with-users/references/usability-test.md) |
-| [test-with-users](skills/test-with-users/SKILL.md) | Test analysis | `/uiux-test-analysis` | [reference](skills/test-with-users/references/test-analysis.md) |
-| [test-with-users](skills/test-with-users/SKILL.md) | Card sorting | `/uiux-card-sorting` | [reference](skills/test-with-users/references/card-sorting.md) |
-| [test-with-users](skills/test-with-users/SKILL.md) | Tree testing | `/uiux-tree-testing` | [reference](skills/test-with-users/references/tree-testing.md) |
-| [test-with-users](skills/test-with-users/SKILL.md) | HEART | `/uiux-heart` | [reference](skills/test-with-users/references/heart.md) |
-| [record-decision](skills/record-decision/SKILL.md) | Design decision | `/uiux-decision` | [reference](skills/record-decision/references/decision.md) |
+| `/uiux-tasks` | [understand-user](skills/understand-user/SKILL.md) | Tasks | [reference](skills/understand-user/references/tasks.md) |
+| `/uiux-journey-map` | [understand-user](skills/understand-user/SKILL.md) | Journey map | [reference](skills/understand-user/references/journey-map.md) |
+| `/uiux-brief` | [understand-user](skills/understand-user/SKILL.md) | Brief | [reference](skills/understand-user/references/brief.md) |
+| `/uiux-sketch` | [specify-screen](skills/specify-screen/SKILL.md) | Sketch | [reference](skills/specify-screen/references/sketch.md) |
+| `/uiux-wireframe` | [specify-screen](skills/specify-screen/SKILL.md) | Wireframe | [reference](skills/specify-screen/references/wireframe.md) |
+| `/uiux-mock` | [specify-screen](skills/specify-screen/SKILL.md) | Mock | [reference](skills/specify-screen/references/mock.md) |
+| `/uiux-prototype` | [specify-screen](skills/specify-screen/SKILL.md) | Prototype | [reference](skills/specify-screen/references/prototype.md) |
+| `/uiux-handoff` | [specify-screen](skills/specify-screen/SKILL.md) | Handoff | [reference](skills/specify-screen/references/handoff.md) |
+| `/uiux-user-flow` | [arrange-screens](skills/arrange-screens/SKILL.md) | User flow | [reference](skills/arrange-screens/references/user-flow.md) |
+| `/uiux-wireflow` | [arrange-screens](skills/arrange-screens/SKILL.md) | Wireflow | [reference](skills/arrange-screens/references/wireflow.md) |
+| `/uiux-sitemap` | [arrange-screens](skills/arrange-screens/SKILL.md) | Sitemap | [reference](skills/arrange-screens/references/sitemap.md) |
+| `/uiux-moodboard` | [define-appearance](skills/define-appearance/SKILL.md) | Moodboard | [reference](skills/define-appearance/references/moodboard.md) |
+| `/uiux-ui-kit` | [define-appearance](skills/define-appearance/SKILL.md) | UI kit | [reference](skills/define-appearance/references/ui-kit.md) |
+| `/uiux-heuristics` | [evaluate-ui](skills/evaluate-ui/SKILL.md) | Heuristics | [reference](skills/evaluate-ui/references/heuristics.md) |
+| `/uiux-cognitive-walkthrough` | [evaluate-ui](skills/evaluate-ui/SKILL.md) | Cognitive walkthrough | [reference](skills/evaluate-ui/references/cognitive-walkthrough.md) |
+| `/uiux-consistency` | [evaluate-ui](skills/evaluate-ui/SKILL.md) | Consistency | [reference](skills/evaluate-ui/references/consistency.md) |
+| `/uiux-flow-review` | [evaluate-ui](skills/evaluate-ui/SKILL.md) | Flow review | [reference](skills/evaluate-ui/references/flow-review.md) |
+| `/uiux-implementation-review` | [evaluate-ui](skills/evaluate-ui/SKILL.md) | Implementation review | [reference](skills/evaluate-ui/references/implementation-review.md) |
+| `/uiux-usability-test` | [test-with-users](skills/test-with-users/SKILL.md) | Usability test | [reference](skills/test-with-users/references/usability-test.md) |
+| `/uiux-test-analysis` | [test-with-users](skills/test-with-users/SKILL.md) | Test analysis | [reference](skills/test-with-users/references/test-analysis.md) |
+| `/uiux-card-sorting` | [test-with-users](skills/test-with-users/SKILL.md) | Card sorting | [reference](skills/test-with-users/references/card-sorting.md) |
+| `/uiux-tree-testing` | [test-with-users](skills/test-with-users/SKILL.md) | Tree testing | [reference](skills/test-with-users/references/tree-testing.md) |
+| `/uiux-heart` | [test-with-users](skills/test-with-users/SKILL.md) | HEART | [reference](skills/test-with-users/references/heart.md) |
+| `/uiux-decision` | [record-decision](skills/record-decision/SKILL.md) | Design decision | [reference](skills/record-decision/references/decision.md) |
 
 ## License
 
