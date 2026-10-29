@@ -3,6 +3,8 @@ name: arrange-screens
 description: Arranges the screens of a task into a user flow, a wireflow, or a sitemap. Use it when someone asks for the path between screens, that same path with wireframes, or the map of how screens are grouped.
 ---
 
+<p align="right">Language:&emsp;<img alt="English" src="https://raw.githubusercontent.com/ADRenaline-Suite/.github/main/profile/lang-en-on.svg" align="middle" style="vertical-align:middle"> <a href="SKILL.es.md" style="vertical-align:middle"><img alt="Español" src="https://raw.githubusercontent.com/ADRenaline-Suite/.github/main/profile/lang-es-off.svg" align="middle" style="vertical-align:middle"></a></p>
+
 [🏠 UI/UX Design](../../README.md)
 
 # Arrange screens

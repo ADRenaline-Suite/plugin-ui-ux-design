@@ -3,6 +3,8 @@ name: define-appearance
 description: Sets the visual direction of the interface in a moodboard and the UI kit with its tokens. If no kit is selected, the plain preset is used. Use it when someone asks how the interface looks, or asks for the components or the design tokens.
 ---
 
+<p align="right">Language:&emsp;<img alt="English" src="https://raw.githubusercontent.com/ADRenaline-Suite/.github/main/profile/lang-en-on.svg" align="middle" style="vertical-align:middle"> <a href="SKILL.es.md" style="vertical-align:middle"><img alt="Español" src="https://raw.githubusercontent.com/ADRenaline-Suite/.github/main/profile/lang-es-off.svg" align="middle" style="vertical-align:middle"></a></p>
+
 [🏠 UI/UX Design](../../README.md)
 
 # Define the appearance

@@ -3,32 +3,19 @@ name: uiux-help
 description: "ADRenaline. Help: catalog of plugin-ui-ux-design (skills, rules, commands)."
 ---
 
-# Help — plugin-ui-ux-design
+# Help — ADRenaline UI/UX Design
 
 Print this catalog as the reply. Do not run any skill or command. Do not invent entries that are not listed. If a component was added to the plugin and is missing here, add one line from its frontmatter `description` and say the catalog was refreshed.
 
-Write the sentences in the language of the request. Keep command names, file ids, and every URL unchanged. Every id is a markdown link to the GitHub URL on its line. Do not print an id as plain text.
+When this help command is the first command in the message, every command, skill, or rule named after it is the subject of the help. Do not run those names. Do not print the full catalog. For each name, in the order given, print its catalog line (the linked id and the sentence). When the README has a heading for that command, also print the paragraphs under that heading, up to the next heading. A skill name uses the skill's catalog line and the README group that names that skill, up to its first command heading. A name that is not in this catalog is one line: it is not in this plugin. Do not invent what it does, and do not write a file.
 
-Keep the section headings. Under Commands, group the lines by the skill named in the line. Each group opens with that skill name linked to its SKILL.md. One line per item: the linked id, then the sentence.
+Write the sentences in the language of the request. Keep command names, file ids, and every URL unchanged. Every id is a markdown link to the GitHub URL on its line. Do not print a repository `name` as the visible label of a plugin.
+
+Keep the section headings, in this order: Plugin, Commands, Skills, Rules, Output, Not in this plugin. The title and the Plugin line show `ADRenaline` plus the `displayName`, then one sentence on what the plugin does. Under Commands, group the lines by the skill named in the line. Each group opens with that skill name linked to its SKILL.md. One line per item: the linked id, then the sentence. Output links this plugin's GitHub repository under that same label. A plugin under Not in this plugin uses `ADRenaline` plus its short name, and links to its GitHub repository only when that repository exists.
 
 ## Plugin
 
-- [**plugin-ui-ux-design**](https://github.com/ADRenaline-Suite/plugin-ui-ux-design/blob/main/README.md) — Designs the experience and the interface of screens, from the task through handoff and evaluation, without writing the code.
-
-## Skills
-
-- [**understand-user**](https://github.com/ADRenaline-Suite/plugin-ui-ux-design/blob/main/skills/understand-user/SKILL.md) — Analyzes the user's tasks, builds the journey map, and closes the design brief before any screen is drawn.
-- [**specify-screen**](https://github.com/ADRenaline-Suite/plugin-ui-ux-design/blob/main/skills/specify-screen/SKILL.md) — Produces the sketch, wireframe, mock, prototype, or handoff of a screen, from least to most concrete.
-- [**arrange-screens**](https://github.com/ADRenaline-Suite/plugin-ui-ux-design/blob/main/skills/arrange-screens/SKILL.md) — Arranges the screens of a task into a user flow, a wireflow, or a sitemap.
-- [**define-appearance**](https://github.com/ADRenaline-Suite/plugin-ui-ux-design/blob/main/skills/define-appearance/SKILL.md) — Sets the visual direction of the interface in a moodboard and the UI kit with its tokens. If no kit is selected, the plain preset is used.
-- [**evaluate-ui**](https://github.com/ADRenaline-Suite/plugin-ui-ux-design/blob/main/skills/evaluate-ui/SKILL.md) — Evaluates an interface without users through heuristics, a cognitive walkthrough, consistency with the UI kit, a flow review, or an implementation review.
-- [**test-with-users**](https://github.com/ADRenaline-Suite/plugin-ui-ux-design/blob/main/skills/test-with-users/SKILL.md) — Plans and analyzes a usability test, a card sort, a tree test, or HEART metrics.
-- [**record-decision**](https://github.com/ADRenaline-Suite/plugin-ui-ux-design/blob/main/skills/record-decision/SKILL.md) — Records a design decision with its context, the options, the decision, and the consequences.
-
-## Rules
-
-- [**output-folder**](https://github.com/ADRenaline-Suite/plugin-ui-ux-design/blob/main/rules/output-folder.mdc) — Every file goes in `ui-ux-design/` (or in `outputDirs["plugin-ui-ux-design"]` of `.cursor/adrenaline.json`). The artifact follows the language of the request.
-- [**ui-fidelity**](https://github.com/ADRenaline-Suite/plugin-ui-ux-design/blob/main/rules/ui-fidelity.mdc) — A missing design input uses a named template and is recorded as assumed. Consistency without a product kit, and an implementation review without a built screen, still stop.
+- [**ADRenaline UI/UX Design**](https://github.com/ADRenaline-Suite/plugin-ui-ux-design/blob/main/README.md) — Designs the experience and the interface of screens, from the task through handoff and evaluation, without writing the code.
 
 ## Commands
 
@@ -58,8 +45,24 @@ Keep the section headings. Under Commands, group the lines by the skill named in
 - [**/uiux-heart**](https://github.com/ADRenaline-Suite/plugin-ui-ux-design/blob/main/skills/test-with-users/references/heart.md) — HEART metrics (skill test-with-users) for a product already launched: experience goal, signal, and metric (attitude, engagement, adoption, return, and task success).
 - [**/uiux-decision**](https://github.com/ADRenaline-Suite/plugin-ui-ux-design/blob/main/skills/record-decision/references/decision.md) — Design decision (skill record-decision): the context, the options, the decision, and the consequences, and whether that decision governs.
 
+## Skills
+
+- [**understand-user**](https://github.com/ADRenaline-Suite/plugin-ui-ux-design/blob/main/skills/understand-user/SKILL.md) — Analyzes the user's tasks, builds the journey map, and closes the design brief before any screen is drawn.
+- [**specify-screen**](https://github.com/ADRenaline-Suite/plugin-ui-ux-design/blob/main/skills/specify-screen/SKILL.md) — Produces the sketch, wireframe, mock, prototype, or handoff of a screen, from least to most concrete.
+- [**arrange-screens**](https://github.com/ADRenaline-Suite/plugin-ui-ux-design/blob/main/skills/arrange-screens/SKILL.md) — Arranges the screens of a task into a user flow, a wireflow, or a sitemap.
+- [**define-appearance**](https://github.com/ADRenaline-Suite/plugin-ui-ux-design/blob/main/skills/define-appearance/SKILL.md) — Sets the visual direction of the interface in a moodboard and the UI kit with its tokens. If no kit is selected, the plain preset is used.
+- [**evaluate-ui**](https://github.com/ADRenaline-Suite/plugin-ui-ux-design/blob/main/skills/evaluate-ui/SKILL.md) — Evaluates an interface without users through heuristics, a cognitive walkthrough, consistency with the UI kit, a flow review, or an implementation review.
+- [**test-with-users**](https://github.com/ADRenaline-Suite/plugin-ui-ux-design/blob/main/skills/test-with-users/SKILL.md) — Plans and analyzes a usability test, a card sort, a tree test, or HEART metrics.
+- [**record-decision**](https://github.com/ADRenaline-Suite/plugin-ui-ux-design/blob/main/skills/record-decision/SKILL.md) — Records a design decision with its context, the options, the decision, and the consequences.
+
+## Rules
+
+- [**output-folder**](https://github.com/ADRenaline-Suite/plugin-ui-ux-design/blob/main/rules/output-folder.mdc) — Every file goes in `ui-ux-design/` (or in `outputDirs["plugin-ui-ux-design"]` of `.cursor/adrenaline.json`). The artifact follows the language of the request.
+- [**ui-fidelity**](https://github.com/ADRenaline-Suite/plugin-ui-ux-design/blob/main/rules/ui-fidelity.mdc) — A missing design input uses a named template and is recorded as assumed. Consistency without a product kit, and an implementation review without a built screen, still stop.
+
 ## Output
 
+- Repository: [**ADRenaline UI/UX Design**](https://github.com/ADRenaline-Suite/plugin-ui-ux-design).
 - Folder: `ui-ux-design/` (override via `.cursor/adrenaline.json`).
 - Name: `<NNN>-<type>-<topic>.<ext>`, with monotonic `<NNN>`. The prose follows the language of the request. The type stays the English piece id.
 
@@ -73,17 +76,18 @@ Keep the section headings. Under Commands, group the lines by the skill named in
 
 ## Not in this plugin
 
-- UML diagrams → `plugin-uml-diagrams`.
-- WCAG audit and accessibility notes → `plugin-accessibility`.
-- Interface copy → `plugin-ux-writing`.
-- Use case → `plugin-project-manager`.
-- Test scenario → `plugin-qa-engineer`.
-- Interface code, instrumentation, and Core Web Vitals → frontend area.
+- UML diagrams → [**ADRenaline UML Diagrams**](https://github.com/ADRenaline-Suite/plugin-uml-diagrams).
+- WCAG audit and accessibility notes → ADRenaline Accessibility.
+- Interface copy → ADRenaline UX Writing.
+- Use case → ADRenaline Project Manager.
+- Test scenario → ADRenaline QA Engineer.
+- Interface code, instrumentation, and Core Web Vitals → ADRenaline Frontend.
 
 In Claude Code, commands use the prefix `/plugin-ui-ux-design:` (example: `/plugin-ui-ux-design:uiux-help`).
 
 ## Done
 
-- The reply is this catalog. Every id is a markdown link to the GitHub URL listed here. Commands are grouped by skill.
+- With no names after this command, the reply is this catalog. Every id is a markdown link to the GitHub URL listed here. Commands are grouped by skill.
+- With names after this command, the reply is only the help for those names, in that order: the catalog line and, when the README has it, the paragraphs under that heading. The other names were not run.
 - No skill ran. No command ran. No file was written.
 - No entry was invented. If a component exists in the plugin and is missing here, one line was added from its `description` and the reply says the catalog was refreshed.

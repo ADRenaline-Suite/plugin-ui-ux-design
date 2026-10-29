@@ -3,6 +3,8 @@ name: test-with-users
 description: Plans and analyzes a usability test, a card sort, a tree test, or HEART metrics. Use it when someone asks to measure with users or to define metrics for a product that is already launched. It does not recruit or run sessions.
 ---
 
+<p align="right">Language:&emsp;<img alt="English" src="https://raw.githubusercontent.com/ADRenaline-Suite/.github/main/profile/lang-en-on.svg" align="middle" style="vertical-align:middle"> <a href="SKILL.es.md" style="vertical-align:middle"><img alt="Español" src="https://raw.githubusercontent.com/ADRenaline-Suite/.github/main/profile/lang-es-off.svg" align="middle" style="vertical-align:middle"></a></p>
+
 [🏠 UI/UX Design](../../README.md)
 
 # Test with users

@@ -3,6 +3,8 @@ name: understand-user
 description: Analyzes the user's tasks, builds the journey map, and closes the design brief before any screen is drawn. Use it when discovering or defining an interface problem, or when someone asks for tasks, a journey map, or a brief.
 ---
 
+<p align="right">Language:&emsp;<img alt="English" src="https://raw.githubusercontent.com/ADRenaline-Suite/.github/main/profile/lang-en-on.svg" align="middle" style="vertical-align:middle"> <a href="SKILL.es.md" style="vertical-align:middle"><img alt="Español" src="https://raw.githubusercontent.com/ADRenaline-Suite/.github/main/profile/lang-es-off.svg" align="middle" style="vertical-align:middle"></a></p>
+
 [🏠 UI/UX Design](../../README.md)
 
 # Understand the user
