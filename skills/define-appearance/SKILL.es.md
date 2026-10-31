@@ -70,6 +70,8 @@ La carpeta es `ui-ux-design/` en la raíz del proyecto. Si `.cursor/adrenaline.j
 
 Mantén `<folder>/STATUS.md` con las columnas `N`, `archivo`, `estado`, `sustituye` y `notas`. Los estados son `proposed`, `accepted`, `deprecated` y `superseded`. Al elegir qué seguir, el orden es `accepted`, luego `proposed`, luego `deprecated`, luego `superseded`.
 
+Mantén `<folder>/ORIGIN.json` junto a `STATUS.md`. No es un archivo `<NNN>` y no tiene fila en `STATUS.md`. Escríbelo cuando se crea la carpeta. En una entrega posterior, vuelve a escribirlo solo si falta o si un campo difiere. Los campos son `suite` `ADRenaline-Suite`, `plugin` `plugin-ui-ux-design`, `repository` `https://github.com/ADRenaline-Suite/plugin-ui-ux-design` y `convention` `adr-001`. El marcador nombra la carpeta. No dice que cada archivo de dentro siga sin cambios.
+
 Si el tema ya tiene un archivo:
 
 - La persona pide cambiar esa entrega: edita los mismos archivos, conserva el `<NNN>` y déjalo `accepted`.
@@ -84,6 +86,7 @@ Antes de cerrar, evalúa esta lista y la lista `## Terminado` de la referencia d
 
 - La situación de este turno es la única que se escribe, salvo que el pedido pidiera dos. Cada entrega tiene su `<NNN>`.
 - Los archivos están solo en la carpeta de salida, nombrados como dice Entrega. `<NNN>` no se reutiliza. `STATUS.md` coincide con los archivos y con el estado que esta situación permite. Un hueco que la referencia deja como `proposed` se queda `proposed`.
+- `ORIGIN.json` está en la carpeta de salida. Sus cuatro campos coinciden con este plugin. No tiene fila en `STATUS.md`.
 - El idioma del artefacto coincide con el pedido. Las columnas de `STATUS.md` siguen `N`, `archivo`, `estado`, `sustituye`, `notas`.
 - Cada campo que la plantilla exige está lleno. No queda un marcador (`#…`, `<task>`, `TBD`, lorem ipsum). Un campo que la referencia manda dejar en blanco hasta que lleguen los datos está en blanco a propósito, y el estado es el que la referencia nombra.
 - No se añadió nada que este skill prohíbe. La referencia nombra qué queda fuera.

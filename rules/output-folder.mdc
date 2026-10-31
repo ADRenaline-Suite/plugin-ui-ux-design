@@ -12,3 +12,5 @@ If `.cursor/adrenaline.json` exists and `outputDirs["plugin-ui-ux-design"]` hold
 Create the folder if it does not exist. Do not write anywhere else.
 
 Write the artifact in the language of the request. If the request names a language, use that one. Otherwise use the language the request is written in. Keep names the person already used. The type in the file name stays the English piece id. `STATUS.md` columns stay `N`, `archivo`, `estado`, `sustituye`, `notas`.
+
+Keep `ORIGIN.json` in that folder, beside `STATUS.md`. The fields are `suite` `ADRenaline-Suite`, `plugin` `plugin-ui-ux-design`, `repository` `https://github.com/ADRenaline-Suite/plugin-ui-ux-design`, and `convention` `adr-001`. It is not an `<NNN>` file and it has no row in `STATUS.md`. Write it when the folder is created, and again only if it is missing or a field differs. The marker names the folder. It does not say that each file inside is unchanged.

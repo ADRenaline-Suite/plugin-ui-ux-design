@@ -50,7 +50,7 @@ gh skill install ADRenaline-Suite/plugin-ui-ux-design
 
 No usa variables ni servicios.
 
-Cada entrega se guarda en `ui-ux-design/` en la raíz del proyecto, con un `<NNN>` monótono que no se reutiliza. La misma entrega comparte ese número: el Markdown y su SVG, CSV o `.tokens.json`. La carpeta lleva `STATUS.md` (`proposed` | `accepted` | `deprecated` | `superseded`). Al elegir qué seguir, manda `accepted`. La prosa del archivo sigue el idioma del pedido. El tipo en el nombre del archivo sigue siendo el id de la pieza en inglés. Las columnas de `STATUS.md` siguen `N`, `archivo`, `estado`, `sustituye`, `notas`.
+Cada entrega se guarda en `ui-ux-design/` en la raíz del proyecto, con un `<NNN>` monótono que no se reutiliza. La misma entrega comparte ese número: el Markdown y su SVG, CSV o `.tokens.json`. La carpeta lleva `STATUS.md` (`proposed` | `accepted` | `deprecated` | `superseded`). Al elegir qué seguir, manda `accepted`. Junto a él, `ORIGIN.json` nombra este plugin (`suite`, `plugin`, `repository`, `convention` `adr-001`). No es un archivo `<NNN>`. La prosa del archivo sigue el idioma del pedido. El tipo en el nombre del archivo sigue siendo el id de la pieza en inglés. Las columnas de `STATUS.md` siguen `N`, `archivo`, `estado`, `sustituye`, `notas`.
 
 Para usar otra carpeta, agrega `.cursor/adrenaline.json` al proyecto:
 

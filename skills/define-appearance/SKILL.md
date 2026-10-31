@@ -70,6 +70,8 @@ The folder is `ui-ux-design/` at the project root. If `.cursor/adrenaline.json` 
 
 Keep `<folder>/STATUS.md` with columns `N`, `archivo`, `estado`, `sustituye`, and `notas`. The states are `proposed`, `accepted`, `deprecated`, and `superseded`. When choosing what to follow, the order is `accepted`, then `proposed`, then `deprecated`, then `superseded`.
 
+Keep `<folder>/ORIGIN.json` beside `STATUS.md`. It is not an `<NNN>` file and it has no row in `STATUS.md`. Write it when the folder is created. On a later delivery, write it again only when it is missing or a field differs. The fields are `suite` `ADRenaline-Suite`, `plugin` `plugin-ui-ux-design`, `repository` `https://github.com/ADRenaline-Suite/plugin-ui-ux-design`, and `convention` `adr-001`. The marker names the folder. It does not say that each file inside is unchanged.
+
 If the topic already has a file:
 
 - The user asks to change that delivery: edit the same files, keep the `<NNN>`, and leave it `accepted`.
@@ -84,6 +86,7 @@ Before you close, evaluate this list and the `## Done` list in the reference for
 
 - The situation of this turn is the only one written, unless the request asked for two. Each delivery has its own `<NNN>`.
 - Files are only in the output folder, named as Delivery says. `<NNN>` is not reused. `STATUS.md` matches the files and the state this situation allows. A gap the reference leaves as `proposed` stays `proposed`.
+- `ORIGIN.json` is in the output folder. Its four fields match this plugin. It has no row in `STATUS.md`.
 - The artifact language matches the request. `STATUS.md` columns stay `N`, `archivo`, `estado`, `sustituye`, `notas`.
 - Every field the template requires is filled. No placeholder remains (`#…`, `<task>`, `TBD`, lorem ipsum). A field the reference tells you to leave blank until data arrives is blank on purpose, and the state is the one the reference names.
 - Nothing this skill forbids was added. The reference names what stays out.

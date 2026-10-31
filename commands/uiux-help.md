@@ -73,6 +73,7 @@ Keep the section headings, in this order: Plugin, Commands, Skills, Rules, Outpu
 | `.tokens.json` | UI kit tokens in DTCG 2025.10. |
 | `.csv` | Test observations, SUS answers, card sorting, and tree testing. |
 | `STATUS.md` | State of each file. Columns stay `N`, `archivo`, `estado`, `sustituye`, `notas`. |
+| `ORIGIN.json` | Folder marker: `suite`, `plugin`, `repository`, `convention` `adr-001`. Not an `<NNN>` file |
 
 ## Not in this plugin
 
