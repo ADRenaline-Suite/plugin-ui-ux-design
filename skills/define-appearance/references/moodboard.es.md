@@ -17,7 +17,7 @@ Los tokens formales y los estados de cada componente. Eso es el kit de interfaz.
 ## Cómo hacerlo
 
 1. Las referencias son enlaces o piezas que proporcionó la persona. No busques una galería ni inventes otras marcas como si pertenecieran al producto. Si no se proporciona ninguna, aplica la plantilla `neutral` y deja la entrega `proposed`.
-2. Un SVG por pantalla de ejemplo. Muestras de color en rectángulos con su hex, una línea de tipo en la familia que nombró la persona, y un bloque de pantalla en ese tono. `xmlns="http://www.w3.org/2000/svg"` y `viewBox`. Sin `foreignObject`.
+2. Un SVG por pantalla de ejemplo. Muestras de color en rectángulos con su hex, una línea de tipo en la familia que nombró la persona, y un bloque de pantalla en ese tono. `xmlns="http://www.w3.org/2000/svg"`, un `viewBox`, y `width` y `height` en `px` iguales a ese `viewBox`. Varios marcos van en fila y pasan a la siguiente para que el ancho del `viewBox` sea al menos su alto. Los caracteres fuera de ASCII son referencias numéricas, así el archivo es UTF-8 válido. Sin `foreignObject`.
 3. El tono se dice con ejemplos de sí y de no que dio la persona. Si no dio ninguno, describe el tono en una frase y no escribas el microtexto: eso es `plugin-ux-writing`.
 4. Si el producto ya tiene un kit de interfaz, el moodboard no lo sustituye. Muestra cómo se aplica el kit.
 
@@ -58,5 +58,5 @@ No hay un comando anterior. El único prompt es el camino.
 ## Terminado
 
 - Las referencias son enlaces o piezas que proporcionó la persona, o la plantilla `neutral` cuando no se proporcionó ninguna. No se buscó una galería y no se añadió otra marca como si fuera la del producto. Cuando se usó `neutral`, la entrega es `proposed` y Assumed lo dice.
-- Cada pantalla de ejemplo tiene un SVG con `xmlns` y un `viewBox`, una muestra de color con su hex, y el tipo que nombró la persona. Sin `foreignObject`.
+- Cada pantalla de ejemplo tiene un SVG con `xmlns`, un `viewBox`, y `width` y `height` en `px` iguales a ese `viewBox`. Los marcos pasan de fila para que el ancho sea al menos el alto. Los caracteres fuera de ASCII son referencias numéricas, así el archivo es UTF-8 válido. Una muestra de color con su hex, y el tipo que nombró la persona. Sin `foreignObject`.
 - El tono usa los ejemplos de sí y de no de la persona, o una frase si no dio ninguno. No se escribió microtexto. Los tokens y los estados de los componentes quedan abiertos. Un kit existente no se sustituyó.

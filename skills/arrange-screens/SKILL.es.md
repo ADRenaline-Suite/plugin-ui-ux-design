@@ -64,7 +64,9 @@ No inventes textos, notas de accesibilidad, filas de prueba, cifras de HEART, un
 
 ## Entrega
 
-La carpeta es `ui-ux-design/` en la raíz del proyecto. Si `.cursor/adrenaline.json` tiene `outputDirs["plugin-ui-ux-design"]` con una ruta relativa, sin `..` y no absoluta, usa esa ruta. Si falta el archivo, la clave o una ruta válida, usa `ui-ux-design/` y, en el último caso, dilo. Crea la carpeta si no existe. No escribas fuera de ella. No elijas la carpeta de otro plugin.
+La carpeta es `adrenaline/ui-ux-design/` en la raíz del proyecto. Si `.cursor/adrenaline.json` tiene `outputDirs["plugin-ui-ux-design"]` con una ruta relativa, sin `..` y no absoluta, usa esa ruta. Si falta el archivo, la clave o una ruta válida, usa `adrenaline/ui-ux-design/` y, en el último caso, dilo. Si `adrenaline/ui-ux-design/` aún no existe y `ui-ux-design/` en la raíz ya tiene el `ORIGIN.json` o el `STATUS.md` de este plugin, sigue escribiendo ahí y dilo. Crea la carpeta si no existe. No escribas fuera de ella. No elijas la carpeta de otro plugin.
+
+Un asunto es una subcarpeta, `<topic>` en kebab-case (`login`, `crud-usuarios-permisos`). Los archivos de ese asunto van ahí, incluidos los que se escriben en el mismo turno. Un asunto distinto abre otra subcarpeta. `<NNN>` es el siguiente número libre de toda la carpeta de salida, y no se reutiliza. `STATUS.md` y `ORIGIN.json` se quedan en la carpeta de salida. La celda `archivo` es `<topic>/<file>`.
 
 Cada archivo nuevo se llama `<NNN>-<type>-<topic>.<ext>`. `<NNN>` es el siguiente entero libre de esa carpeta, con tres dígitos, y no se reutiliza. `<type>` es `user-flow`, `wireflow` o `sitemap`. El flujo de usuario y el sitemap son Markdown con Mermaid. El wireflow añade un SVG por pantalla: `<NNN>-wireflow-<topic>-<screen>.svg`, el mismo `<NNN>`.
 
@@ -85,7 +87,7 @@ Una entrega nueva es `accepted`. Es `proposed` solo cuando la persona pide un bo
 Antes de cerrar, evalúa esta lista y la lista `## Terminado` de la referencia para esta situación. Un comando fija la situación: usa la referencia que nombra ese comando. Cada ítem es verdadero, o corriges la entrega en este turno. No dejes un archivo que falle un ítem. No lo marques `accepted` mientras un ítem falle. Una plantilla que nombra la referencia se aplica y se anota bajo `Assumed`; la entrega usa el estado que nombra esa referencia. Un prerrequisito que todavía detiene la entrega no es una lista fallida: sigue «Cuando falta un prerrequisito» y no escribas archivos de esa pieza.
 
 - La situación de este turno es la única que se escribe, salvo que el pedido pidiera dos. Cada entrega tiene su propio `<NNN>`.
-- Los archivos están solo en la carpeta de salida, nombrados como dice Entrega. `<NNN>` no se reutiliza. `STATUS.md` coincide con los archivos y con el estado que esta situación permite. Un hueco que la referencia deja como `proposed` se queda `proposed`.
+- Los archivos están solo en la carpeta de salida, bajo `<topic>/`, nombrados como dice Entrega. `<NNN>` no se reutiliza. `STATUS.md` coincide con los archivos y con el estado que esta situación permite. Un hueco que la referencia deja como `proposed` se queda `proposed`.
 - `ORIGIN.json` está en la carpeta de salida. Sus cuatro campos coinciden con este plugin. No tiene fila en `STATUS.md`.
 - El idioma del artefacto coincide con el pedido. Las columnas de `STATUS.md` siguen `N`, `archivo`, `estado`, `sustituye`, `notas`.
 - Cada campo que exige la plantilla está lleno. No queda ningún marcador (`#…`, `<task>`, `TBD`, lorem ipsum). Un campo que la referencia manda dejar en blanco hasta que lleguen los datos está en blanco a propósito, y el estado es el que nombra la referencia.
@@ -96,4 +98,4 @@ Antes de cerrar, evalúa esta lista y la lista `## Terminado` de la referencia p
 
 Entrada: «Flujo de usuario para pagar con tarjeta: el cobro puede salir bien o fallar.»
 
-Salida: `ui-ux-design/004-user-flow-pay.md` con un diagrama Mermaid de tres pantallas (datos, resultado, error) y la vuelta del error a los datos. No es un diagrama de actividad.
+Salida: `adrenaline/ui-ux-design/pay/004-user-flow-pay.md` con un diagrama Mermaid de tres pantallas (datos, resultado, error) y la vuelta del error a los datos. No es un diagrama de actividad.

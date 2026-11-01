@@ -118,7 +118,7 @@ The path is cart, payment, result. If the charge fails, it returns to payment wi
 
 ## Done
 
-- The SVG is the accepted mock plus redlines. Every measure is a token the kit has. A missing measure is a gap, and the delivery is `proposed`.
+- The SVG is the accepted mock plus redlines. The root sets `width` and `height` in `px` to the same integers as the `viewBox`, and the frames wrap so that width is at least the height. Characters outside ASCII are numeric character references, so the file is valid UTF-8. Every measure is a token the kit has. A missing measure is a gap, and the delivery is `proposed`.
 - Behavior per breakpoint, states, copy, accessibility, and measures tables are present. Error keeps what was typed. A state that does not apply says why.
 - Copy and accessibility notes are cited from the user, `plugin-ux-writing`, or `plugin-accessibility`. If either is missing, the cell stays blank, the delivery is `proposed`, and the gaps are listed. They were not written here and WCAG was not audited. A mock assumed in this turn also leaves the handoff `proposed`, and Assumed names the templates.
 - Long-string and translation-expansion checks are in the file. RTL is included only if the product needs it. No HTML.

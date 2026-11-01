@@ -85,4 +85,4 @@ El camino es carrito, pago, resultado. Si el cobro falla, vuelve al pago con los
 - El camino es un flujo de usuario accepted, el camino de este turno, o la plantilla `linear-three` escrita en este turno. La línea del kit de interfaz nombra un kit accepted, un id de preset o tokens de este turno. Si no se seleccionó ninguno, el kit es el preset `plain`, escrito por `define-appearance` antes de este archivo. No se inventó una paleta. Cada plantilla usada queda bajo Assumed.
 - Los temas son solo los que el producto tiene. Se dibujan los estados que cambian la apariencia. El error conserva lo que se escribió y muestra qué falló.
 - El texto viene de la persona, de `plugin-ux-writing` o de etiquetas acordadas, y la línea de origen dice cuál. Sin microtextos nuevos.
-- El SVG usa colores del kit. No hay acotaciones ni enlaces a otras pantallas.
+- El SVG usa colores del kit. La raíz lleva `width` y `height` en `px` con los mismos enteros del `viewBox`, y los marcos pasan de fila para que ese ancho sea al menos el alto. Los caracteres fuera de ASCII son referencias numéricas, así el archivo es UTF-8 válido. No hay acotaciones ni enlaces a otras pantallas.

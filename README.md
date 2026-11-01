@@ -50,7 +50,9 @@ gh skill install ADRenaline-Suite/plugin-ui-ux-design
 
 It uses no variables and no services.
 
-Each delivery is saved in `ui-ux-design/` at the project root, with a monotonic `<NNN>` that is not reused. The same delivery shares that number: the Markdown and its SVG, CSV, or `.tokens.json`. The folder keeps `STATUS.md` (`proposed` | `accepted` | `deprecated` | `superseded`). When choosing what to follow, `accepted` wins. Beside it, `ORIGIN.json` names this plugin (`suite`, `plugin`, `repository`, `convention` `adr-001`). It is not an `<NNN>` file. The prose of the file follows the language of the request. The type in the file name stays the English piece id. The `STATUS.md` columns stay `N`, `archivo`, `estado`, `sustituye`, `notas`.
+Each delivery is saved in `adrenaline/ui-ux-design/<topic>/` at the project root. `<topic>` is the kebab-case subject of the request, so one subject is one folder. `<NNN>` stays monotonic across that output folder and is not reused. The same delivery shares that number: the Markdown and its SVG, CSV, or `.tokens.json`. The folder keeps `STATUS.md` (`proposed` | `accepted` | `deprecated` | `superseded`). When choosing what to follow, `accepted` wins. Beside it, `ORIGIN.json` names this plugin (`suite`, `plugin`, `repository`, `convention` `adr-001`). It is not an `<NNN>` file. The prose of the file follows the language of the request. The type in the file name stays the English piece id. The `STATUS.md` columns stay `N`, `archivo`, `estado`, `sustituye`, `notas`.
+
+If `adrenaline/ui-ux-design/` does not exist yet and `ui-ux-design/` at the project root already holds this plugin's output, files keep going there.
 
 To use another folder, add `.cursor/adrenaline.json` to the project:
 

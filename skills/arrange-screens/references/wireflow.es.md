@@ -17,7 +17,7 @@ Color, tipo y medidas para construir.
 ## Cómo hacerlo
 
 1. Si hay un flujo de usuario `accepted` para esa tarea, sigue sus pantallas y sus vueltas. Si no lo hay y quien pide describe el camino en este turno, úsalo y cítalo. Si el camino no está dicho, escribe el flujo de usuario en este turno con la plantilla `linear-three`.
-2. Un SVG por pantalla, en gris, con la misma regla visual que un wireframe: bloques, etiquetas, sin color de marca. `xmlns="http://www.w3.org/2000/svg"`, `viewBox`, sin scripts y sin `foreignObject`.
+2. Un SVG por pantalla, en gris, con la misma regla visual que un wireframe: bloques, etiquetas, sin color de marca. `xmlns="http://www.w3.org/2000/svg"`, `viewBox`, y `width` y `height` en `px` iguales a ese `viewBox`. Varios marcos van en fila y pasan a la siguiente para que el ancho del `viewBox` sea al menos su alto. Los caracteres fuera de ASCII son referencias numéricas, así el archivo es UTF-8 válido. Sin scripts y sin `foreignObject`.
 3. El Markdown ordena los pasos y apunta a cada SVG. Los SVG no tienen que estar enlazados: el enlace entre pantallas es el prototipo. Aquí el orden sale de la lista.
 4. Incluye el paso de error cuando el flujo lo tiene. El marco de error conserva los datos que escribió la persona.
 5. Cada paso nombra la tarea que cubre.
@@ -72,5 +72,5 @@ Pantallas: carrito, pago, resultado. Si el cobro falla, vuelve al pago con los d
 ## Terminado
 
 - Los pasos siguen el flujo de usuario `accepted`, el camino descrito en este turno o la plantilla `linear-three` escrita en este turno, en ese orden. Cada paso nombra la tarea y apunta a un SVG en gris. `Assumed` nombra cualquier plantilla.
-- Cada SVG tiene `xmlns`, un `viewBox`, bloques y etiquetas. Sin color de marca, sin scripts, sin `foreignObject` y sin enlaces entre SVG.
+- Cada SVG tiene `xmlns`, un `viewBox`, y `width` y `height` en `px` iguales a ese `viewBox`. Los marcos pasan de fila para que el ancho sea al menos el alto. Los caracteres fuera de ASCII son referencias numéricas, así el archivo es UTF-8 válido. Bloques y etiquetas. Sin color de marca, sin scripts, sin `foreignObject` y sin enlaces entre SVG.
 - El paso de error se incluye cuando el flujo lo tiene, y ese marco conserva los datos que se escribieron. No están el color, el tipo ni las medidas para construir.

@@ -17,7 +17,7 @@ Color, type, and build measures.
 ## How to do it
 
 1. If there is an `accepted` user flow for that task, follow its screens and its returns. If there is none and the user describes the path in this turn, use it and cite it. If the path is not stated, write the user flow in this turn with template `linear-three`.
-2. One SVG per screen, in gray, with the same visual rule as a wireframe: blocks, labels, no brand color. `xmlns="http://www.w3.org/2000/svg"`, `viewBox`, no scripts and no `foreignObject`.
+2. One SVG per screen, in gray, with the same visual rule as a wireframe: blocks, labels, no brand color. `xmlns="http://www.w3.org/2000/svg"`, `viewBox`, and `width` and `height` in `px` equal to that `viewBox`. Several frames sit in a row and wrap so the `viewBox` width is at least its height. Characters outside ASCII are numeric character references, so the file is valid UTF-8. No scripts and no `foreignObject`.
 3. The Markdown orders the steps and points at each SVG. The SVGs do not have to be linked: the link between screens is the prototype. Here the order comes from the list.
 4. Include the error step when the flow has one. The error frame keeps the data the person typed.
 5. Each step names the task it covers.
@@ -72,5 +72,5 @@ Screens: cart, payment, result. If the charge fails, it returns to payment with 
 ## Done
 
 - The steps follow the accepted user flow, the path described in this turn, or template `linear-three` written in this turn, in that order. Each step names the task and points at one gray SVG. Assumed names any template.
-- Each SVG has `xmlns`, a `viewBox`, blocks, and labels. No brand color, no scripts, no `foreignObject`, and no links between SVGs.
+- Each SVG has `xmlns`, a `viewBox`, and `width` and `height` in `px` equal to that `viewBox`. Frames wrap so the width is at least the height. Characters outside ASCII are numeric character references, so the file is valid UTF-8. Blocks and labels. No brand color, no scripts, no `foreignObject`, and no links between SVGs.
 - The error step is included when the flow has one, and that frame keeps the data that was typed. Color, type, and build measures are absent.

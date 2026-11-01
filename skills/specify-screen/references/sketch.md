@@ -59,7 +59,7 @@ The goal is to pay an order with a card. Tasks: review the amount, enter the car
 
 ## Done
 
-- The task or use case is named, from an accepted analysis, from this turn, or from template `single-task`. When the template was used, Assumed says so. The SVG is grayscale, one file per screen, with rectangles and labels. No brand icons, no final typeface, no pixel measures, no links to other screens.
+- The task or use case is named, from an accepted analysis, from this turn, or from template `single-task`. When the template was used, Assumed says so. The SVG is grayscale, one file per screen, with rectangles and labels. The root sets `width` and `height` in `px` to the same integers as the `viewBox`, and the frames wrap so that width is at least the height. Characters outside ASCII are numeric character references, so the file is valid UTF-8. No brand icons, no final typeface, no pixel measures in the Markdown, no links to other screens.
 - Ideal, empty, loading, partial, error, and success are listed. A state that does not apply says why. A state that changes the blocks has a frame. Error keeps what was typed.
 - Labels are words the user already used, or the subtask name. No new interface copy.
 - Left open stays measure, color, and final copy.

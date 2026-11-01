@@ -57,13 +57,13 @@ Keep the section headings, in this order: Plugin, Commands, Skills, Rules, Outpu
 
 ## Rules
 
-- [**output-folder**](https://github.com/ADRenaline-Suite/plugin-ui-ux-design/blob/main/rules/output-folder.mdc) — Every file goes in `ui-ux-design/` (or in `outputDirs["plugin-ui-ux-design"]` of `.cursor/adrenaline.json`). The artifact follows the language of the request.
+- [**output-folder**](https://github.com/ADRenaline-Suite/plugin-ui-ux-design/blob/main/rules/output-folder.mdc) — Every file goes in `adrenaline/ui-ux-design/<topic>/` (or under `outputDirs["plugin-ui-ux-design"]` of `.cursor/adrenaline.json`). One subject is one folder. The artifact follows the language of the request.
 - [**ui-fidelity**](https://github.com/ADRenaline-Suite/plugin-ui-ux-design/blob/main/rules/ui-fidelity.mdc) — A missing design input uses a named template and is recorded as assumed. Consistency without a product kit, and an implementation review without a built screen, still stop.
 
 ## Output
 
 - Repository: [**ADRenaline UI/UX Design**](https://github.com/ADRenaline-Suite/plugin-ui-ux-design).
-- Folder: `ui-ux-design/` (override via `.cursor/adrenaline.json`).
+- Folder: `adrenaline/ui-ux-design/<topic>/` (override via `.cursor/adrenaline.json`). One subject is one folder. An existing `ui-ux-design/` at the project root keeps receiving files.
 - Name: `<NNN>-<type>-<topic>.<ext>`, with monotonic `<NNN>`. The prose follows the language of the request. The type stays the English piece id.
 
 | Format | Description |

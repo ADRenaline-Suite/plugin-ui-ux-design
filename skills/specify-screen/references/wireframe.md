@@ -70,5 +70,5 @@ The goal is to pay an order with a card. Tasks: review the amount, enter the car
 ## Done
 
 - Hierarchy and layout are fixed per breakpoint. The task is named, including template `single-task` when it was written in this turn. Breakpoints are the product's, or Material Design 3 if the product has none. A breakpoint that only grows is named in the Markdown and is not redrawn.
-- The SVG stays grayscale. At least one block has a long string. Translation expansion is reserved when a short string may be translated. RTL is a frame only if the product needs it.
+- The SVG stays grayscale. The root sets `width` and `height` in `px` to the same integers as the `viewBox`, and the frames wrap so that width is at least the height. Characters outside ASCII are numeric character references, so the file is valid UTF-8. At least one block has a long string. Translation expansion is reserved when a short string may be translated. RTL is a frame only if the product needs it.
 - States that change the layout are drawn, including error, which keeps what was typed. Brand color and build measures are absent.

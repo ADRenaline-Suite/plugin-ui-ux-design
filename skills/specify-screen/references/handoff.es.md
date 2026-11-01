@@ -118,7 +118,7 @@ El camino es carrito, pago, resultado. Si el cobro falla, vuelve al pago con los
 
 ## Terminado
 
-- El SVG es el mock accepted más las acotaciones. Cada medida es un token que el kit tiene. Una medida que falta es un hueco, y la entrega queda en `proposed`.
+- El SVG es el mock accepted más las acotaciones. La raíz lleva `width` y `height` en `px` con los mismos enteros del `viewBox`, y los marcos pasan de fila para que ese ancho sea al menos el alto. Los caracteres fuera de ASCII son referencias numéricas, así el archivo es UTF-8 válido. Cada medida es un token que el kit tiene. Una medida que falta es un hueco, y la entrega queda en `proposed`.
 - Están las tablas de comportamiento por tamaño de ventana, estados, texto, accesibilidad y medidas. El error conserva lo que se escribió. Un estado que no aplica dice por qué.
 - El texto y las notas de accesibilidad se citan de la persona, de `plugin-ux-writing` o de `plugin-accessibility`. Si falta alguno, la celda se queda en blanco, la entrega queda en `proposed` y se listan los huecos. No se escribieron aquí y no se auditó WCAG. Un mock asumido en este turno también deja el handoff en `proposed`, y Assumed nombra las plantillas.
 - Las comprobaciones de cadena larga y de expansión al traducir están en el archivo. RTL se incluye solo si el producto lo necesita. Sin HTML.

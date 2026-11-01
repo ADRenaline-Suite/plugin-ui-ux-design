@@ -2,7 +2,7 @@
 
 Designs the experience and the interface of the screens of a digital product. The procedure is in `skills/`. Each piece has its manual in `skills/<skill>/references/`.
 
-Files are saved in `ui-ux-design/` at the project root, or in the path `.cursor/adrenaline.json` sets in `outputDirs["plugin-ui-ux-design"]`. The name is `<NNN>-<type>-<topic>.<ext>`, with a monotonic `<NNN>`, and the folder keeps `STATUS.md`.
+Files are saved in `adrenaline/ui-ux-design/` at the project root, or in the path `.cursor/adrenaline.json` sets in `outputDirs["plugin-ui-ux-design"]`. If `adrenaline/ui-ux-design/` does not exist yet and `ui-ux-design/` at the project root already has this plugin's `ORIGIN.json` or `STATUS.md`, keep writing there and say so. One subject is the subfolder `<topic>/` in kebab-case. The name is `<NNN>-<type>-<topic>.<ext>`, with a monotonic `<NNN>` across the whole output folder, and that folder keeps `STATUS.md`. The `archivo` cell is `<topic>/<file>`.
 
 The artifact is written in the language of the request. The type in the file name stays the English piece id. `STATUS.md` columns stay `N`, `archivo`, `estado`, `sustituye`, `notas`.
 

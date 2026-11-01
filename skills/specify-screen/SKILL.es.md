@@ -45,7 +45,7 @@ Fuente: ISO 9241-210:2019 (producir soluciones). Estados: Scott Hurff, The UI St
 
 ## SVG
 
-Uno por pantalla. SVG 1.1, con `xmlns="http://www.w3.org/2000/svg"`, un `viewBox` y un rectángulo de fondo. Texto en `<text>`, `font-family="system-ui, Segoe UI, sans-serif"`. Sin imágenes externas, sin scripts y sin `foreignObject`.
+Uno por pantalla. SVG 1.1, con `xmlns="http://www.w3.org/2000/svg"`, un `viewBox` y un rectángulo de fondo. El elemento raíz lleva `width` y `height` en `px`, con los mismos enteros del `viewBox`. SVG 1.1 trata la ausencia de `width` o `height` como `100%`, y un visor sin tamaño definido deja el gráfico en blanco o lo aplasta. Esos dos atributos son el tamaño intrínseco del archivo. No son medidas del layout, y el Markdown sigue sin anotar píxeles. El archivo es UTF-8. Cada carácter fuera de ASCII es una referencia numérica (`&#183;` para el separador de la etiqueta del marco). El visor lee el archivo como UTF-8, y un byte por encima de 127 que no sea UTF-8 hace que informe que no puede cargar el SVG. Los marcos de un mismo archivo van en fila y pasan a la siguiente para que el ancho del `viewBox` sea al menos su alto. Texto en `<text>`, `font-family="system-ui, Segoe UI, sans-serif"`. Sin imágenes externas, sin scripts y sin `foreignObject`.
 
 Dentro de ese archivo, un marco por estado que cambia lo visible. Un tamaño de ventana se vuelve a dibujar solo cuando cambia la disposición (columnas, qué se muestra, qué se apila). Si solo crece, el Markdown lo dice y el marco no se repite. Los temas son marcos del estado ideal cuando cambian el color o el tipo. Cada marco tiene una etiqueta (`Ideal · Compacto`, `Error · Oscuro`). Esas etiquetas siguen el idioma del artefacto.
 
@@ -88,7 +88,9 @@ No inventes textos, notas de accesibilidad, filas de prueba, cifras de HEART, un
 
 ## Entrega
 
-La carpeta es `ui-ux-design/` en la raíz del proyecto. Si `.cursor/adrenaline.json` tiene `outputDirs["plugin-ui-ux-design"]` con una ruta relativa, sin `..` y no absoluta, usa esa ruta. Si falta el archivo, la clave o una ruta válida, usa `ui-ux-design/` y, en el último caso, dilo. Crea la carpeta si no existe. No escribas fuera de ella. No elijas la carpeta de otro plugin.
+La carpeta es `adrenaline/ui-ux-design/` en la raíz del proyecto. Si `.cursor/adrenaline.json` tiene `outputDirs["plugin-ui-ux-design"]` con una ruta relativa, sin `..` y no absoluta, usa esa ruta. Si falta el archivo, la clave o una ruta válida, usa `adrenaline/ui-ux-design/` y, en el último caso, dilo. Si `adrenaline/ui-ux-design/` aún no existe y `ui-ux-design/` en la raíz ya tiene el `ORIGIN.json` o el `STATUS.md` de este plugin, sigue escribiendo ahí y dilo. Crea la carpeta si no existe. No escribas fuera de ella. No elijas la carpeta de otro plugin.
+
+Un asunto es una subcarpeta, `<topic>` en kebab-case (`login`, `crud-usuarios-permisos`). Los archivos de ese asunto van ahí, incluidos los que se escriben en el mismo turno. Un asunto distinto abre otra subcarpeta. `<NNN>` es el siguiente número libre de toda la carpeta de salida, y no se reutiliza. `STATUS.md` y `ORIGIN.json` se quedan en la carpeta de salida. La celda `archivo` es `<topic>/<file>`.
 
 `<NNN>` es el siguiente entero libre en esa carpeta, de tres dígitos, y no se reutiliza. `<type>` es `sketch`, `wireframe`, `mock`, `prototype` o `handoff`. `<topic>` y `<screen>` van en kebab-case.
 
@@ -109,11 +111,12 @@ El handoff se queda `proposed` cuando faltan el texto o las notas de accesibilid
 Antes de cerrar, evalúa esta lista y la lista `## Terminado` de la referencia para esta situación. Un comando fija la situación: usa la referencia que nombra ese comando. Cada ítem es verdadero, o corriges la entrega en este turno. No dejes un archivo que falle un ítem. No lo marques `accepted` mientras un ítem falle. Una plantilla que nombra la referencia se aplica y se anota bajo `Assumed`; la entrega usa el estado que nombra esa referencia. Un prerrequisito que todavía detiene la entrega no es una lista fallida: sigue «Cuando falta un prerrequisito» y no escribas archivos de esa pieza.
 
 - La situación de este turno es la única que se escribe, salvo que el pedido pidiera dos. Cada entrega tiene su propio `<NNN>`.
-- Los archivos están solo en la carpeta de salida, nombrados como dice Entrega. `<NNN>` no se reutiliza. `STATUS.md` coincide con los archivos y con el estado que esta situación permite. Un hueco que la referencia deja como `proposed` se queda `proposed`.
+- Los archivos están solo en la carpeta de salida, bajo `<topic>/`, nombrados como dice Entrega. `<NNN>` no se reutiliza. `STATUS.md` coincide con los archivos y con el estado que esta situación permite. Un hueco que la referencia deja como `proposed` se queda `proposed`.
 - `ORIGIN.json` está en la carpeta de salida. Sus cuatro campos coinciden con este plugin. No tiene fila en `STATUS.md`.
 - El idioma del artefacto coincide con el pedido. Las columnas de `STATUS.md` siguen `N`, `archivo`, `estado`, `sustituye`, `notas`.
 - Cada campo que exige la plantilla está lleno. No queda ningún marcador (`#…`, `<task>`, `TBD`, lorem ipsum). Un campo que la referencia manda dejar en blanco hasta que lleguen los datos está en blanco a propósito, y el estado es el que nombra la referencia.
 - No se añadió nada que este skill prohíbe. La referencia nombra lo que queda fuera.
+- El `<svg>` raíz lleva `width` y `height` en `px` con los mismos enteros del `viewBox`. Los marcos comparten fila y pasan a la siguiente para que el ancho del `viewBox` sea al menos su alto. Los caracteres fuera de ASCII son referencias numéricas, así el archivo es UTF-8 válido.
 - La respuesta nombra la carpeta, los archivos, el `N` y el estado. Si se aplicó una plantilla, la respuesta termina con el bloque `Assumed`, una línea por plantilla, nombrando el comando que la cambia y el comando que regenera esta pieza. Un blanco dejado a propósito nombra el comando que lo llena.
 
 ## Ejemplo
@@ -122,21 +125,30 @@ Entrada: «Boceto de la pantalla de pago. La tarea es pagar con tarjeta. Platafo
 
 Salida `accepted`:
 
-- `ui-ux-design/001-sketch-payment.md`
-- `ui-ux-design/001-sketch-payment-payment.svg`
+- `adrenaline/ui-ux-design/payment/001-sketch-payment.md`
+- `adrenaline/ui-ux-design/payment/001-sketch-payment-payment.svg`
 - Fila `001` en `STATUS.md` por cada archivo.
 
 El Markdown nombra la tarea «pagar con tarjeta», lista los seis estados y dice que vacío no aplica porque el monto ya viene del pedido. El SVG tiene dos bloques en el estado ideal (monto, tarjeta) y el estado de error conserva esos datos más un bloque de mensaje. No hay medidas ni color de marca. Un pedido escrito en español usa etiquetas en español en el SVG y en el Markdown.
 
 ```svg
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 640">
-  <rect width="360" height="640" fill="#f4f4f4"/>
-  <text x="16" y="32" font-family="system-ui, Segoe UI, sans-serif" font-size="14">Ideal · Compacto</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="712px" height="376px" viewBox="0 0 712 376">
+  <rect width="712" height="376" fill="#f4f4f4"/>
+  <text x="16" y="32" font-family="system-ui, Segoe UI, sans-serif" font-size="14">Ideal &#183; Compacto</text>
   <rect x="16" y="48" width="328" height="64" fill="#ffffff" stroke="#222"/>
   <text x="32" y="84" font-family="system-ui, Segoe UI, sans-serif" font-size="16">Monto del pedido</text>
   <rect x="16" y="128" width="328" height="120" fill="#ffffff" stroke="#222"/>
   <text x="32" y="164" font-family="system-ui, Segoe UI, sans-serif" font-size="16">Tarjeta</text>
   <rect x="16" y="264" width="328" height="48" fill="#ffffff" stroke="#222"/>
   <text x="32" y="294" font-family="system-ui, Segoe UI, sans-serif" font-size="16">Pagar</text>
+  <text x="368" y="32" font-family="system-ui, Segoe UI, sans-serif" font-size="14">Error &#183; Compacto</text>
+  <rect x="368" y="48" width="328" height="64" fill="#ffffff" stroke="#222"/>
+  <text x="384" y="84" font-family="system-ui, Segoe UI, sans-serif" font-size="16">Monto del pedido</text>
+  <rect x="368" y="128" width="328" height="120" fill="#ffffff" stroke="#222"/>
+  <text x="384" y="164" font-family="system-ui, Segoe UI, sans-serif" font-size="16">Tarjeta</text>
+  <rect x="368" y="264" width="328" height="48" fill="#ffffff" stroke="#222"/>
+  <text x="384" y="294" font-family="system-ui, Segoe UI, sans-serif" font-size="16">Pagar</text>
+  <rect x="368" y="320" width="328" height="40" fill="#ffffff" stroke="#222"/>
+  <text x="384" y="346" font-family="system-ui, Segoe UI, sans-serif" font-size="16">Aviso</text>
 </svg>
 ```

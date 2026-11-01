@@ -85,4 +85,4 @@ The path is cart, payment, result. If the charge fails, it returns to payment wi
 - The path is an accepted user flow, the path in this turn, or template `linear-three` written in this turn. The UI kit line names an accepted kit, a preset id, or tokens from this turn. If none was selected, the kit is preset `plain`, written by `define-appearance` before this file. No palette was invented. Each template used is under Assumed.
 - Themes are only the ones the product has. States that change the appearance are drawn. Error keeps what was typed and shows what failed.
 - Copy comes from the user, from `plugin-ux-writing`, or from agreed labels, and the origin line says which. No new microcopy.
-- The SVG uses kit colors. There are no redlines and no links to other screens.
+- The SVG uses kit colors. The root sets `width` and `height` in `px` to the same integers as the `viewBox`, and the frames wrap so that width is at least the height. Characters outside ASCII are numeric character references, so the file is valid UTF-8. There are no redlines and no links to other screens.

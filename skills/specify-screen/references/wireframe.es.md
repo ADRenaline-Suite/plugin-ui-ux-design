@@ -70,5 +70,5 @@ La meta es pagar un pedido con tarjeta. Tareas: revisar el monto, ingresar la ta
 ## Terminado
 
 - La jerarquía y la disposición están fijas por tamaño de ventana. La tarea está nombrada, incluida la plantilla `single-task` cuando se escribió en este turno. Los tamaños de ventana son los del producto, o Material Design 3 si el producto no tiene. Un tamaño de ventana que solo crece se nombra en el Markdown y no se vuelve a dibujar.
-- El SVG se queda en escala de grises. Al menos un bloque tiene una cadena larga. La expansión al traducir se reserva cuando una cadena corta puede traducirse. RTL es un marco solo si el producto lo necesita.
+- El SVG se queda en escala de grises. La raíz lleva `width` y `height` en `px` con los mismos enteros del `viewBox`, y los marcos pasan de fila para que ese ancho sea al menos el alto. Los caracteres fuera de ASCII son referencias numéricas, así el archivo es UTF-8 válido. Al menos un bloque tiene una cadena larga. La expansión al traducir se reserva cuando una cadena corta puede traducirse. RTL es un marco solo si el producto lo necesita.
 - Se dibujan los estados que cambian la disposición, incluido el error, que conserva lo que se escribió. El color de marca y las medidas para construir están ausentes.

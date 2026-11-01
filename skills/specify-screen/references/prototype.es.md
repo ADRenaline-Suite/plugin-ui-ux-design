@@ -88,7 +88,7 @@ El camino es carrito, pago, resultado. Si el cobro falla, vuelve al pago con los
 
 ## Terminado
 
-- El camino se abre en el navegador. Cada pantalla es su propio SVG. Los enlaces son `<a href>` a un SVG hermano de este mismo `<NNN>`. No hay JavaScript. Un wireframe escrito en este turno a partir de la plantilla `task-blocks` se nombra bajo Assumed.
+- El camino se abre en el navegador. Cada pantalla es su propio SVG, con `width` y `height` en `px` iguales al `viewBox`, y los marcos pasan de fila para que ese ancho sea al menos el alto. Los caracteres fuera de ASCII son referencias numéricas, así el archivo es UTF-8 válido. Los enlaces son `<a href>` a un SVG hermano de este mismo `<NNN>`. No hay JavaScript. Un wireframe escrito en este turno a partir de la plantilla `task-blocks` se nombra bajo Assumed.
 - El Markdown nombra el archivo que se abre primero. Cada destino enlazado existe. Una zona sin destino queda sin enlace y la entrega queda en `proposed`.
 - El error de una tarea que puede fallar está incluido, y reintentar vuelve a la pantalla que tiene los datos.
 - Las medidas, los tokens y las notas de accesibilidad están ausentes. No es un diagrama UML. No se reescribió el archivo de mock o de wireframe.

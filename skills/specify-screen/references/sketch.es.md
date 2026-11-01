@@ -59,7 +59,7 @@ La meta es pagar un pedido con tarjeta. Tareas: revisar el monto, ingresar la ta
 
 ## Terminado
 
-- La tarea o el caso de uso está nombrado, a partir de un análisis accepted, de este turno o de la plantilla `single-task`. Cuando se usó la plantilla, Assumed lo dice. El SVG está en escala de grises, un archivo por pantalla, con rectángulos y etiquetas. Sin iconos de marca, sin tipografía final, sin medidas en píxeles, sin enlaces a otras pantallas.
+- La tarea o el caso de uso está nombrado, a partir de un análisis accepted, de este turno o de la plantilla `single-task`. Cuando se usó la plantilla, Assumed lo dice. El SVG está en escala de grises, un archivo por pantalla, con rectángulos y etiquetas. La raíz lleva `width` y `height` en `px` con los mismos enteros del `viewBox`, y los marcos pasan de fila para que ese ancho sea al menos el alto. Los caracteres fuera de ASCII son referencias numéricas, así el archivo es UTF-8 válido. Sin iconos de marca, sin tipografía final, sin medidas en píxeles en el Markdown, sin enlaces a otras pantallas.
 - Están listados ideal, vacío, carga, parcial, error y éxito. Un estado que no aplica dice por qué. Un estado que cambia los bloques tiene un marco. El error conserva lo que se escribió.
 - Las etiquetas son palabras que la persona ya usó, o el nombre de la subtarea. Sin texto de interfaz nuevo.
 - Lo dejado abierto sigue siendo medida, color y texto final.

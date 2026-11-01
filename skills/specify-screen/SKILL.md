@@ -45,7 +45,7 @@ Source: ISO 9241-210:2019 (produce solutions). States: Scott Hurff, The UI Stack
 
 ## SVG
 
-One per screen. SVG 1.1, with `xmlns="http://www.w3.org/2000/svg"`, a `viewBox`, and a background rectangle. Text in `<text>`, `font-family="system-ui, Segoe UI, sans-serif"`. No external images, no scripts, and no `foreignObject`.
+One per screen. SVG 1.1, with `xmlns="http://www.w3.org/2000/svg"`, a `viewBox`, and a background rectangle. The root element sets `width` and `height` in `px` to the same integers as the `viewBox`. SVG 1.1 treats a missing `width` or `height` as `100%`, and a preview with no definite size leaves the graphic blank or crushes it. Those two attributes are the intrinsic size of the file. They are not layout measures, and the Markdown still does not note pixels. The file is UTF-8. Every character outside ASCII is a numeric character reference (`&#183;` for the separator in a frame label). The preview parses the file as UTF-8, and a raw byte above 127 that is not UTF-8 makes it report that it cannot load the SVG. Frames in one file sit in a row and wrap to the next row so the `viewBox` width is at least its height. Text in `<text>`, `font-family="system-ui, Segoe UI, sans-serif"`. No external images, no scripts, and no `foreignObject`.
 
 Inside that file, one frame per state that changes what is visible. A breakpoint is drawn again only when the layout changes (columns, what is shown, what stacks). If it only grows, the Markdown says so and the frame is not repeated. Themes are frames of the ideal state when color or type changes. Each frame has a label (`Ideal · Compact`, `Error · Dark`). Those labels follow the language of the artifact.
 
@@ -88,7 +88,9 @@ Do not invent copy, accessibility notes, test rows, HEART figures, a chosen deci
 
 ## Delivery
 
-The folder is `ui-ux-design/` at the project root. If `.cursor/adrenaline.json` has `outputDirs["plugin-ui-ux-design"]` set to a relative path, without `..` and not absolute, use that path. If the file, the key, or a valid path is missing, use `ui-ux-design/` and, in the last case, say so. Create the folder if it does not exist. Do not write outside it. Do not choose another plugin's folder.
+The folder is `adrenaline/ui-ux-design/` at the project root. If `.cursor/adrenaline.json` has `outputDirs["plugin-ui-ux-design"]` set to a relative path, without `..` and not absolute, use that path. If the file, the key, or a valid path is missing, use `adrenaline/ui-ux-design/` and, in the last case, say so. If `adrenaline/ui-ux-design/` does not exist yet and `ui-ux-design/` at the project root already has this plugin's `ORIGIN.json` or `STATUS.md`, keep writing there and say so. Create the folder if it does not exist. Do not write outside it. Do not choose another plugin's folder.
+
+One subject is one subfolder, `<topic>` in kebab-case (`login`, `crud-usuarios-permisos`). Files of that subject go there, including the pieces written in the same turn. A different subject gets a new subfolder. `<NNN>` is the next free number in the whole output folder, and it is not reused. `STATUS.md` and `ORIGIN.json` stay in the output folder. The `archivo` cell is `<topic>/<file>`.
 
 `<NNN>` is the next free integer in that folder, three digits, and it is not reused. `<type>` is `sketch`, `wireframe`, `mock`, `prototype`, or `handoff`. `<topic>` and `<screen>` are kebab-case.
 
@@ -109,11 +111,12 @@ The handoff stays `proposed` when the copy or the accessibility notes are missin
 Before you close, evaluate this list and the `## Done` list in the reference for this situation. A command fixes the situation: use the reference that command names. Every item is true, or you fix the delivery in this turn. Do not leave a file that fails an item. Do not mark it `accepted` while an item fails. A template the reference names is applied and recorded under Assumed; the delivery uses the state that reference names. A prerequisite that still stops the delivery is not a failed list: follow "When a prerequisite is missing" and write no files for that piece.
 
 - The situation of this turn is the only one written, unless the request asked for two. Each delivery has its own `<NNN>`.
-- Files are only in the output folder, named as Delivery says. `<NNN>` is not reused. `STATUS.md` matches the files and the state this situation allows. A gap the reference leaves as `proposed` stays `proposed`.
+- Files are only in the output folder, under `<topic>/`, named as Delivery says. `<NNN>` is not reused. `STATUS.md` matches the files and the state this situation allows. A gap the reference leaves as `proposed` stays `proposed`.
 - `ORIGIN.json` is in the output folder. Its four fields match this plugin. It has no row in `STATUS.md`.
 - The artifact language matches the request. `STATUS.md` columns stay `N`, `archivo`, `estado`, `sustituye`, `notas`.
 - Every field the template requires is filled. No placeholder remains (`#…`, `<task>`, `TBD`, lorem ipsum). A field the reference tells you to leave blank until data arrives is blank on purpose, and the state is the one the reference names.
 - Nothing this skill forbids was added. The reference names what stays out.
+- The root `<svg>` sets `width` and `height` in `px` to the same integers as the `viewBox`. Frames share a row and wrap so the `viewBox` width is at least its height. Characters outside ASCII are numeric character references, so the file is valid UTF-8.
 - The reply names the folder, the files, the `N`, and the state. If a template was applied, the reply ends with the Assumed block, one line per template, naming the command that changes it and the command that regenerates this piece. A blank left on purpose names the command that fills it.
 
 ## Example
@@ -122,21 +125,30 @@ Input: "Sketch of the payment screen. The task is pay with a card. Web platform.
 
 `accepted` output:
 
-- `ui-ux-design/001-sketch-payment.md`
-- `ui-ux-design/001-sketch-payment-payment.svg`
+- `adrenaline/ui-ux-design/payment/001-sketch-payment.md`
+- `adrenaline/ui-ux-design/payment/001-sketch-payment-payment.svg`
 - Row `001` in `STATUS.md` for each file.
 
 The Markdown names the task "pay with a card", lists the six states, and says empty does not apply because the amount already comes from the order. The SVG has two blocks in the ideal state (amount, card) and the error state keeps that data plus a message block. There are no measures and no brand color. A request written in Spanish uses Spanish labels in the SVG and in the Markdown.
 
 ```svg
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 640">
-  <rect width="360" height="640" fill="#f4f4f4"/>
-  <text x="16" y="32" font-family="system-ui, Segoe UI, sans-serif" font-size="14">Ideal · Compact</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="712px" height="376px" viewBox="0 0 712 376">
+  <rect width="712" height="376" fill="#f4f4f4"/>
+  <text x="16" y="32" font-family="system-ui, Segoe UI, sans-serif" font-size="14">Ideal &#183; Compact</text>
   <rect x="16" y="48" width="328" height="64" fill="#ffffff" stroke="#222"/>
   <text x="32" y="84" font-family="system-ui, Segoe UI, sans-serif" font-size="16">Order amount</text>
   <rect x="16" y="128" width="328" height="120" fill="#ffffff" stroke="#222"/>
   <text x="32" y="164" font-family="system-ui, Segoe UI, sans-serif" font-size="16">Card</text>
   <rect x="16" y="264" width="328" height="48" fill="#ffffff" stroke="#222"/>
   <text x="32" y="294" font-family="system-ui, Segoe UI, sans-serif" font-size="16">Pay</text>
+  <text x="368" y="32" font-family="system-ui, Segoe UI, sans-serif" font-size="14">Error &#183; Compact</text>
+  <rect x="368" y="48" width="328" height="64" fill="#ffffff" stroke="#222"/>
+  <text x="384" y="84" font-family="system-ui, Segoe UI, sans-serif" font-size="16">Order amount</text>
+  <rect x="368" y="128" width="328" height="120" fill="#ffffff" stroke="#222"/>
+  <text x="384" y="164" font-family="system-ui, Segoe UI, sans-serif" font-size="16">Card</text>
+  <rect x="368" y="264" width="328" height="48" fill="#ffffff" stroke="#222"/>
+  <text x="384" y="294" font-family="system-ui, Segoe UI, sans-serif" font-size="16">Pay</text>
+  <rect x="368" y="320" width="328" height="40" fill="#ffffff" stroke="#222"/>
+  <text x="384" y="346" font-family="system-ui, Segoe UI, sans-serif" font-size="16">Notice</text>
 </svg>
 ```

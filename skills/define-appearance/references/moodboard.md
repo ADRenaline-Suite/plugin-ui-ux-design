@@ -17,7 +17,7 @@ Formal tokens and the states of each component. That is the UI kit.
 ## How to do it
 
 1. The references are links or pieces the user provided. Do not search a gallery or invent other brands as if they belonged to the product. If none are provided, apply template `neutral` and leave the delivery `proposed`.
-2. One SVG per sample screen. Color swatches in rectangles with their hex, one line of type in the family the user named, and a screen block in that tone. `xmlns="http://www.w3.org/2000/svg"` and `viewBox`. No `foreignObject`.
+2. One SVG per sample screen. Color swatches in rectangles with their hex, one line of type in the family the user named, and a screen block in that tone. `xmlns="http://www.w3.org/2000/svg"`, a `viewBox`, and `width` and `height` in `px` equal to that `viewBox`. Several frames sit in a row and wrap so the `viewBox` width is at least its height. Characters outside ASCII are numeric character references, so the file is valid UTF-8. No `foreignObject`.
 3. Tone is said with yes and no examples the user gave. If they gave none, describe the tone in one sentence and do not write the microcopy: that is `plugin-ux-writing`.
 4. If the product already has a UI kit, the moodboard does not replace it. It shows how the kit is applied.
 
@@ -58,5 +58,5 @@ There is no earlier command. The single prompt is the way.
 ## Done
 
 - References are links or pieces the user provided, or template `neutral` when none were provided. No gallery was searched and no other brand was added as if it were the product's. When `neutral` was used, the delivery is `proposed` and Assumed says so.
-- Each sample screen has an SVG with `xmlns` and a `viewBox`, a color swatch with its hex, and the type the user named. No `foreignObject`.
+- Each sample screen has an SVG with `xmlns`, a `viewBox`, and `width` and `height` in `px` equal to that `viewBox`. Frames wrap so the width is at least the height. Characters outside ASCII are numeric character references, so the file is valid UTF-8. A color swatch with its hex, and the type the user named. No `foreignObject`.
 - Tone uses the user's yes and no examples, or one sentence if they gave none. Microcopy was not written. Tokens and component states are left open. An existing kit was not replaced.

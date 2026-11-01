@@ -10,6 +10,13 @@ The version stays at 0.0.1 until the maintainer declares this plugin ready for d
 
 - The output folder keeps `ORIGIN.json` (`suite`, `plugin`, `repository`, `convention` `adr-001`) so another agent can see which ADRenaline plugin wrote it. It is not an `<NNN>` file and it has no row in `STATUS.md`.
 
+#### Changed
+
+- A new output folder is `adrenaline/ui-ux-design/`. An existing `ui-ux-design/` at the project root keeps receiving files. `outputDirs` still wins.
+- An SVG root sets `width` and `height` in `px` to the same integers as the `viewBox`. Frames in one file sit in a row and wrap so the canvas is at least as wide as it is tall. SVG 1.1 otherwise treats the size as `100%`, and the preview collapses or crushes the drawing.
+- The SVG file is UTF-8. A character outside ASCII is a numeric character reference. The image preview parses the file as UTF-8 and refuses a raw byte above 127 that is not UTF-8.
+- One subject is the subfolder `<topic>/` under the output folder. `<NNN>` stays monotonic across that folder. `STATUS.md` lists `archivo` as `<topic>/<file>`.
+
 ### 2026-10-29
 
 #### Added

@@ -64,7 +64,9 @@ Do not invent copy, accessibility notes, test rows, HEART figures, a chosen deci
 
 ## Delivery
 
-The folder is `ui-ux-design/` at the project root. If `.cursor/adrenaline.json` has `outputDirs["plugin-ui-ux-design"]` set to a relative path, without `..` and not absolute, use that path. If the file, the key, or a valid path is missing, use `ui-ux-design/` and, in the last case, say so. Create the folder if it does not exist. Do not write outside it. Do not choose another plugin's folder.
+The folder is `adrenaline/ui-ux-design/` at the project root. If `.cursor/adrenaline.json` has `outputDirs["plugin-ui-ux-design"]` set to a relative path, without `..` and not absolute, use that path. If the file, the key, or a valid path is missing, use `adrenaline/ui-ux-design/` and, in the last case, say so. If `adrenaline/ui-ux-design/` does not exist yet and `ui-ux-design/` at the project root already has this plugin's `ORIGIN.json` or `STATUS.md`, keep writing there and say so. Create the folder if it does not exist. Do not write outside it. Do not choose another plugin's folder.
+
+One subject is one subfolder, `<topic>` in kebab-case (`login`, `crud-usuarios-permisos`). Files of that subject go there, including the pieces written in the same turn. A different subject gets a new subfolder. `<NNN>` is the next free number in the whole output folder, and it is not reused. `STATUS.md` and `ORIGIN.json` stay in the output folder. The `archivo` cell is `<topic>/<file>`.
 
 Each new file is named `<NNN>-<type>-<topic>.<ext>`. `<NNN>` is the next free integer in that folder, three digits, and it is not reused. `<type>` is `tasks`, `journey-map`, or `brief`. `<topic>` is kebab-case. This skill writes Markdown.
 
@@ -85,7 +87,7 @@ A new delivery is `accepted`, unless the reference says the template leaves it `
 Before you close, evaluate this list and the `## Done` list in the reference for this situation. A command fixes the situation: use the reference that command names. Every item is true, or you fix the delivery in this turn. Do not leave a file that fails an item. Do not mark it `accepted` while an item fails. A template the reference names is applied and recorded under Assumed; the delivery uses the state that reference names. A prerequisite that still stops the delivery is not a failed list: follow "When a prerequisite is missing" and write no files for that piece.
 
 - The situation of this turn is the only one written, unless the request asked for two. Each delivery has its own `<NNN>`.
-- Files are only in the output folder, named as Delivery says. `<NNN>` is not reused. `STATUS.md` matches the files and the state this situation allows. A gap the reference leaves as `proposed` stays `proposed`.
+- Files are only in the output folder, under `<topic>/`, named as Delivery says. `<NNN>` is not reused. `STATUS.md` matches the files and the state this situation allows. A gap the reference leaves as `proposed` stays `proposed`.
 - `ORIGIN.json` is in the output folder. Its four fields match this plugin. It has no row in `STATUS.md`.
 - The artifact language matches the request. `STATUS.md` columns stay `N`, `archivo`, `estado`, `sustituye`, `notas`.
 - Every field the template requires is filled. No placeholder remains (`#…`, `<task>`, `TBD`, lorem ipsum). A field the reference tells you to leave blank until data arrives is blank on purpose, and the state is the one the reference names.
@@ -96,4 +98,4 @@ Before you close, evaluate this list and the `## Done` list in the reference for
 
 Input: "The goal is to pay an order with a card. The use case is pay the cart."
 
-Output: `ui-ux-design/001-tasks-pay-order.md`, an `accepted` row in `STATUS.md`. The Markdown lists the goal, the tasks in order (review the amount, enter the card, confirm), and the subtasks the user described. It adds neither a persona nor a screen. A request written in Spanish produces the same fields with Spanish prose.
+Output: `adrenaline/ui-ux-design/pay-order/001-tasks-pay-order.md`, an `accepted` row in `STATUS.md`. The Markdown lists the goal, the tasks in order (review the amount, enter the card, confirm), and the subtasks the user described. It adds neither a persona nor a screen. A request written in Spanish produces the same fields with Spanish prose.

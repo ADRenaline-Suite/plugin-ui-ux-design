@@ -88,7 +88,7 @@ The path is cart, payment, result. If the charge fails, it returns to payment wi
 
 ## Done
 
-- The path opens in the browser. Each screen is its own SVG. Links are `<a href>` to a sibling SVG of this same `<NNN>`. There is no JavaScript. A wireframe written in this turn from template `task-blocks` is named under Assumed.
+- The path opens in the browser. Each screen is its own SVG, with `width` and `height` in `px` equal to the `viewBox`, and frames wrap so that width is at least the height. Characters outside ASCII are numeric character references, so the file is valid UTF-8. Links are `<a href>` to a sibling SVG of this same `<NNN>`. There is no JavaScript. A wireframe written in this turn from template `task-blocks` is named under Assumed.
 - The Markdown names the file to open first. Every linked destination exists. A zone with no destination is unlinked and the delivery is `proposed`.
 - The error of a task that can fail is included, and retry returns to the screen that holds the data.
 - Measures, tokens, and accessibility notes are absent. It is not a UML diagram. The mock or wireframe file was not rewritten.
