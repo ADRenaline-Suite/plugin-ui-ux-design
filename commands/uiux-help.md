@@ -1,6 +1,6 @@
 ---
 name: uiux-help
-description: "ADRenaline. Help: catalog of plugin-ui-ux-design (skills, rules, commands)."
+description: "ADRenaline. Help: catalog of plugin-ui-ux-design (skills, rules, commands, agents)."
 ---
 
 # Help — ADRenaline UI/UX Design
@@ -11,11 +11,11 @@ When this help command is the first command in the message, every command, skill
 
 Write the sentences in the language of the request. Keep command names, file ids, and every URL unchanged. Every id is a markdown link to the GitHub URL on its line. Do not print a repository `name` as the visible label of a plugin.
 
-Keep the section headings, in this order: Plugin, Commands, Skills, Rules, Output, Not in this plugin. The title and the Plugin line show `ADRenaline` plus the `displayName`, then one sentence on what the plugin does. Under Commands, group the lines by the skill named in the line. Each group opens with that skill name linked to its SKILL.md. One line per item: the linked id, then the sentence. Output links this plugin's GitHub repository under that same label. A plugin under Not in this plugin uses `ADRenaline` plus its short name, and links to its GitHub repository only when that repository exists.
+Keep the section headings, in this order: Plugin, Commands, Skills, Rules, Agents, Output, Not in this plugin. The title and the Plugin line show `ADRenaline` plus the `displayName`, then one sentence on what the plugin does. Under Commands, group the lines by the skill named in the line. Each group opens with that skill name linked to its SKILL.md. One line per item: the linked id, then the sentence. Output links this plugin's GitHub repository under that same label. A plugin under Not in this plugin uses `ADRenaline` plus its short name, and links to its GitHub repository only when that repository exists.
 
 ## Plugin
 
-- [**ADRenaline UI/UX Design**](https://github.com/ADRenaline-Suite/plugin-ui-ux-design/blob/main/README.md) — Designs the experience and the interface of screens, from the task through handoff and evaluation, without writing the code.
+- [**ADRenaline UI/UX Design**](https://github.com/ADRenaline-Suite/plugin-ui-ux-design/blob/main/README.md) — Designs the experience and the interface of screens, from the task through handoff and evaluation, and frames a design sprint, without writing the code.
 
 ## Commands
 
@@ -23,6 +23,8 @@ Keep the section headings, in this order: Plugin, Commands, Skills, Rules, Outpu
 - [**/uiux-tasks**](https://github.com/ADRenaline-Suite/plugin-ui-ux-design/blob/main/skills/understand-user/references/tasks.md) — Task analysis (skill understand-user): the person's goal, the tasks, the steps, and the order, before any screen is drawn.
 - [**/uiux-journey-map**](https://github.com/ADRenaline-Suite/plugin-ui-ux-design/blob/main/skills/understand-user/references/journey-map.md) — Journey map (skill understand-user): one person's path through a scenario, with actions, thoughts, emotions, and opportunities, without proposing the interface.
 - [**/uiux-brief**](https://github.com/ADRenaline-Suite/plugin-ui-ux-design/blob/main/skills/understand-user/references/brief.md) — Design brief (skill understand-user): the problem, who it is for, the constraints, and the measurable success criteria, before the form of the interface is chosen.
+- [**/uiux-sprint-frame**](https://github.com/ADRenaline-Suite/plugin-ui-ux-design/blob/main/skills/facilitate-design-sprint/references/sprint-frame.md) — Design-sprint frame (skill facilitate-design-sprint): the long-term goal, the questions the week must answer, and the target moment, before any solution is drawn.
+- [**/uiux-solution-sketch**](https://github.com/ADRenaline-Suite/plugin-ui-ux-design/blob/main/skills/facilitate-design-sprint/references/solution-sketch.md) — Solution sketch (skill facilitate-design-sprint): one competing idea in three beats, before a winner is picked. It is not the screen sketch.
 - [**/uiux-sketch**](https://github.com/ADRenaline-Suite/plugin-ui-ux-design/blob/main/skills/specify-screen/references/sketch.md) — Sketch (skill specify-screen): the idea of a screen and its blocks (named zones), without measure, color, or final copy.
 - [**/uiux-wireframe**](https://github.com/ADRenaline-Suite/plugin-ui-ux-design/blob/main/skills/specify-screen/references/wireframe.md) — Wireframe (skill specify-screen): hierarchy and layout of a screen by window size, without brand color or a final typeface.
 - [**/uiux-mock**](https://github.com/ADRenaline-Suite/plugin-ui-ux-design/blob/main/skills/specify-screen/references/mock.md) — Mock (skill specify-screen): the visual appearance of a screen with the UI kit tokens, without the path or the specification for building it.
@@ -48,6 +50,7 @@ Keep the section headings, in this order: Plugin, Commands, Skills, Rules, Outpu
 ## Skills
 
 - [**understand-user**](https://github.com/ADRenaline-Suite/plugin-ui-ux-design/blob/main/skills/understand-user/SKILL.md) — Analyzes the user's tasks, builds the journey map, and closes the design brief before any screen is drawn.
+- [**facilitate-design-sprint**](https://github.com/ADRenaline-Suite/plugin-ui-ux-design/blob/main/skills/facilitate-design-sprint/SKILL.md) — Frames a design sprint and records one competing solution sketch.
 - [**specify-screen**](https://github.com/ADRenaline-Suite/plugin-ui-ux-design/blob/main/skills/specify-screen/SKILL.md) — Produces the sketch, wireframe, mock, prototype, or handoff of a screen, from least to most concrete.
 - [**arrange-screens**](https://github.com/ADRenaline-Suite/plugin-ui-ux-design/blob/main/skills/arrange-screens/SKILL.md) — Arranges the screens of a task into a user flow, a wireflow, or a sitemap.
 - [**define-appearance**](https://github.com/ADRenaline-Suite/plugin-ui-ux-design/blob/main/skills/define-appearance/SKILL.md) — Sets the visual direction of the interface in a moodboard and the UI kit with its tokens. If no kit is selected, the plain preset is used.
@@ -59,6 +62,11 @@ Keep the section headings, in this order: Plugin, Commands, Skills, Rules, Outpu
 
 - [**output-folder**](https://github.com/ADRenaline-Suite/plugin-ui-ux-design/blob/main/rules/output-folder.mdc) — Every file goes in `adrenaline/ui-ux-design/<topic>/` (or under `outputDirs["plugin-ui-ux-design"]` of `.cursor/adrenaline.json`). One subject is one folder. The artifact follows the language of the request.
 - [**ui-fidelity**](https://github.com/ADRenaline-Suite/plugin-ui-ux-design/blob/main/rules/ui-fidelity.mdc) — A missing design input uses a named template and is recorded as assumed. Consistency without a product kit, and an implementation review without a built screen, still stop.
+- [**design-sprint**](https://github.com/ADRenaline-Suite/plugin-ui-ux-design/blob/main/rules/design-sprint.mdc) — A design sprint writes the frame and one competing solution sketch, and asks the other commands for the rest of the week.
+
+## Agents
+
+- [**plugin-ui-ux-design**](https://github.com/ADRenaline-Suite/plugin-ui-ux-design/blob/main/agents/plugin-ui-ux-design.md) — Use when the request asks for tasks, a journey, a brief, a screen, a UI kit, a design sprint, or a review of an interface.
 
 ## Output
 
@@ -83,6 +91,7 @@ Keep the section headings, in this order: Plugin, Commands, Skills, Rules, Outpu
 - Use case → ADRenaline Project Manager.
 - Test scenario → ADRenaline QA Engineer.
 - Interface code, instrumentation, and Core Web Vitals → ADRenaline Frontend.
+- The business outcome of a design sprint → ADRenaline Product. This plugin writes the frame and the solution sketch, and asks the commands that already exist for the rest of the week.
 
 In Claude Code, commands use the prefix `/plugin-ui-ux-design:` (example: `/plugin-ui-ux-design:uiux-help`).
 

@@ -1,8 +1,21 @@
 # Changelog
 
+## [Unreleased]
+
+### Added
+
+- One agent, `plugin-ui-ux-design`. It follows this plugin's skills and names when to ask another plugin. The method stays in the skill.
+
 ## [0.0.1] - 2026-10-28
 
 The version stays at 0.0.1 until the maintainer declares this plugin ready for distribution. The notes below record the work. They are not separate releases. Git tags `v0.1.0` and `v1.0.0` already exist and are left as they are.
+
+### 2026-11-12
+
+#### Added
+
+- Skill `facilitate-design-sprint`. `/uiux-sprint-frame` writes the long-term goal, the sprint questions, and the target. `/uiux-solution-sketch` writes one competing idea in three beats and does not pick a winner. The rest of the week asks the commands that already exist. The prompts for one week are in the skill. Rule `design-sprint` keeps that boundary.
+- The week section of that skill, and the README, show the commands to ask for each day. Friday's five interviews have no command.
 
 ### 2026-10-31
 

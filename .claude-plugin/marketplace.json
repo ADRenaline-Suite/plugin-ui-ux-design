@@ -10,7 +10,7 @@
     {
       "name": "plugin-ui-ux-design",
       "source": "./",
-      "description": "Designs the experience and the interface of screens, from the task through handoff and evaluation, without writing the code."
+      "description": "Designs the experience and the interface of screens, from the task through handoff and evaluation, and frames a design sprint, without writing the code."
     }
   ]
 }

@@ -16,16 +16,19 @@ Quien diseña pantallas dentro de una conversación con el agente. Le pide los d
 
 Portable, para cualquier agente que siga [Agent Skills](https://agentskills.io/specification):
 
-- Siete skills. Cada uno lleva la carpeta de salida y las restricciones de fidelidad, para un agente que no carga rules.
+- Ocho skills. Cada uno lleva la carpeta de salida y las restricciones de fidelidad, para un agente que no carga rules.
 
 Cursor y Claude Code:
 
-- 25 comandos: `/uiux-help` (catálogo de una línea) y uno por pieza. En Cursor, `/uiux-help` o `/uiux-wireframe`. En Claude Code, `/plugin-ui-ux-design:uiux-help`.
+- 27 comandos: `/uiux-help` (catálogo de una línea) y uno por pieza. En Cursor, `/uiux-help` o `/uiux-wireframe`. En Claude Code, `/plugin-ui-ux-design:uiux-help`.
+
+- Un agente, `plugin-ui-ux-design`. Sigue los skills de este plugin y dice cuándo pedir otro plugin. El método se queda en el skill.
 
 Solo Cursor:
 
 - Rule `output-folder`, que guarda todo en la carpeta de salida.
 - Rule `ui-fidelity`, que impide un salto de fidelidad, una pantalla sin estados, o que este plugin haga el trabajo de otro.
+- Rule `design-sprint`, que deja en este plugin el marco del sprint y el boceto de solución, y pide el resto de la semana a los otros comandos.
 
 ## Instalar
 
@@ -210,6 +213,54 @@ Usa este grupo cuando la razón de una elección debe quedar escrita junto a las
 
 Escribe por qué la interfaz quedó de una manera: el contexto, las opciones, qué se eligió y qué se sigue de eso. No diseña la pantalla. La elección viene de ti. El plugin no escoge al ganador. Úsalo cuando quien lea después deba saber por qué se eligió esta opción. Hasta que confirmes la decisión, el archivo se queda en borrador.
 
+### Facilitar un design sprint — skill `facilitate-design-sprint`
+
+Usa este grupo para correr un design sprint. Un mensaje escribe una pieza. Los prompts de una semana entera, con el asunto «reservar mesa», están en [el skill](skills/facilitate-design-sprint/SKILL.es.md#la-semana).
+
+```mermaid
+flowchart TD
+  subgraph lun ["Lunes"]
+    brief["/uiux-brief"]
+    tasks["/uiux-tasks"]
+    journey["/uiux-journey-map"]
+    frame["/uiux-sprint-frame"]
+  end
+  subgraph mar ["Martes"]
+    sol["/uiux-solution-sketch"]
+  end
+  subgraph mie ["Miércoles"]
+    decision["/uiux-decision"]
+    wire["/uiux-wireflow"]
+  end
+  subgraph jue ["Jueves"]
+    proto["/uiux-prototype"]
+  end
+  subgraph vie ["Viernes"]
+    test["/uiux-usability-test"]
+    interviews["cinco entrevistas, las corres tú"]
+    analysis["/uiux-test-analysis"]
+  end
+  brief --> tasks --> journey --> frame --> sol --> decision --> wire --> proto --> test --> interviews --> analysis
+```
+
+| Día | Qué pedir |
+| --- | --- |
+| Lunes | `/uiux-brief`, `/uiux-tasks`, `/uiux-journey-map`, `/uiux-sprint-frame` |
+| Martes | `/uiux-solution-sketch`, una vez por idea |
+| Miércoles | `/uiux-decision`, luego `/uiux-wireflow` |
+| Jueves | `/uiux-prototype` |
+| Viernes | `/uiux-usability-test`. Después de las entrevistas, `/uiux-test-analysis` |
+
+El lunes cierra el problema, las tareas, el mapa y el marco. El martes registra una idea que compite por mensaje. El miércoles eliges tú, y el wireflow es el storyboard de esa idea. El jueves es el prototipo. El viernes es el plan de la prueba; las cinco entrevistas las haces tú, y el análisis espera las notas que traigas.
+
+#### `/uiux-sprint-frame`
+
+Escribe la apuesta de la semana: la meta de largo plazo, las preguntas que la semana tiene que responder y el momento objetivo. No dibuja una solución. Úsalo cuando el problema ya se conoce y la semana necesita un objetivo antes de que alguien bocete una idea. Una meta, una pregunta o un objetivo que no hayas dado se queda en borrador.
+
+#### `/uiux-solution-sketch`
+
+Escribe una idea que compite, en tres tiempos: apertura, acción y resultado. No es el sketch de una pantalla, y no elige ganador. Úsalo una vez por idea. Una segunda idea es otro mensaje. Hasta que nombres la idea, el archivo se queda en borrador.
+
 ## Skills
 
 Cada comando pertenece a un skill. El skill es la categoría: agrupa las piezas del mismo tramo del oficio. El nombre es la carpeta `skills/<skill>/`.
@@ -217,6 +268,7 @@ Cada comando pertenece a un skill. El skill es la categoría: agrupa las piezas 
 | Skill | Qué cubre | Comandos |
 | --- | --- | --- |
 | [understand-user](skills/understand-user/SKILL.es.md) | Tareas, mapa de recorrido y brief, antes de dibujar | `/uiux-tasks`, `/uiux-journey-map`, `/uiux-brief` |
+| [facilitate-design-sprint](skills/facilitate-design-sprint/SKILL.es.md) | Marco del sprint y un boceto de solución que compite. El resto de la semana pide los comandos que ya existen | `/uiux-sprint-frame`, `/uiux-solution-sketch` |
 | [specify-screen](skills/specify-screen/SKILL.es.md) | Sketch, wireframe, mock, prototipo y handoff | `/uiux-sketch`, `/uiux-wireframe`, `/uiux-mock`, `/uiux-prototype`, `/uiux-handoff` |
 | [arrange-screens](skills/arrange-screens/SKILL.es.md) | Flujo de usuario, wireflow y sitemap | `/uiux-user-flow`, `/uiux-wireflow`, `/uiux-sitemap` |
 | [define-appearance](skills/define-appearance/SKILL.es.md) | Moodboard y kit de interfaz. Cinco presets; `plain` es el de partida | `/uiux-moodboard`, `/uiux-ui-kit` |
@@ -287,6 +339,8 @@ flowchart TD
 | `understand-user` | `/uiux-tasks` | Plantilla `single-task`. `accepted` |
 | `understand-user` | `/uiux-journey-map` | Plantillas `role-from-task` y `complete-the-task`. `proposed`. Sin nombre ni biografía |
 | `understand-user` | `/uiux-brief` | `task-unsupported` y `finish-unaided` dejan `proposed`. La plataforma `web` puede dejar `accepted` |
+| `facilitate-design-sprint` | `/uiux-sprint-frame` | `two-year-outcome`, `one-question` y `target-result` dejan `proposed`. No se inventa una persona |
+| `facilitate-design-sprint` | `/uiux-solution-sketch` | Sin idea: `proposed`. `role-from-task` deja `proposed`. `three-beats` puede dejar `accepted` cuando la idea fue dada |
 | `specify-screen` | `/uiux-sketch` | Plantilla `single-task`, escrita en este turno. `accepted` |
 | `specify-screen` | `/uiux-wireframe` | Plantilla `single-task`. `accepted` |
 | `arrange-screens` | `/uiux-user-flow` | Plantillas `single-task` y `linear-three`. `accepted` |
@@ -318,6 +372,8 @@ La respuesta termina con una línea por plantilla: el valor tomado automáticame
 | `/uiux-tasks` | [understand-user](skills/understand-user/SKILL.es.md) | Tareas | [referencia](skills/understand-user/references/tasks.es.md) |
 | `/uiux-journey-map` | [understand-user](skills/understand-user/SKILL.es.md) | Mapa de recorrido | [referencia](skills/understand-user/references/journey-map.es.md) |
 | `/uiux-brief` | [understand-user](skills/understand-user/SKILL.es.md) | Brief | [referencia](skills/understand-user/references/brief.es.md) |
+| `/uiux-sprint-frame` | [facilitate-design-sprint](skills/facilitate-design-sprint/SKILL.es.md) | Marco del sprint | [referencia](skills/facilitate-design-sprint/references/sprint-frame.es.md) |
+| `/uiux-solution-sketch` | [facilitate-design-sprint](skills/facilitate-design-sprint/SKILL.es.md) | Boceto de solución | [referencia](skills/facilitate-design-sprint/references/solution-sketch.es.md) |
 | `/uiux-sketch` | [specify-screen](skills/specify-screen/SKILL.es.md) | Sketch | [referencia](skills/specify-screen/references/sketch.es.md) |
 | `/uiux-wireframe` | [specify-screen](skills/specify-screen/SKILL.es.md) | Wireframe | [referencia](skills/specify-screen/references/wireframe.es.md) |
 | `/uiux-mock` | [specify-screen](skills/specify-screen/SKILL.es.md) | Mock | [referencia](skills/specify-screen/references/mock.es.md) |

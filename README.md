@@ -16,16 +16,19 @@ Someone designing screens inside a conversation with the agent. They ask `plugin
 
 Portable, for any agent that follows [Agent Skills](https://agentskills.io/specification):
 
-- Seven skills. Each one carries the output folder and the fidelity restrictions, for an agent that does not load rules.
+- Eight skills. Each one carries the output folder and the fidelity restrictions, for an agent that does not load rules.
 
 Cursor and Claude Code:
 
-- 25 commands: `/uiux-help` (one-line catalog) and one per piece. In Cursor, `/uiux-help` or `/uiux-wireframe`. In Claude Code, `/plugin-ui-ux-design:uiux-help`.
+- 27 commands: `/uiux-help` (one-line catalog) and one per piece. In Cursor, `/uiux-help` or `/uiux-wireframe`. In Claude Code, `/plugin-ui-ux-design:uiux-help`.
+
+- One agent, `plugin-ui-ux-design`. It follows this plugin's skills and names when to ask another plugin. The method stays in the skill.
 
 Cursor only:
 
 - Rule `output-folder`, which keeps everything in the output folder.
 - Rule `ui-fidelity`, which stops a jump in fidelity, a screen without states, or this plugin doing another plugin's job.
+- Rule `design-sprint`, which keeps the sprint frame and the solution sketch in this plugin and asks the other commands for the rest of the week.
 
 ## Install
 
@@ -210,6 +213,54 @@ Use this group when the reason for a choice should stay written next to the scre
 
 Writes why the interface ended one way: the context, the options, what was chosen, and what follows from that. It does not design the screen. The choice comes from you. The plugin does not pick the winner. Use it when a later reader should know why this option was chosen. Until you confirm the decision, the file stays a draft.
 
+### Facilitate a design sprint — skill `facilitate-design-sprint`
+
+Use this group to run a design sprint. One message writes one piece. The prompts for a whole week, on the subject "reserving a table," are in [the skill](skills/facilitate-design-sprint/SKILL.md#the-week).
+
+```mermaid
+flowchart TD
+  subgraph mon ["Monday"]
+    brief["/uiux-brief"]
+    tasks["/uiux-tasks"]
+    journey["/uiux-journey-map"]
+    frame["/uiux-sprint-frame"]
+  end
+  subgraph tue ["Tuesday"]
+    sol["/uiux-solution-sketch"]
+  end
+  subgraph wed ["Wednesday"]
+    decision["/uiux-decision"]
+    wire["/uiux-wireflow"]
+  end
+  subgraph thu ["Thursday"]
+    proto["/uiux-prototype"]
+  end
+  subgraph fri ["Friday"]
+    test["/uiux-usability-test"]
+    interviews["five interviews, you run them"]
+    analysis["/uiux-test-analysis"]
+  end
+  brief --> tasks --> journey --> frame --> sol --> decision --> wire --> proto --> test --> interviews --> analysis
+```
+
+| Day | What to ask for |
+| --- | --- |
+| Monday | `/uiux-brief`, `/uiux-tasks`, `/uiux-journey-map`, `/uiux-sprint-frame` |
+| Tuesday | `/uiux-solution-sketch`, once per idea |
+| Wednesday | `/uiux-decision`, then `/uiux-wireflow` |
+| Thursday | `/uiux-prototype` |
+| Friday | `/uiux-usability-test`. After the interviews, `/uiux-test-analysis` |
+
+Monday closes the problem, the tasks, the map, and the frame. Tuesday records one competing idea per message. Wednesday you choose, and the wireflow is the storyboard of that idea. Thursday is the prototype. Friday is the test plan; you run the five interviews, and the analysis waits for the notes you bring back.
+
+#### `/uiux-sprint-frame`
+
+Writes the bet for the week: the long-term goal, the questions the week must answer, and the target moment. It does not draw a solution. Use it when the problem is known and the week needs a target before anyone sketches an idea. A goal, a question, or a target that you did not supply stays a draft.
+
+#### `/uiux-solution-sketch`
+
+Writes one competing idea in three beats: opening, action, and outcome. It is not the screen sketch, and it does not pick a winner. Use it once per idea. A second idea is another message. Until you name the idea, the file stays a draft.
+
 ## Skills
 
 Each command belongs to a skill. The skill is the category: it groups the pieces of the same stretch of the craft. The name is the folder `skills/<skill>/`.
@@ -217,6 +268,7 @@ Each command belongs to a skill. The skill is the category: it groups the pieces
 | Skill | What it covers | Commands |
 | --- | --- | --- |
 | [understand-user](skills/understand-user/SKILL.md) | Tasks, journey map, and brief, before drawing | `/uiux-tasks`, `/uiux-journey-map`, `/uiux-brief` |
+| [facilitate-design-sprint](skills/facilitate-design-sprint/SKILL.md) | Sprint frame and one competing solution sketch. The rest of the week asks the commands that already exist | `/uiux-sprint-frame`, `/uiux-solution-sketch` |
 | [specify-screen](skills/specify-screen/SKILL.md) | Sketch, wireframe, mock, prototype, and handoff | `/uiux-sketch`, `/uiux-wireframe`, `/uiux-mock`, `/uiux-prototype`, `/uiux-handoff` |
 | [arrange-screens](skills/arrange-screens/SKILL.md) | User flow, wireflow, and sitemap | `/uiux-user-flow`, `/uiux-wireflow`, `/uiux-sitemap` |
 | [define-appearance](skills/define-appearance/SKILL.md) | Moodboard and UI kit. Five presets; `plain` is the default | `/uiux-moodboard`, `/uiux-ui-kit` |
@@ -287,6 +339,8 @@ flowchart TD
 | `understand-user` | `/uiux-tasks` | Template `single-task`. `accepted` |
 | `understand-user` | `/uiux-journey-map` | Templates `role-from-task` and `complete-the-task`. `proposed`. No name or biography |
 | `understand-user` | `/uiux-brief` | `task-unsupported` and `finish-unaided` leave `proposed`. Platform `web` can leave `accepted` |
+| `facilitate-design-sprint` | `/uiux-sprint-frame` | `two-year-outcome`, `one-question`, and `target-result` leave `proposed`. No persona is invented |
+| `facilitate-design-sprint` | `/uiux-solution-sketch` | No idea: `proposed`. `role-from-task` leaves `proposed`. `three-beats` can leave `accepted` when the idea was given |
 | `specify-screen` | `/uiux-sketch` | Template `single-task`, written in this turn. `accepted` |
 | `specify-screen` | `/uiux-wireframe` | Template `single-task`. `accepted` |
 | `arrange-screens` | `/uiux-user-flow` | Templates `single-task` and `linear-three`. `accepted` |
@@ -318,6 +372,8 @@ The reply ends with one line per template: the value taken automatically, the co
 | `/uiux-tasks` | [understand-user](skills/understand-user/SKILL.md) | Tasks | [reference](skills/understand-user/references/tasks.md) |
 | `/uiux-journey-map` | [understand-user](skills/understand-user/SKILL.md) | Journey map | [reference](skills/understand-user/references/journey-map.md) |
 | `/uiux-brief` | [understand-user](skills/understand-user/SKILL.md) | Brief | [reference](skills/understand-user/references/brief.md) |
+| `/uiux-sprint-frame` | [facilitate-design-sprint](skills/facilitate-design-sprint/SKILL.md) | Sprint frame | [reference](skills/facilitate-design-sprint/references/sprint-frame.md) |
+| `/uiux-solution-sketch` | [facilitate-design-sprint](skills/facilitate-design-sprint/SKILL.md) | Solution sketch | [reference](skills/facilitate-design-sprint/references/solution-sketch.md) |
 | `/uiux-sketch` | [specify-screen](skills/specify-screen/SKILL.md) | Sketch | [reference](skills/specify-screen/references/sketch.md) |
 | `/uiux-wireframe` | [specify-screen](skills/specify-screen/SKILL.md) | Wireframe | [reference](skills/specify-screen/references/wireframe.md) |
 | `/uiux-mock` | [specify-screen](skills/specify-screen/SKILL.md) | Mock | [reference](skills/specify-screen/references/mock.md) |

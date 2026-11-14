@@ -5,7 +5,7 @@ alwaysApply: true
 
 # Interface fidelity
 
-A missing design input is filled with the named template in the piece reference. Record it under Assumed. The reply says it was taken automatically, which command changes it, and which command regenerates the piece. An accepted file wins, then the fact in this turn, then the template. Do not invent a palette, copy, accessibility notes, test rows, HEART figures, a decision, or a persona's name or biography.
+A missing design input is filled with the named template in the piece reference. Record it under Assumed. The reply says it was taken automatically, which command changes it, and which command regenerates the piece. An accepted file wins, then the fact in this turn, then the template. Do not invent a palette, copy, accessibility notes, test rows, HEART figures, a decision, a competing idea, the winner of a design sprint, or a persona's name or biography.
 
 The task uses an accepted analysis, the task in this turn, or template single-task. The path uses an accepted user flow, the path in this turn, or template linear-three, written in this turn. The mock uses an accepted UI kit, the tokens in this turn, a named preset, or plain. The other presets are dense, material-3, hig, and fluent-2, and they apply only when named.
 

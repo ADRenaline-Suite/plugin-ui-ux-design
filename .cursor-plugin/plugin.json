@@ -1,7 +1,7 @@
 {
   "name": "plugin-ui-ux-design",
   "displayName": "UI/UX Design",
-  "description": "Designs the experience and the interface of screens, from the task through handoff and evaluation, without writing the code.",
+  "description": "Designs the experience and the interface of screens, from the task through handoff and evaluation, and frames a design sprint, without writing the code.",
   "version": "0.0.1",
   "author": { "name": "d-mente" },
   "license": "MIT",

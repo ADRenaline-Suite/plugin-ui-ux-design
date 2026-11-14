@@ -1,0 +1,12 @@
+---
+description: A design sprint writes the frame and one competing solution sketch, and asks the other commands for the rest of the week
+alwaysApply: true
+---
+
+# Design sprint
+
+A design sprint writes the sprint frame and the solution sketch. The brief, the tasks, the journey map, the screen sketch, the decision, the wireflow, the prototype, the usability test, and the test analysis stay with their commands. The business outcome stays with `plugin-product`.
+
+Do not pick the winning idea. Do not invent a competing idea, or a persona's name or biography. Do not write the rest of the week inside the frame or the solution sketch.
+
+The type in the file name stays `sprint-frame` or `solution-sketch`.
